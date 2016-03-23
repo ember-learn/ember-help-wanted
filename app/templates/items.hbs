@@ -1,0 +1,11 @@
+<h1>Items</h1>
+
+<ul>
+  {{#each item in model}}
+    <li>
+      {{item.description}}
+    </li>
+  {{/each}}
+</ul>
+
+{{outlet}}
