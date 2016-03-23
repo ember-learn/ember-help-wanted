@@ -6,6 +6,6 @@ export default DS.Model.extend({
   link:         DS.attr(),
   category:     DS.attr(),
   notes:        DS.attr(),
-  difficulty:   DS.attr(),
+  rating:       DS.attr(),
   workingOn:    DS.attr()
 });
