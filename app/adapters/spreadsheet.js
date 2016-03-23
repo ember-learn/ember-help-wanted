@@ -1,10 +1,11 @@
+import Ember from 'ember';
 import ApplicationAdapter from './application';
 
 export default ApplicationAdapter.extend({
   spreadsheets: Ember.inject.service(),
 
-  findAll: function(_, type) {
-    var worksheet = Ember.String.pluralize(type.typeKey);
+  findAll: function(store, type, sinceToken, snapshotRecordArray) {
+    var worksheet = Ember.String.pluralize(type.modelName);
     return this.get('spreadsheets').fetch(worksheet);
   },
 
