@@ -3,14 +3,22 @@
 
 module.exports = {
 
+  watching: {
+    'emberjs/ember.js': {
+      labels: [
+        'Needs Help',
+        'Good for New Contributors'
+      ]
+    }
+  },
+
   issueLabeled: function (event) {
 
-    if (this.hasOneOfDesiredLabels(event)) {
+    if (this.hasOneOfDesiredLabels(event.payload)) {
 
-      // construct desired issue hash
-      var issue = this.constructIssueHash(event.payload);
+      var issueHash = this.constructIssueHash(event.payload);
 
-      return this.addIssueToDatastore(issue);
+      return this.addIssueToDatastore(issueHash);
     }
   },
 
@@ -75,7 +83,19 @@ module.exports = {
    * @returns {boolean}
    */
   hasOneOfDesiredLabels: function (payload) {
-    return true;
+
+    var watchedRepo = this.watching[payload.repository.full_name];
+
+    if( typeof watchedRepo !== 'undefined' ) {
+
+      var result = payload.issue.labels.filter(function(label) {
+        return watchedRepo.labels.indexOf(label.name) !== -1;
+      });
+
+      return ( result.length );
+    }
+
+    return false;
   },
 
   /**
@@ -93,6 +113,7 @@ module.exports = {
     return {
       id: payload.issue.number,
       url: payload.issue.html_url,
+      title: payload.issue.title,
       labels: payload.issue.labels,
       repo: payload.repository.full_name,
       repoUrl: payload.repository.html_url
