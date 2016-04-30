@@ -2,7 +2,7 @@ module.exports = {
   "payload": {
     "action": "unlabeled",
     "issue": {
-      "html_url": "https://github.com/acorncom/ember-hitlist-tester/issues/1",
+      "html_url": "https://github.com/emberjs/ember.js/issues/1",
       "number": 1,
       "user": {
         "login": "acorncom",
@@ -25,12 +25,13 @@ module.exports = {
       },
       "labels": [
         {
-          "url": "https://api.github.com/repos/acorncom/ember-hitlist-tester/labels/enhancement",
+          "url": "https://api.github.com/repos/emberjs/ember.js/labels/Needs%20Help",
           "name": "Needs Help",
           "color": "84b6eb"
         }
       ],
       "state": "open",
+      "title": "Testing issue",
       "locked": false,
       "assignee": null,
       "milestone": null,
@@ -47,7 +48,7 @@ module.exports = {
     },
     "repository": {
       "full_name": "emberjs/ember.js",
-      "html_url": "https://github.com/acorncom/ember-hitlist-tester",
+      "html_url": "https://github.com/emberjs/ember.js",
     }
   }
 };
