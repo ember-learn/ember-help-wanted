@@ -66,3 +66,21 @@ describe('renaming an issue updates its title on Firebase', function() {
     assert.ok(false, 'Need to confirm that title updates properly');
   });
 });
+
+describe('addIssueToDatastore updates Firebase as desired', function() {
+  it('saving works', function () {
+    assert.ok(false, 'Confirm that adding issues works');
+  });
+});
+
+describe('removeIssueFromDatastore updates Firebase as desired', function() {
+  it('deleting works', function () {
+    assert.ok(false, 'Confirm that removing issues works');
+  });
+});
+
+describe('updateIssueInDatastore updates Firebase as desired', function() {
+  it('updating works', function () {
+    assert.ok(false, 'Confirm that updating issues works');
+  });
+});
