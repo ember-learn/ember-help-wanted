@@ -40,7 +40,7 @@ var spreadsheetsMock = {
   }
 }
 
-moduleFor('adapter:item', 'Unit | Adapter | item', {
+moduleFor('adapter:item', 'Unit | Adapter | spreadsheet', {
   // Specify the other units that are required for this test.
   // needs: ['serializer:foo']
 });
