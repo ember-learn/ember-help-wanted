@@ -14,7 +14,7 @@ export default DS.Model.extend({
     return `https://github.com/${this.get('githubData.org')}/${this.get('githubData.repo')}/issues/${this.get('githubData.number')}`;
   }),
   project: Ember.computed.alias('githubData.repo'),
-  projectLink: Ember.computed('githubData.repo', function(){
+  projectLink: Ember.computed('githubData.repo', function() {
     return `https://github.com/${this.get('githubData.org')}/${this.get('githubData.repo')}`;
   }),
   title: Ember.computed.alias('githubData.title'),
@@ -25,20 +25,18 @@ export default DS.Model.extend({
     // https://guides.emberjs.com/v2.4.0/models/defining-models/#toc_custom-transforms
     let displayValue = this.get('workingOn');
 
-    if(displayValue.indexOf(':') !== -1) {
+    if (displayValue.indexOf(':') !== -1) {
 
-      var [ network, username ] = displayValue.split(':');
+      let [ network, username ] = displayValue.split(':');
 
       let value = Ember.Handlebars.Utils.escapeExpression(username);
 
-      var networkString = '';
-      if(network === 'github') {
+      let networkString = '';
+      if (network === 'github') {
         networkString = `<a href="https://github.com/${value}" title="${value} on Github">`;
-      }
-      else if(network === 'slack') {
+      } else if (network === 'slack') {
         networkString = `<a href="#" title="${value} on Ember Slack">`;
-      }
-      else if(network === 'twitter') {
+      } else if (network === 'twitter') {
         networkString = `<a href="https://twitter.com/${value}" title="${value} on Twitter">`;
       }
 
