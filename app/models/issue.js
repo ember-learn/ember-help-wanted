@@ -14,7 +14,7 @@ export default DS.Model.extend({
     return `https://github.com/${this.get('githubData.org')}/${this.get('githubData.repo')}/issues/${this.get('githubData.number')}`;
   }),
   project: Ember.computed.alias('githubData.repo'),
-  projectLink: Ember.computed('githubData.repo', function(){
+  projectLink: Ember.computed('githubData.repo', function() {
     return `https://github.com/${this.get('githubData.org')}/${this.get('githubData.repo')}`;
   }),
   title: Ember.computed.alias('githubData.title'),
