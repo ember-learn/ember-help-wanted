@@ -1,13 +1,23 @@
 import DS from 'ember-data';
+import Ember from 'ember';
 
 export default DS.Model.extend({
-  project:      DS.attr(),
-  description:  DS.attr(),
-  link:         DS.attr(),
-  category:     DS.attr(),
-  notes:        DS.attr(),
-  rating:       DS.attr(),
-  workingOn:    DS.attr(),
+  githubData:      DS.attr(),
+
+  workingOn:    'no one',
+
+  category: 'todo', // @TODO: we want to build these at some point ...
+  rating: 3, // @TODO: let's work out how to build these nicely
+  notes: 'we want notes in the future', // @TODO: work out how to add these
+
+  link: Ember.computed('githubData.repo', 'githubData.org', function() {
+    return `https://github.com/${this.get('githubData.org')}/${this.get('githubData.repo')}/issues/${this.get('githubData.number')}`;
+  }),
+  project: Ember.computed.alias('githubData.repo'),
+  projectLink: Ember.computed('githubData.repo', function(){
+    return `https://github.com/${this.get('githubData.org')}/${this.get('githubData.repo')}`;
+  }),
+  title: Ember.computed.alias('githubData.title'),
 
   workingOnLink: Ember.computed('workingOn', function() {
 

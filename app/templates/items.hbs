@@ -2,10 +2,10 @@
 <table>
   <thead>
     <tr>
-      <th>Rating</th>
-      <th>Category</th>
+      <!--<th>Rating</th>-->
+      <!--<th>Category</th>-->
       <th>Project</th>
-      <th>Description</th>
+      <th>Title</th>
       <th>Notes</th>
       <th>Working On</th>
     </tr>
@@ -13,12 +13,12 @@
   <tbody>
     {{#each model as |item|}}
     <tr>
-      <td>{{item.rating}}</td>
-      <td>{{item.category}}</td>
-      <td>{{item.project}}</td>
-      <td><a href="{{item.link}}" target="_blank">{{item.description}}</a></td>
+{{!--      <td>{{item.rating}}</td>
+      <td>{{item.category}}</td>--}}
+      <td><a href="{{item.projectLink}}" target="_blank">{{item.project}}</a></td>
+      <td><a href="{{item.link}}" target="_blank">{{item.title}}</a></td>
       <td>{{item.notes}}</td>
-      <td>{{item.workingOnLink}}</td>
+      <td>{{!-- item.workingOnLink --}}</td>
     </tr>
   {{/each}}
   </tbody>
