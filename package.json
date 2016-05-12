@@ -43,6 +43,7 @@
     "ember-normalize": "0.0.9",
     "ember-pagefront": "0.11.1",
     "ember-resolver": "^2.0.3",
+    "emberfire": "1.6.6",
     "loader.js": "^4.0.0"
   }
 }

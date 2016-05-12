@@ -4,6 +4,8 @@ module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'ember-hitlist',
     environment: environment,
+    contentSecurityPolicy: { 'connect-src': "'self' https://auth.firebase.com wss://*.firebaseio.com" },
+    firebase: 'https://help-wanted-dev.firebaseio.com/',
     baseURL: '/',
     locationType: 'auto',
     EmberENV: {
