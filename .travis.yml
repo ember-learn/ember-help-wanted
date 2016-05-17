@@ -9,8 +9,16 @@ cache:
   directories:
     - node_modules
 
+
+
+      # Download the right version of phantomjs 2.0.0, and place it before everything else in our $PATH
 before_install:
-  - export PATH=/usr/local/phantomjs-2.0.0/bin:$PATH
+  - mkdir travis-phantomjs
+  - wget https://s3.amazonaws.com/travis-phantomjs/phantomjs-2.0.0-ubuntu-12.04.tar.bz2 -O $PWD/travis-phantomjs/phantomjs-2.0.0-ubuntu-12.04.tar.bz2
+  - tar -xvf $PWD/travis-phantomjs/phantomjs-2.0.0-ubuntu-12.04.tar.bz2 -C $PWD/travis-phantomjs
+  - export PATH=$PWD/travis-phantomjs:$PATH
+
+before_install:
   - "npm config set spin false"
   - "npm install -g npm@^2"
 
