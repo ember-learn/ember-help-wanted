@@ -4,8 +4,11 @@ module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'ember-hitlist',
     environment: environment,
-    contentSecurityPolicy: { 'connect-src': "'self' https://auth.firebase.com wss://*.firebaseio.com" },
-    firebase: 'https://help-wanted-dev.firebaseio.com/',
+    contentSecurityPolicy: { 'connect-src': "'self'" },
+    emberPouch:{
+      localDb:'ember-help-local',
+      //remoteDb: 'http://xxx'
+    },
     baseURL: '/',
     locationType: 'auto',
     EmberENV: {

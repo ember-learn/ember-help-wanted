@@ -1,10 +1,14 @@
 import DS from 'ember-data';
 import Ember from 'ember';
 
-export default DS.Model.extend({
-  githubData:      DS.attr(),
+import Model from 'ember-pouch/model';
 
-  workingOn:    'no one',
+const { attr, hasMany, belongsTo } = DS;
+
+export default Model.extend({
+  githubData: attr('string'),
+
+  workingOn: 'no one',
 
   category: 'todo', // @TODO: we want to build these at some point ...
   rating: 3, // @TODO: let's work out how to build these nicely
@@ -27,7 +31,7 @@ export default DS.Model.extend({
 
     if (displayValue.indexOf(':') !== -1) {
 
-      let [ network, username ] = displayValue.split(':');
+      let [network, username] = displayValue.split(':');
 
       let value = Ember.Handlebars.Utils.escapeExpression(username);
 
@@ -46,3 +50,4 @@ export default DS.Model.extend({
     }
   })
 });
+

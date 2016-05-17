@@ -1,4 +1,4 @@
-import DS from 'ember-data';
+import { Serializer } from 'ember-pouch';
 
-export default DS.JSONSerializer.extend({
+export default Serializer.extend({
 });
