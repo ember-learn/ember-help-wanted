@@ -6,7 +6,15 @@ import Model from 'ember-pouch/model';
 const { attr, hasMany, belongsTo } = DS;
 
 export default Model.extend({
-  githubData: attr('string'),
+  githubId: attr('string'),
+  number: attr('number'),
+  org: attr('string'),
+  repo: attr('string'),
+  state: attr('string'),
+  title: attr('string'),
+
+  createdAt: attr('date'),
+  updatedAt: attr('date'),
 
   workingOn: 'no one',
 
@@ -14,14 +22,13 @@ export default Model.extend({
   rating: 3, // @TODO: let's work out how to build these nicely
   notes: 'we want notes in the future', // @TODO: work out how to add these
 
-  link: Ember.computed('githubData.repo', 'githubData.org', function() {
-    return `https://github.com/${this.get('githubData.org')}/${this.get('githubData.repo')}/issues/${this.get('githubData.number')}`;
+  link: Ember.computed('repo', 'org', function() {
+    return `https://github.com/${this.get('org')}/${this.get('repo')}/issues/${this.get('number')}`;
   }),
-  project: Ember.computed.alias('githubData.repo'),
-  projectLink: Ember.computed('githubData.repo', function() {
-    return `https://github.com/${this.get('githubData.org')}/${this.get('githubData.repo')}`;
+  project: Ember.computed.alias('repo'),
+  projectLink: Ember.computed('repo', function() {
+    return `https://github.com/${this.get('org')}/${this.get('repo')}`;
   }),
-  title: Ember.computed.alias('githubData.title'),
 
   workingOnLink: Ember.computed('workingOn', function() {
 
