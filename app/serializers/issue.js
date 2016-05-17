@@ -5,7 +5,7 @@ from 'ember-pouch';
 
 export
 default Serializer.extend({
-
+/*
   serialize(snapshot, options) {
     let json = this._super(...arguments);
     let githubDataAsString = JSON.stringify(snapshot.attr('githubData'));
@@ -18,5 +18,6 @@ default Serializer.extend({
     o.data.attributes.githubData = JSON.parse(githubDataAsObject);
     return o;
   }
+ */
 });
 
