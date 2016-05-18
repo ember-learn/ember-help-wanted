@@ -1,23 +1,34 @@
 import DS from 'ember-data';
 import Ember from 'ember';
 
-export default DS.Model.extend({
-  githubData:      DS.attr(),
+import Model from 'ember-pouch/model';
 
-  workingOn:    'no one',
+const { attr, hasMany, belongsTo } = DS;
+
+export default Model.extend({
+  githubId: attr('string'),
+  number: attr('number'),
+  org: attr('string'),
+  repo: attr('string'),
+  state: attr('string'),
+  title: attr('string'),
+
+  createdAt: attr('date'),
+  updatedAt: attr('date'),
+
+  workingOn: 'no one',
 
   category: 'todo', // @TODO: we want to build these at some point ...
   rating: 3, // @TODO: let's work out how to build these nicely
   notes: 'we want notes in the future', // @TODO: work out how to add these
 
-  link: Ember.computed('githubData.repo', 'githubData.org', function() {
-    return `https://github.com/${this.get('githubData.org')}/${this.get('githubData.repo')}/issues/${this.get('githubData.number')}`;
+  link: Ember.computed('repo', 'org', function() {
+    return `https://github.com/${this.get('org')}/${this.get('repo')}/issues/${this.get('number')}`;
   }),
-  project: Ember.computed.alias('githubData.repo'),
-  projectLink: Ember.computed('githubData.repo', function() {
-    return `https://github.com/${this.get('githubData.org')}/${this.get('githubData.repo')}`;
+  project: Ember.computed.alias('repo'),
+  projectLink: Ember.computed('repo', function() {
+    return `https://github.com/${this.get('org')}/${this.get('repo')}`;
   }),
-  title: Ember.computed.alias('githubData.title'),
 
   workingOnLink: Ember.computed('workingOn', function() {
 
@@ -27,7 +38,7 @@ export default DS.Model.extend({
 
     if (displayValue.indexOf(':') !== -1) {
 
-      let [ network, username ] = displayValue.split(':');
+      let [network, username] = displayValue.split(':');
 
       let value = Ember.Handlebars.Utils.escapeExpression(username);
 
@@ -46,3 +57,4 @@ export default DS.Model.extend({
     }
   })
 });
+
