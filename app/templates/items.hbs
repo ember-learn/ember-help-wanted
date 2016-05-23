@@ -7,11 +7,11 @@
       <th>Working On</th>
     </tr>
   </thead>
-  <tbody>
+  <tbody class="issues">
     {{#each openIssues as |item|}}
-    <tr>
-      <td><a href="{{item.projectLink}}" target="_blank">{{item.project}}</a></td>
-      <td><a href="{{item.link}}" target="_blank">{{item.title}}</a></td>
+    <tr class="issue">
+      <td class="issue-project"><a href="{{item.projectLink}}" target="_blank">{{item.project}}</a></td>
+      <td class="issue-title"><a href="{{item.link}}" target="_blank">{{item.title}}</a></td>
       <td></td>
     </tr>
   {{/each}}
