@@ -4,10 +4,10 @@ module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'ember-hitlist',
     environment: environment,
-    contentSecurityPolicy: { 'connect-src': "'self'" },
+    contentSecurityPolicy: { 'connect-src': "'self' *.cloudant.com/*" },
     emberPouch:{
       localDb:'ember-help-local',
-      //remoteDb: 'http://xxx'
+      remoteDb: process.env.Ember_Help_Wanted_CouchDb_Url,
     },
     baseURL: '/',
     locationType: 'auto',
