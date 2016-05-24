@@ -1,20 +1,11 @@
 <p>The items below could all use some love and attention.  Please, grab one!</p>
-<table>
-  <thead>
-    <tr>
-      <th>Project</th>
-      <th>Title</th>
-      <th>Working On</th>
-    </tr>
-  </thead>
-  <tbody>
-    {{#each openIssues as |item|}}
-    <tr>
-      <td><a href="{{item.projectLink}}" target="_blank">{{item.project}}</a></td>
-      <td><a href="{{item.link}}" target="_blank">{{item.title}}</a></td>
-      <td></td>
-    </tr>
-  {{/each}}
-  </tbody>
-</table>
+{{models-table
+  data=model
+  columns=grid.columns
+  showColumnsDropdown=false
+  filteringIgnoreCase=true
+  useNumericPagination=true
+  showTableFooter=true
+  pageSize= 10
+}}
 {{outlet}}

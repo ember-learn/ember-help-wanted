@@ -3,6 +3,13 @@ import Ember from 'ember';
 export
 default Ember.Controller.extend({
   openIssues: Ember.computed.filterBy('model', 'state', 'open'),
+  grid: {
+    columns: [
+      { propertyName: 'project', title: 'Project', filterWithSelect: false },
+      { propertyName: 'title', title: 'Issue' },
+      { propertyName: '', title: 'Working On' }
+    ]
+  },
 
   actions: {
     createDummyIssue() {
