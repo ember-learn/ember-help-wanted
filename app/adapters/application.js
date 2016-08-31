@@ -20,8 +20,7 @@ function createDb() {
 
   if (config.emberPouch.remoteDb) {
     let remote = new PouchDB(remoteDb);
-
-    db.sync(remote, {
+    let sync = db.sync(remote, {
       live: true,
       retry: true
     });
@@ -32,8 +31,8 @@ function createDb() {
 
 export default Adapter.extend({
   init() {
-      this._super(...arguments);
-      this.set('db', createDb());
-    }
+    this._super(...arguments);
+    this.set('db', createDb());
+  }
 });
 

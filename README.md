@@ -1,7 +1,7 @@
 # Ember-Help-Wanted
 
 This app is designed to help new folks to the Ember ecosystem find issues to work on
-that most need help.  The goal would be for this to work well for project nights for 
+that most need help.  The goal would be for this to work well for project nights for
 meetups, conferences and anyone else interested in hacking on various projects while
 also helping the main Ember repositories get much needed help with issues.
 
@@ -21,6 +21,7 @@ You will need the following things properly installed on your computer.
 * change into the new directory
 * `npm install`
 * `bower install`
+* set your couchDb url using an environment variable e.g. `export Ember_Help_Wanted_CouchDb_Url="https://eibrahim.cloudant.com/ember-help-wanted"`
 
 ## Running / Development
 
