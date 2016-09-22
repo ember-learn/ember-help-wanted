@@ -2,7 +2,7 @@
 
 module.exports = function(environment) {
   var ENV = {
-    modulePrefix: 'ember-hitlist',
+    modulePrefix: 'ember-help-wanted',
     environment: environment,
     contentSecurityPolicy: { 'connect-src': "'self'" },
     baseURL: '/',

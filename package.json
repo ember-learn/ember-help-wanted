@@ -1,7 +1,7 @@
 {
-  "name": "ember-hitlist",
+  "name": "ember-help-wanted",
   "version": "0.0.0",
-  "description": "Small description for ember-hitlist goes here",
+  "description": "Small description for ember-help-wanted goes here",
   "private": true,
   "directories": {
     "doc": "doc",
