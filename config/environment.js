@@ -5,10 +5,6 @@ module.exports = function(environment) {
     modulePrefix: 'ember-hitlist',
     environment: environment,
     contentSecurityPolicy: { 'connect-src': "'self'" },
-    emberPouch:{
-      localDb:'ember-help-local',
-      //remoteDb: 'http://xxx'
-    },
     baseURL: '/',
     locationType: 'auto',
     EmberENV: {
