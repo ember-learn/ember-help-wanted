@@ -1,9 +1,7 @@
 import DS from 'ember-data';
 import Ember from 'ember';
 
-import Model from 'ember-pouch/model';
-
-const { attr, hasMany, belongsTo } = DS;
+const { attr, hasMany, belongsTo, Model } = DS;
 
 export default Model.extend({
   githubId: attr('string'),

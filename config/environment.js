@@ -2,15 +2,12 @@
 
 module.exports = function(environment) {
   var ENV = {
-    modulePrefix: 'ember-hitlist',
+    modulePrefix: 'ember-help-wanted',
     environment: environment,
     contentSecurityPolicy: { 'connect-src': "'self'" },
-    emberPouch:{
-      localDb:'ember-help-local',
-      //remoteDb: 'http://xxx'
-    },
     baseURL: '/',
     locationType: 'auto',
+    API_HOST: '',
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
