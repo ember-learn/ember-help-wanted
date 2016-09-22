@@ -1,7 +1,7 @@
 import DS from 'ember-data';
 import Ember from 'ember';
 
-const { attr, hasMany, belongsTo, Model } = DS;
+const { attr, Model } = DS;
 
 export default Model.extend({
   githubId: attr('string'),
