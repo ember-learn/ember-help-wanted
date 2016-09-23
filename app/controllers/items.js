@@ -1,8 +1,9 @@
 import Ember from 'ember';
 
-export
-default Ember.Controller.extend({
-  openIssues: Ember.computed.filterBy('model', 'state', 'open'),
+const { Controller, computed } = Ember;
+
+export default Controller.extend({
+  openIssues: computed.filterBy('model', 'state', 'open'),
 
   actions: {
     createDummyIssue() {

@@ -1,7 +1,8 @@
 import DS from 'ember-data';
 import Ember from 'ember';
 
-const { attr, hasMany, belongsTo, Model } = DS;
+const { computed, Handlebars, String: EmberString } = Ember;
+const { attr, Model } = DS;
 
 export default Model.extend({
   githubId: attr('string'),
@@ -20,15 +21,15 @@ export default Model.extend({
   rating: 3, // @TODO: let's work out how to build these nicely
   notes: 'we want notes in the future', // @TODO: work out how to add these
 
-  link: Ember.computed('repo', 'org', function() {
+  link: computed('repo', 'org', function() {
     return `https://github.com/${this.get('org')}/${this.get('repo')}/issues/${this.get('number')}`;
   }),
-  project: Ember.computed.alias('repo'),
-  projectLink: Ember.computed('repo', function() {
+  project: computed.alias('repo'),
+  projectLink: computed('repo', function() {
     return `https://github.com/${this.get('org')}/${this.get('repo')}`;
   }),
 
-  workingOnLink: Ember.computed('workingOn', function() {
+  workingOnLink: computed('workingOn', function() {
 
     // todo: let's clean this up! ;-) possibly move it into a custom transform
     // https://guides.emberjs.com/v2.4.0/models/defining-models/#toc_custom-transforms
@@ -38,7 +39,7 @@ export default Model.extend({
 
       let [network, username] = displayValue.split(':');
 
-      let value = Ember.Handlebars.Utils.escapeExpression(username);
+      let value = Handlebars.Utils.escapeExpression(username);
 
       let networkString = '';
       if (network === 'github') {
@@ -49,9 +50,9 @@ export default Model.extend({
         networkString = `<a href="https://twitter.com/${value}" title="${value} on Twitter">`;
       }
 
-      return Ember.String.htmlSafe(`${networkString}${value}</a>`);
+      return EmberString.htmlSafe(`${networkString}${value}</a>`);
     } else {
-      return Ember.String.htmlSafe(`${displayValue}`);
+      return EmberString.htmlSafe(`${displayValue}`);
     }
   })
 });

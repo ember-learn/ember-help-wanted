@@ -5,7 +5,7 @@ module.exports = function(environment) {
     modulePrefix: 'ember-help-wanted',
     environment: environment,
     contentSecurityPolicy: { 'connect-src': "'self'" },
-    baseURL: '/',
+    rootURL: '/',
     locationType: 'auto',
     API_HOST: '',
     EmberENV: {
@@ -31,7 +31,6 @@ module.exports = function(environment) {
 
   if (environment === 'test') {
     // Testem prefers this...
-    ENV.baseURL = '/';
     ENV.locationType = 'none';
 
     // keep test console output quieter
