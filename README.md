@@ -5,6 +5,8 @@ that most need help.  The goal would be for this to work well for project nights
 meetups, conferences and anyone else interested in hacking on various projects while
 also helping the main Ember repositories get much needed help with issues.
 
+The goal is for this app to interface with https://github.com/ember-learn/ember-help-wanted-backend as the backend.
+
 ## Prerequisites
 
 You will need the following things properly installed on your computer.
