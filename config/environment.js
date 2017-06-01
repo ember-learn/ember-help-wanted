@@ -1,9 +1,9 @@
-/* jshint node: true */
+/* eslint-env node */
 
 module.exports = function(environment) {
-  var ENV = {
+  const ENV = {
     modulePrefix: 'ember-help-wanted',
-    environment: environment,
+    environment,
     contentSecurityPolicy: { 'connect-src': "'self'" },
     rootURL: '/',
     locationType: 'auto',
@@ -12,6 +12,10 @@ module.exports = function(environment) {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
         // e.g. 'with-controller': true
+      },
+      EXTEND_PROTOTYPES: {
+        // Prevent Ember Data from overriding Date.parse.
+        Date: false
       }
     },
 

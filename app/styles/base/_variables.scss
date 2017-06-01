@@ -40,7 +40,7 @@ $highlight-red: #EC605E;
 $highlight-blue: #90D7F5;
 $highlight-cyan: #78CEC8;
 $code-background: $dark-gray;
-$code-header-background: shade($code-background, 40%);
+$code-header-background: shade($code-background, .4);
 $code-line-number-background: mix($code-background, $code-header-background);
 
 $highlight-colors: (
