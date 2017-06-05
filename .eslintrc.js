@@ -14,5 +14,7 @@ module.exports = {
   env: {
     browser: true
   },
-  rules: {}
+  rules: {
+    'ember-suave/no-const-outside-module-scope': 'off'
+  }
 };

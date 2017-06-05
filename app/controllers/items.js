@@ -3,9 +3,16 @@ import Ember from 'ember';
 const { Controller, computed } = Ember;
 
 export default Controller.extend({
+  queryParams: ['sort', 'dir'],
+  sort: 'updatedAt',
+  dir: 'desc',
+
   openIssues: computed.filterBy('model', 'state', 'open'),
 
   actions: {
+    onSortChanged([sort, dir]) {
+      this.setProperties({ sort, dir });
+    },
     createDummyIssue() {
       // create a dummy issue (for dev/testing purposes)
       let closedIssue = this.store.createRecord('issue', {
