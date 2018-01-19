@@ -1,6 +1,5 @@
 import Component from '@ember/component';
-import { computed } from '@ember/object';
-import { observer } from '@ember/object';
+import { computed, observer } from '@ember/object';
 
 import Table from 'ember-light-table';
 import moment from 'moment';
