@@ -1,7 +1,8 @@
 import DS from 'ember-data';
+import { computed } from '@ember/object';
 import Ember from 'ember';
 
-const { computed, Handlebars, String: EmberString } = Ember;
+const { Handlebars, String: EmberString } = Ember;
 const { attr, Model } = DS;
 
 export default Model.extend({

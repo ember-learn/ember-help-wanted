@@ -1,7 +1,7 @@
 /* eslint-env node */
 
 module.exports = function(deployTarget) {
-  var ENV = {
+  let ENV = {
     pagefront: {
       app: 'help-wanted',
       key: process.env.PAGEFRONT_KEY
