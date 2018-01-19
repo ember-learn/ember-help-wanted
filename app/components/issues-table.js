@@ -1,8 +1,9 @@
-import Ember from 'ember';
+import Component from '@ember/component';
+import { computed } from '@ember/object';
+import { observer } from '@ember/object';
+
 import Table from 'ember-light-table';
 import moment from 'moment';
-
-const { Component, computed, observer } = Ember;
 
 export default Component.extend({
   table: undefined,
