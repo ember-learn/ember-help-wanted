@@ -17,7 +17,7 @@ module.exports = {
   },
   rules: {
     'ember-suave/no-const-outside-module-scope': 'off'
-  },
+  }, 
   overrides: [
     // node files
     {
@@ -26,6 +26,9 @@ module.exports = {
         'ember-cli-build.js',
         'config/**/*.js'
       ],
+      rules: {
+        'camelcase': ['error', { 'properties': 'never' }],
+      },
       parserOptions: {
         sourceType: 'script',
         ecmaVersion: 2015
