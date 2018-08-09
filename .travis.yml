@@ -1,18 +1,20 @@
 ---
 language: node_js
 node_js:
-  - "6"
+  - "8"
 
+sudo: false 
 dist: trusty
-sudo: required
-group: deprecated-2017Q4
+
+branches:
+  only:
+    - master
 
 addons:
   chrome: stable
 
 cache:
-  directories:
-    - $HOME/.npm
+  yarn: true
 
 env:
   global:
@@ -20,14 +22,12 @@ env:
     - JOBS=1
 
 before_install:
-  - npm config set spin false
-  - npm install -g bower
-  - bower --version
+  - curl -o- -L https://yarnpkg.com/install.sh | bash
+  - export PATH=$HOME/.yarn/bin:$PATH
 
 install:
-  - npm install
-  - bower install
+  - yarn install --no-lockfile --non-interactive
 
 script:
-  - npm run lint:js
-  - npm test
+  - yarn run lint:js
+  - yarn test

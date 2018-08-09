@@ -22,9 +22,11 @@ module.exports = {
     // node files
     {
       files: [
-        'testem.js',
         'ember-cli-build.js',
-        'config/**/*.js'
+        'testem.js',
+        'blueprints/*/index.js',
+        'config/**/*.js',
+        'lib/*/index.js'
       ],
       rules: {
         'camelcase': ['error', { 'properties': 'never' }],
@@ -36,15 +38,6 @@ module.exports = {
       env: {
         browser: false,
         node: true
-      }
-    },
-
-    // test files
-    {
-      files: ['tests/**/*.js'],
-      excludedFiles: ['tests/dummy/**/*.js'],
-      env: {
-        embertest: true
       }
     }
   ]
