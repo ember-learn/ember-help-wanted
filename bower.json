@@ -1,7 +1,0 @@
-{
-  "name": "ember-help-wanted",
-  "dependencies": {
-    "normalize.css": "3.0.3",
-    "bourbon": "4.2.6"
-  }
-}
