@@ -3268,6 +3268,14 @@ ember-copy@^1.0.0:
   dependencies:
     ember-cli-babel "^6.6.0"
 
+ember-data-github@^0.8.0:
+  version "0.8.0"
+  resolved "https://registry.yarnpkg.com/ember-data-github/-/ember-data-github-0.8.0.tgz#715d210e4fbdc8e9366d72a29c1465eb18a6af12"
+  dependencies:
+    broccoli-funnel "^2.0.1"
+    broccoli-merge-trees "^2.0.0"
+    ember-cli-babel "^6.9.0"
+
 ember-data@~3.3.0:
   version "3.3.1"
   resolved "https://registry.yarnpkg.com/ember-data/-/ember-data-3.3.1.tgz#8ff1f7759d35fcb750c8d33435e7ef2f69242dce"

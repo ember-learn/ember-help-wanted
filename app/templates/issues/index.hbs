@@ -1,0 +1,24 @@
+<!-- {{issues-table issues=model}} -->
+
+<table>
+  <thead>
+    <tr>
+      <td>Project</td>
+      <td>Title</td>
+      <td>Labels</td>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each model as |issue|}}
+      <tr>
+        <td><a target="_blank" href={{issue.repositoryHtml}}>{{issue.repositoryName}}</a></td>
+        <td>{{issue.title}} <a target="_blank" href={{issue.htmlUrl}}>link</a></td>
+        <td>
+          {{#each issue.labels as |label|}}
+            {{github-label label=label.name labelColor=label.color}}
+          {{/each}}
+        </td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>
