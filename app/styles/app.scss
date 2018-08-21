@@ -4,7 +4,77 @@
   align-items: center;
   display: flex;
   background-color: white;
-  box-shadow:0px 1px 1px #de1dde;
+  box-shadow: 0px 1px 1px #d25f46;
   height: 80px;
   padding: 0 40px;
+
+  &__list {
+    display: flex;
+    margin: 0;
+    list-style: none;
+  }
+
+  &__list__item {
+    font-size: 1.2em;
+    font-weight: 300;
+    margin-left: 3em;
+  }
+}
+
+.github-issue-link {
+  border-bottom: solid 2px;
+}
+
+.github-issue-table {
+  border-collapse:collapse;
+  margin-top: 3px;
+  table-layout: fixed;
+  width: 100%;
+
+  thead tr {
+    background-color: #f6f8fa;
+  }
+
+  thead th {
+    font-size: 1.2em;
+    font-weight: 400;
+    text-align: left;
+  }
+
+  thead th:nth-child(1) {
+    width: 15vw;
+  }
+
+  tbody td:nth-child(1) {
+    font-weight: 200;
+  }
+
+  tbody tr {
+    background-color: #FEFEFE;
+    border-top: 1px solid #e1e4e8;
+    font-weight: 500;
+
+    &:hover {
+      background-color: #d25f461f;
+    }
+  }
+  tbody tr:last-child {
+    border-bottom: 1px solid #e1e4e8;
+  }
+
+  th,
+  td {
+    padding: 20px;
+  }
+}
+
+.github-label {
+  border-radius: 4px;
+  display: inline-block;
+  margin-right: 5px;
+  padding: 6px;
+
+  img {
+    height: 15px;
+  }
 }
