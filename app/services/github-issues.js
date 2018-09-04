@@ -50,7 +50,11 @@ let rfcs = [
     { repo: 'emberjs/rfcs', labels: 'Needs Champion' }
 ];
 
-let categoryRepos = { core, learning, community, rfcs };
+let emberHelpWanted = [
+    { repo: 'ember-learn/ember-help-wanted', labels: 'Help Wanted' }
+];
+
+let categoryRepos = { core, learning, community, rfcs, emberHelpWanted };
 
 export default Service.extend({
     store: service('store'),
