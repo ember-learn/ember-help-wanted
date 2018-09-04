@@ -18,7 +18,7 @@ function reverseSort(items, property) {
   });
 }
 
-let coreRepos = [
+let core = [
     { repo: 'emberjs/ember.js', labels: 'Help Wanted' },
     { repo: 'emberjs/ember.js', labels: 'Good for New Contributors' },
     { repo: 'emberjs/data', labels: 'Good for New Contributors' },
@@ -34,10 +34,12 @@ let coreRepos = [
     { repo: 'emberjs/website', labels: 'good first issue' }
 ];
 
-let learningRepos = [
+let learning = [
     { repo: 'ember-learn/ember-styleguide', labels: 'help wanted :sos:' },
     { repo: 'ember-learn/guides-source', labels: 'help wanted' }
 ];
+
+let categoryRepos = { core, learning };
 
 export default Service.extend({
     store: service('store'),
@@ -63,11 +65,7 @@ export default Service.extend({
         });
     },
 
-    findAllCore() {
-        return this._fetchAll(coreRepos);
-    },
-
-    findAllLearning() {
-        return this._fetchAll(learningRepos);
+    findAllFromCategory(category) {
+        return this._fetchAll(categoryRepos[category]);
     }
 });

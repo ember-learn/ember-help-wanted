@@ -4,8 +4,8 @@ import { inject as service } from '@ember/service';
 export default Route.extend({
   githubIssues: service('github-issues'),
 
-  model() {
+  model(params) {
     const GithubIssues = this.get('githubIssues');
-    return GithubIssues.findAllCore();
+    return GithubIssues.findAllFromCategory(params.category);
   }
 });
