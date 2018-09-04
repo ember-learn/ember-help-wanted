@@ -10,11 +10,13 @@
       <tr>
         <td><a target="_blank" href={{issue.repositoryHtml}}>{{issue.repositoryName}}</a></td>
         <td>
-          {{issue.title}} 
-          <a target="_blank" class="github-issue-link" href={{issue.htmlUrl}}>link</a>
+          <a target="_blank" class="github-issue-link" href={{issue.htmlUrl}}>{{issue.title}}</a>
+
           {{#each issue.labels as |label|}}
             {{github-label label=label.name labelColor=label.color class="github-label"}}
           {{/each}}
+          <br>
+          {{issue.updatedAtFormatted}}
         </td>
       </tr>
     {{/each}}
