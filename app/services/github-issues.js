@@ -39,7 +39,13 @@ let learning = [
     { repo: 'ember-learn/guides-source', labels: 'help wanted' }
 ];
 
-let categoryRepos = { core, learning };
+let community = [
+    { repo: 'typed-ember/ember-cli-typescript', labels: 'help wanted' },
+    { repo: 'typed-ember/ember-cli-typescript', labels: 'good first issue' },
+    { repo: 'ember-engines/ember-engines', labels: 'help wanted' }
+];
+
+let categoryRepos = { core, learning, community };
 
 export default Service.extend({
     store: service('store'),
