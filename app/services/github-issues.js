@@ -34,6 +34,11 @@ let coreRepos = [
     { repo: 'emberjs/website', labels: 'good first issue' }
 ];
 
+let learningRepos = [
+    { repo: 'ember-learn/ember-styleguide', labels: 'help wanted :sos:' },
+    { repo: 'ember-learn/guides-source', labels: 'help wanted' }
+];
+
 export default Service.extend({
     store: service('store'),
 
@@ -60,5 +65,9 @@ export default Service.extend({
 
     findAllCore() {
         return this._fetchAll(coreRepos);
+    },
+
+    findAllLearning() {
+        return this._fetchAll(learningRepos);
     }
 });
