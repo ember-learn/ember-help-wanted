@@ -45,7 +45,12 @@ let community = [
     { repo: 'ember-engines/ember-engines', labels: 'help wanted' }
 ];
 
-let categoryRepos = { core, learning, community };
+let rfcs = [
+    { repo: 'emberjs/rfcs', labels: 'Final Comment Period' },
+    { repo: 'emberjs/rfcs', labels: 'Needs Champion' }
+];
+
+let categoryRepos = { core, learning, community, rfcs };
 
 export default Service.extend({
     store: service('store'),
