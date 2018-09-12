@@ -78,10 +78,25 @@ export default Service.extend({
             }, []);
 
             return reverseSort(allIssues, 'updatedAt');
+        }).catch((error) => {
+            console.error(error);
+            return [];
         });
     },
 
     findAllFromCategory(category) {
         return this._fetchAll(categoryRepos[category]);
+    },
+
+    allCategories() {
+        let allRepos = {};
+
+        ['core', 'learning', 'community', 'rfcs', 'emberHelpWanted'].forEach((category) => {
+            categoryRepos[category].forEach((mapping) => {
+                allRepos[mapping.repo] = category;
+            });
+        });
+
+        return allRepos;
     }
 });
