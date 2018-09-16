@@ -7,11 +7,8 @@ const Router = EmberRouter.extend({
 });
 
 Router.map(function() {
-  this.route('items');
-  this.route('issues',  { path: '/' }, function() {
-    this.route('core');
-    this.route('learning');
-  });
+  this.route('index', { path: '/' });
+  this.route('issues',  { path: '/:category' });
 });
 
 export default Router;

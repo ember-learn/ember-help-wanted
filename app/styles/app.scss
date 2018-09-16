@@ -23,6 +23,7 @@
 
 .github-issue-link {
   border-bottom: solid 2px;
+  margin-right: 8px;
 }
 
 .github-issue-table {
@@ -73,8 +74,17 @@
   display: inline-block;
   margin-right: 5px;
   padding: 6px;
+  font-size: 12px;
 
   img {
-    height: 15px;
+    height: 12px;
   }
+}
+
+.prose {
+  margin: 30px;
+}
+
+.search-box {
+  margin: 20px;
 }
