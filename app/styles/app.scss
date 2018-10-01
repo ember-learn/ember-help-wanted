@@ -18,6 +18,10 @@
     font-size: 1.2em;
     font-weight: 300;
     margin-left: 3em;
+
+    & > .active {
+      font-weight: bold;
+    }
   }
 }
 
@@ -27,7 +31,7 @@
 }
 
 .github-issue-table {
-  border-collapse:collapse;
+  border-collapse: collapse;
   margin-top: 3px;
   table-layout: fixed;
   width: 100%;
@@ -51,7 +55,7 @@
   }
 
   tbody tr {
-    background-color: #FEFEFE;
+    background-color: #fefefe;
     border-top: 1px solid #e1e4e8;
     font-weight: 500;
 
