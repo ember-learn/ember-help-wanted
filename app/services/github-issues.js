@@ -51,8 +51,8 @@ let rfcs = [
 ];
 
 let emberHelpWanted = [
-  { repo: 'EndangeredMassa/ember-help-wanted', labels: 'help wanted' },
-  { repo: 'EndangeredMassa/ember-help-wanted', labels: 'good first issue' }
+  { repo: 'ember-learn/ember-help-wanted', labels: 'help wanted' },
+  { repo: 'ember-learn/ember-help-wanted', labels: 'good first issue' }
 ];
 
 let categoryRepos = { core, learning, community, rfcs, emberHelpWanted };
