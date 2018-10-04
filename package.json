@@ -31,7 +31,6 @@
     "ember-cli-htmlbars-inline-precompile": "^1.0.0",
     "ember-cli-inject-live-reload": "^1.4.1",
     "ember-cli-mirage": "^0.4.8",
-    "ember-cli-moment-shim": "^3.3.1",
     "ember-cli-netlify": "^0.0.1",
     "ember-cli-qunit": "^4.3.2",
     "ember-cli-release": "^1.0.0-beta.2",
@@ -45,7 +44,6 @@
     "ember-light-table": "^1.13.2",
     "ember-load-initializers": "^1.1.0",
     "ember-maybe-import-regenerator": "^0.1.6",
-    "ember-moment": "^7.3.1",
     "ember-resolver": "^4.0.0",
     "ember-sass-bootstrap": "^0.2.0",
     "ember-source": "~3.3.0",
@@ -60,6 +58,7 @@
     "node": "6.* || 8.* || >= 10.*"
   },
   "dependencies": {
+    "dayjs": "^1.7.5",
     "invert-color": "^1.2.3"
   }
 }
