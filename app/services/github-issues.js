@@ -1,22 +1,5 @@
 import Service from '@ember/service';
-import RSVP from 'rsvp';
 import { inject as service } from '@ember/service';
-
-function reverseSort(items, property) {
-  return items.sort((a, b) => {
-    let left = a.get(property).getTime();
-    let right = b.get(property).getTime();
-
-    if (left > right) {
-      return -1;
-    }
-    if (left < right) {
-      return 1;
-    }
-
-    return 0;
-  });
-}
 
 let core = [
   { repo: 'emberjs/ember.js', labels: 'Help Wanted' },
@@ -60,24 +43,11 @@ let categoryRepos = { core, learning, community, rfcs, emberHelpWanted };
 export default Service.extend({
   store: service('store'),
 
-  _fetchAll(reposAndLabels) {
-    const promises = reposAndLabels.map((data) => {
-      // github's API only supports requests for a single issue at a time
-      return this.get('store').query('github-issue', {
-        repo: data.repo,
-        labels: data.labels
-      });
-    });
-
-    return RSVP.all(promises).then((allModels) => {
-      let allIssues = allModels.reduce((acc, repoIssues) => {
-        repoIssues.forEach((issue) => {
-          acc.push(issue);
-        });
-        return acc;
-      }, []);
-
-      return reverseSort(allIssues, 'updatedAt');
+  findAllFromCategory(category) {
+    return this.get('store').query('github-issue', {
+      group: category
+    }).then((allIssues) => {
+      return allIssues.sortBy('updatedAt').reverse();
     }).catch((error) => {
       // eslint-disable-next-line no-console
       console.error(error);
@@ -85,14 +55,10 @@ export default Service.extend({
     });
   },
 
-  findAllFromCategory(category) {
-    return this._fetchAll(categoryRepos[category]);
-  },
-
   allCategories() {
     let allRepos = {};
 
-    ['core', 'learning', 'community', 'rfcs', 'emberHelpWanted'].forEach((category) => {
+    Object.keys(categoryRepos).forEach((category) => {
       categoryRepos[category].forEach((mapping) => {
         allRepos[mapping.repo] = category;
       });
