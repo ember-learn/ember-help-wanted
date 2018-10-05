@@ -2,7 +2,7 @@ import Component from '@ember/component';
 import { computed, observer } from '@ember/object';
 
 import Table from 'ember-light-table';
-import dayjs from 'dayjs';
+import moment from 'moment';
 
 export default Component.extend({
   table: undefined,
@@ -39,7 +39,7 @@ export default Component.extend({
     }, {
       label: 'Updated At',
       valuePath: 'updatedAt',
-      format: (rawValue) => dayjs(rawValue).format('MM-DD-YYYY')
+      format: (rawValue) => moment(rawValue).format('MM-DD-YYYY')
     }];
   }),
 
