@@ -2,10 +2,14 @@
 'use strict';
 
 const proxyPath = '/github-issues';
-const target = 'http://localhost:3000';
+const target = 'https://ember-help-wanted-server.herokuapp.com';
 
 module.exports = function(app) {
-  let proxy = require('http-proxy').createProxyServer({});
+  let proxy = require('http-proxy').createProxyServer({
+    headers: {
+      host: 'ember-help-wanted-server.herokuapp.com'
+    }
+  });
 
   proxy.on('error', function(err, req) {
     // eslint-disable-next-line no-console
