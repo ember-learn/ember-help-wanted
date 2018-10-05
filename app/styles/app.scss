@@ -18,15 +18,20 @@
     font-size: 1.2em;
     font-weight: 300;
     margin-left: 3em;
+
+    & > .active {
+      font-weight: bold;
+    }
   }
 }
 
 .github-issue-link {
   border-bottom: solid 2px;
+  margin-right: 8px;
 }
 
 .github-issue-table {
-  border-collapse:collapse;
+  border-collapse: collapse;
   margin-top: 3px;
   table-layout: fixed;
   width: 100%;
@@ -50,7 +55,7 @@
   }
 
   tbody tr {
-    background-color: #FEFEFE;
+    background-color: #fefefe;
     border-top: 1px solid #e1e4e8;
     font-weight: 500;
 
@@ -73,8 +78,17 @@
   display: inline-block;
   margin-right: 5px;
   padding: 6px;
+  font-size: 12px;
 
   img {
-    height: 15px;
+    height: 12px;
   }
+}
+
+.prose {
+  margin: 30px;
+}
+
+.search-box {
+  margin: 20px;
 }

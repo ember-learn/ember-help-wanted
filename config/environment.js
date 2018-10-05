@@ -50,6 +50,7 @@ module.exports = function(environment) {
 
   if (environment === 'production') {
     // here you can enable a production-specific feature
+    ENV.API_HOST = 'https://ember-help-wanted-server.herokuapp.com';
   }
 
   return ENV;
