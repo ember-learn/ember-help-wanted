@@ -94,6 +94,13 @@ You will need the following things properly installed on your computer.
 * Visit your app at [http://localhost:4200](http://localhost:4200).
 * Visit your tests at [http://localhost:4200/tests](http://localhost:4200/tests).
 
+By default we have an api-proxy that uses the production API when developing
+locally, so you don't need to run the ember-help-wanted-server when editing the
+Ember frontend. If you are developing the backend and want your local Ember
+frontend to hit your local server then you can start the server like this:
+
+`LOCAL_API=true ember s`
+
 ### Code Generators
 
 Make use of the many generators for code, try `ember help generate` for more details

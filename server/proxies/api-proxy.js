@@ -1,11 +1,28 @@
 /* eslint-env node */
 'use strict';
 
+const httpProxy = require('http-proxy');
 const proxyPath = '/github-issues';
-const target = 'http://localhost:3000';
+let target;
+
+if (process.env.LOCAL_API) {
+  target = 'http://localhost:3000';
+} else {
+  target = 'https://ember-help-wanted-server.herokuapp.com';
+}
 
 module.exports = function(app) {
-  let proxy = require('http-proxy').createProxyServer({});
+  let proxy;
+
+  if (process.env.LOCAL_API) {
+    proxy = httpProxy.createProxyServer({});
+  } else {
+    proxy = httpProxy.createProxyServer({
+      headers: {
+        host: 'ember-help-wanted-server.herokuapp.com'
+      }
+    });
+  }
 
   proxy.on('error', function(err, req) {
     // eslint-disable-next-line no-console
