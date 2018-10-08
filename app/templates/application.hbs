@@ -3,6 +3,18 @@
     <img src="images/ember-help-wanted-logo.svg">
   </a>
 
+  {{#mobile-menu-wrapper as |mmw|}}
+    <button {{action mmw.actions.toggle 'left'}} class="box-shadow-menu"></button>
+  
+    {{#mmw.mobile-menu as |mm|}}
+      {{#mm.link-to "issues" "core"}}Core{{/mm.link-to}}
+      {{#mm.link-to "issues" "rfcs"}}RFCs{{/mm.link-to}}
+      {{#mm.link-to "issues" "learning"}}Learning{{/mm.link-to}}
+      {{#mm.link-to "issues" "community"}}Community{{/mm.link-to}}
+      {{#mm.link-to "issues" "emberHelpWanted"}}Ember Help Wanted{{/mm.link-to}}
+    {{/mmw.mobile-menu}}
+  {{/mobile-menu-wrapper}}
+
   <ul class="nav__list">
     <li class="nav__list__item">{{#link-to "issues" "core"}}Core{{/link-to}}</li>
     <li class="nav__list__item">{{#link-to "issues" "rfcs"}}RFCs{{/link-to}}</li>
