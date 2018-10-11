@@ -1,13 +1,8 @@
 export default function() {
 
-  this.urlPrefix = 'https://api.github.com/';
+  this.urlPrefix = 'http://localhost:4200';
 
-  this.get('/repos/:owner/:repo/issues', (schema, request) => {
-
-    const { repo, owner } = request.params;
-
-    const repositoryUrl = `https://api.github.com/repos/${owner}/${repo}`;
-    return schema.githubIssues.where({ repositoryUrl });
-
+  this.get('/github-issues', (schema) => {
+    return schema.githubIssues.all();
   });
 }

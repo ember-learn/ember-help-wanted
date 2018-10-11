@@ -9,24 +9,9 @@ module('Acceptance | basic', function(hooks) {
 
   test('visit /learning', async function(assert) {
 
-    server.createList('github-issue', 10, 'withLabels');
+    server.createList('github-issue', 10);
     await visit('/learning');
     assert.equal(currentURL(), '/learning');
-
-    const issues = findAll('.github-issue-table tr');
-    assert.ok(issues.length > 0, 'can list issues');
-
-    const labels = findAll('.github-issue-table tr:first-child .github-label');
-    assert.ok(labels.length > 0, 'can list issue labels');
-
-  });
-
-  test('visit /core', async function(assert) {
-
-    server.createList('github-issue', 10, 'withLabels');
-
-    await visit('/core');
-    assert.equal(currentURL(), '/core');
 
     const issues = findAll('.github-issue-table tr');
     assert.ok(issues.length > 0, 'can list issues');
