@@ -1,8 +1,7 @@
 import Model from 'ember-data/model';
 import attr from 'ember-data/attr';
-import { hasMany } from 'ember-data/relationships';
 import { computed } from '@ember/object';
-import dayjs from 'dayjs';
+import moment from 'moment';
 
 export default Model.extend({
   number: attr('number'),
@@ -17,10 +16,10 @@ export default Model.extend({
   repositoryHtml: attr('string'),
   repositoryUrl: attr('string'),
 
-  labels: hasMany('github-label'),
+  labels: attr(),
 
   updatedAtFormatted: computed('updatedAt', function() {
     let updatedAt = this.get('updatedAt');
-    return dayjs(updatedAt).format('MM-DD-YYYY hh:mm Z');
+    return moment(updatedAt).format('MM-DD-YYYY hh:mm Z');
   })
 });

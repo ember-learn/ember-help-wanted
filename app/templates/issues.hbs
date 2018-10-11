@@ -20,7 +20,7 @@
             {{github-label label=label.name labelColor=label.color class="github-label"}}
           {{/each}}
           <br>
-          #{{issue.number}} updated on {{issue.updatedAtFormatted}}
+          #{{issue.number}} updated {{moment-from-now issue.updatedAt}}
         </td>
       </tr>
     {{/each}}
