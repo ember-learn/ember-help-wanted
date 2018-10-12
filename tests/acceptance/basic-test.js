@@ -20,7 +20,6 @@ module('Acceptance | basic', function(hooks) {
     assert.ok(labels.length > 0, 'can list issue labels');
 
     const projects = findAll('.github-issue-table tr:first-child td:first-child a');
-    console.log(projects[0]);
     assert.ok(projects.length > 0, 'can list projects');
   });
 
