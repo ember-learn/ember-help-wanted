@@ -1,4 +1,11 @@
-import { JSONAPISerializer } from 'ember-cli-mirage';
+import { RestSerializer } from 'ember-cli-mirage';
+import { underscore } from '@ember/string';
 
-export default JSONAPISerializer.extend({
+export default RestSerializer.extend({
+  root: false,
+  embed: true,
+
+  keyForAttribute(attr) {
+    return underscore(attr);
+  }
 });
