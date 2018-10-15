@@ -23,13 +23,24 @@ export default Route.extend({
 
   _filter(params) {
     let issues = this.store.peekAll('github-issue');
-    let filterFunc = params.query ? this._matchWildcard(params.category, params.query) : this._matchLabel(params.label);
     if (issues.length) {
-      return issues.filter(filterFunc);
+      if (params.query) {
+        issues = issues.filter(this._matchWildcard(params.category, params.query));
+      }
+      if (params.label) {
+        issues = issues.filter(this._matchLabel(params.category, params.label));
+      }
+      return issues;
     }
 
     return this._findAllFromCategory(params.category).then((allResults) => {
-      return allResults.filter(filterFunc);
+      if (params.query) {
+        allResults = allResults.filter(this._matchWildcard(params.category, params.query));
+      }
+      if (params.label) {
+        allResults = allResults.filter(this._matchLabel(params.category, params.label));
+      }
+      return allResults;
     });
   },
 
@@ -47,8 +58,12 @@ export default Route.extend({
     };
   },
 
-  _matchLabel(label) {
-    return (issue) => issue.get('labels').map((lb) => lb.name).includes(label);
+  _matchLabel(category, label) {
+    return (issue) => {
+      let inCategory = this._isInCategory(category, issue.get('repositoryName'));
+      let included = issue.get('labels').map((lb) => lb.name).includes(label);
+      return inCategory && included;
+    };
   },
 
   _isInCategory(category, repo) {

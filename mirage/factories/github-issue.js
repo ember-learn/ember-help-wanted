@@ -12,6 +12,7 @@ export default Factory.extend({
   createdAt: faker.date.recent,
   updatedAt: faker.date.recent,
   body: faker.hacker.phrase,
+  repositoryName: 'ember-learn/guides-source',
 
   labels: () => [
     {
