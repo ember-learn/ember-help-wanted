@@ -1,4 +1,5 @@
 @charset "utf-8";
+@import "ember-mobile-menu";
 
 .nav {
   align-items: center;
@@ -22,6 +23,47 @@
     & > .active {
       font-weight: bold;
     }
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .nav__list {
+    display: none;
+  }
+  .nav {
+    justify-content: space-between;
+  }
+  .mobile-menu-wrapper {
+    min-height: 0px;
+  }
+  .box-shadow-menu {
+    position: relative;
+    width: 30px;
+    height: 24px;
+    border: 1px solid #000000;
+    border-radius: 3px;
+    background-color: #fff; 
+  }
+  .box-shadow-menu:before {
+    content: "";
+    position: absolute;
+    left: 9px;
+    top: 0.25em;
+    width: 1em;
+    height: 0.15em;
+    background: #d25f46;
+    box-shadow: 
+      0 0.25em 0 0 #d25f46,
+      0 0.5em 0 0 #d25f46;
+  }
+  div#ember266 a {
+    display: flex;
+    margin: 15px;
+  }
+}
+@media only screen and (min-width: 900px) {
+  #ember258 {
+    display: none;
   }
 }
 
@@ -92,3 +134,5 @@
 .search-box {
   margin: 20px;
 }
+
+

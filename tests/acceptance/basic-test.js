@@ -19,6 +19,8 @@ module('Acceptance | basic', function(hooks) {
     const labels = findAll('.github-issue-table tr:first-child .github-label');
     assert.ok(labels.length > 0, 'can list issue labels');
 
+    const projects = findAll('.github-issue-table tr:first-child td:first-child a');
+    assert.ok(projects.length > 0, 'can list projects');
   });
 
 });
