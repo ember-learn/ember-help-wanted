@@ -2,7 +2,7 @@ import { helper } from '@ember/component/helper';
 import { htmlSafe } from '@ember/string';
 import githubEmojis from 'ember-help-wanted/constants/github-emojis';
 
-export function labelWithEmoji([label, ...rest]) {
+export function labelWithEmoji([label]) {
   let re = /:(\w+):/;
   let emojiTag = re.exec(label);
   if (emojiTag) {
