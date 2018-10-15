@@ -16,8 +16,8 @@
         <td>
           <a target="_blank" class="github-issue-link" href={{issue.htmlUrl}}>{{issue.title}}</a>
 
-          {{#each issue.labels as |label|}}
-            {{github-label label=label.name labelColor=label.color class="github-label"}}
+          {{#each issue.labels as |lb|}}
+            <a target="_blank" {{action (mut label) lb.name}}>{{github-label label=lb.name labelColor=lb.color class="github-label"}}</a>
           {{/each}}
           <br>
           #{{issue.number}} updated {{moment-from-now issue.updatedAt}}

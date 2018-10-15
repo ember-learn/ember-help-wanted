@@ -7,25 +7,29 @@ export default Route.extend({
   queryParams: {
     query: {
       refreshModel: true
+    },
+    label: {
+      refreshModel: true
     }
   },
 
   model(params) {
-    if (params.query) {
-      return this._search(params.category, params.query);
+    if (params.query || params.label) {
+      return this._filter(params);
     }
 
     return this._findAllFromCategory(params.category);
   },
 
-  _search(category, query) {
+  _filter(params) {
     let issues = this.store.peekAll('github-issue');
+    let filterFunc = params.query ? this._matchWildcard(params.category, params.query) : this._matchLabel(params.label);
     if (issues.length) {
-      return issues.filter(this._matchWildcard(category, query));
+      return issues.filter(filterFunc);
     }
 
-    return this._findAllFromCategory(category).then((allResults) => {
-      return allResults.filter(this._matchWildcard(category, query));
+    return this._findAllFromCategory(params.category).then((allResults) => {
+      return allResults.filter(filterFunc);
     });
   },
 
@@ -41,6 +45,10 @@ export default Route.extend({
       let inBody = issue.get('body').includes(query);
       return inCategory && (inTitle || inBody);
     };
+  },
+
+  _matchLabel(label) {
+    return (issue) => issue.get('labels').map((lb) => lb.name).includes(label);
   },
 
   _isInCategory(category, repo) {
