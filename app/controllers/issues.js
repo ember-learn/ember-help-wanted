@@ -4,6 +4,7 @@ import { computed } from '@ember/object';
 export default Controller.extend({
   queryParams: ['query', 'label'],
   query: '',
+  label: '',
 
   queryInput: computed('query', function() {
     return this.get('query');
