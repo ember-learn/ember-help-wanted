@@ -1,5 +1,8 @@
 <form {{action "searchByWildcard" queryInput on="submit"}} class="search-box">
   {{input value=queryInput}} <button type="submit">Search</button>
+  {{#if label}}
+    <span class="current-filter-label">{{label-with-emoji label}} <span {{action (mut label) null}}>x</span></span>
+  {{/if}}
 </form>
 
 <table class="github-issue-table">
@@ -16,8 +19,8 @@
         <td>
           <a target="_blank" class="github-issue-link" href={{issue.htmlUrl}}>{{issue.title}}</a>
 
-          {{#each issue.labels as |label|}}
-            {{github-label label=label.name labelColor=label.color class="github-label"}}
+          {{#each issue.labels as |lb|}}
+            <a onclick={{action (mut label) lb.name}}>{{github-label label=lb.name labelColor=lb.color}}</a>
           {{/each}}
           <br>
           #{{issue.number}} updated {{moment-from-now issue.updatedAt}}

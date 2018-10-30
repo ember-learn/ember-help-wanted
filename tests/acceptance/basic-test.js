@@ -9,7 +9,7 @@ module('Acceptance | basic', function(hooks) {
 
   test('visit /learning', async function(assert) {
 
-    server.createList('github-issue', 10);
+    server.createList('github-issue', 10, { state: 'open' });
     await visit('/learning');
     assert.equal(currentURL(), '/learning');
 
