@@ -26,5 +26,5 @@ export default Factory.extend({
   url: 'https://api.github.com/repos/ember-learn/guides-source/issues/117',
   htmlUrl: 'https://github.com/ember-learn/guides-source/issues/117',
 
-  repositoryUrl: 'https://github.com/ember-learn/guides-source'
+  repositoryUrl: 'https://api.github.com/repos/ember-learn/guides-source'
 });

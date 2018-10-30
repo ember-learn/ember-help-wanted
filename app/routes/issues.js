@@ -7,25 +7,40 @@ export default Route.extend({
   queryParams: {
     query: {
       refreshModel: true
+    },
+    label: {
+      refreshModel: true
     }
   },
 
   model(params) {
-    if (params.query) {
-      return this._search(params.category, params.query);
+    if (params.query || params.label) {
+      return this._filter(params);
     }
 
     return this._findAllFromCategory(params.category);
   },
 
-  _search(category, query) {
+  _filter(params) {
     let issues = this.store.peekAll('github-issue');
     if (issues.length) {
-      return issues.filter(this._matchWildcard(category, query));
+      if (params.query) {
+        issues = issues.filter(this._matchWildcard(params.category, params.query));
+      }
+      if (params.label) {
+        issues = issues.filter(this._matchLabel(params.category, params.label));
+      }
+      return issues;
     }
 
-    return this._findAllFromCategory(category).then((allResults) => {
-      return allResults.filter(this._matchWildcard(category, query));
+    return this._findAllFromCategory(params.category).then((allResults) => {
+      if (params.query) {
+        allResults = allResults.filter(this._matchWildcard(params.category, params.query));
+      }
+      if (params.label) {
+        allResults = allResults.filter(this._matchLabel(params.category, params.label));
+      }
+      return allResults;
     });
   },
 
@@ -40,6 +55,14 @@ export default Route.extend({
       let inTitle = issue.get('title').includes(query);
       let inBody = issue.get('body').includes(query);
       return inCategory && (inTitle || inBody);
+    };
+  },
+
+  _matchLabel(category, label) {
+    return (issue) => {
+      let inCategory = this._isInCategory(category, issue.get('repositoryName'));
+      let included = issue.get('labels').map((lb) => lb.name).includes(label);
+      return inCategory && included;
     };
   },
 
