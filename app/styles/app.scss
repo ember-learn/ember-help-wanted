@@ -61,6 +61,17 @@
     display: flex;
     margin: 15px;
   }
+  thead {
+    display: none;
+  }
+  thead th:nth-child(1) {
+    width: 100vw;
+  }
+  td {
+    display: block;
+    width: 90vw;
+    padding: 5vw;
+  }
 }
 @media only screen and (min-width: 900px) {
   #ember258 {
