@@ -8,6 +8,7 @@ module('Acceptance | basic', function(hooks) {
   setupMirage(hooks);
 
   test('visit /learning', async function(assert) {
+    assert.expect(4);
 
     server.createList('github-issue', 10, { state: 'open' });
     await visit('/learning');
@@ -21,6 +22,13 @@ module('Acceptance | basic', function(hooks) {
 
     const projects = findAll('.github-issue-table tr:first-child td:first-child a');
     assert.ok(projects.length > 0, 'can list projects');
+  });
+
+  test('total issues displayed', async function(assert) {
+    assert.expect(1);
+    server.createList('github-issue', 5, { state: 'open' });
+    await visit('/learning');
+    assert.dom('.total-issues').hasText('5 issues displayed');
   });
 
 });
