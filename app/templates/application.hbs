@@ -7,11 +7,11 @@
     <button {{action mmw.actions.toggle 'left'}} class="box-shadow-menu"></button>
   
     {{#mmw.mobile-menu as |mm|}}
-      {{#mm.link-to "issues" "core"}}Core{{/mm.link-to}}
-      {{#mm.link-to "issues" "rfcs"}}RFCs{{/mm.link-to}}
-      {{#mm.link-to "issues" "learning"}}Learning{{/mm.link-to}}
-      {{#mm.link-to "issues" "community"}}Community{{/mm.link-to}}
-      {{#mm.link-to "issues" "emberHelpWanted"}}Ember Help Wanted{{/mm.link-to}}
+      <li class="mmlist">{{#mm.link-to "issues" "core"}}Core{{/mm.link-to}}</li>
+      <li class="mmlist">{{#mm.link-to "issues" "rfcs"}}RFCs{{/mm.link-to}}</li>
+      <li class="mmlist">{{#mm.link-to "issues" "learning"}}Learning{{/mm.link-to}}</li>
+      <li class="mmlist">{{#mm.link-to "issues" "community"}}Community{{/mm.link-to}}</li>
+      <li class="mmlist">{{#mm.link-to "issues" "emberHelpWanted"}}Ember Help Wanted{{/mm.link-to}}</li>
     {{/mmw.mobile-menu}}
   {{/mobile-menu-wrapper}}
 
