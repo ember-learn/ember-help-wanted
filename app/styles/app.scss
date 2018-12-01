@@ -166,4 +166,10 @@
   margin: 20px;
 }
 
-
+//temporary fix for mobile menu - remove this when ember-styleguide navbar is used.
+.mobile-menu__tray a {
+  border-bottom: 1px solid lightgray;
+  display: block;
+  padding: 1em 0.5em;
+  text-align:center;
+}
