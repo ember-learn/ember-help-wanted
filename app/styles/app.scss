@@ -1,81 +1,13 @@
 @charset "utf-8";
 @import 'loading-cube';
-@import "ember-mobile-menu";
 
-.nav {
-  align-items: center;
-  display: flex;
-  background-color: white;
-  box-shadow: 0px 1px 1px #d25f46;
-  height: 80px;
-  padding: 0 40px;
-
-  &__list {
-    display: flex;
-    margin: 0;
-    list-style: none;
-  }
-
-  &__list__item {
-    font-size: 1.2em;
-    font-weight: 300;
-    margin-left: 3em;
-
-    & > .active {
-      font-weight: bold;
-    }
-  }
-}
-
-@media only screen and (max-width: 900px) {
-  .nav__list {
-    display: none;
-  }
-  .nav {
-    justify-content: space-between;
-  }
-  .mobile-menu-wrapper {
-    min-height: 0px;
-  }
-  .box-shadow-menu {
-    position: relative;
-    width: 30px;
-    height: 24px;
-    border: 1px solid #000000;
-    border-radius: 3px;
-    background-color: #fff;
-  }
-  .box-shadow-menu:before {
-    content: "";
-    position: absolute;
-    left: 9px;
-    top: 0.25em;
-    width: 1em;
-    height: 0.15em;
-    background: #d25f46;
-    box-shadow:
-      0 0.25em 0 0 #d25f46,
-      0 0.5em 0 0 #d25f46;
-  }
-  div#ember266 a {
-    display: flex;
-    margin: 15px;
-  }
-  thead {
-    display: none;
-  }
-  thead th:nth-child(1) {
-    width: 100vw;
-  }
-  td {
-    display: block;
-    width: 90vw;
-    padding: 5vw;
-  }
-}
-@media only screen and (min-width: 900px) {
-  #ember258 {
-    display: none;
+/* Navbar */
+.navbar {
+  .navbar-toggler {
+    font-size: 16px;
+    border: none;
+    margin-right: 20px;
+    outline: 0;
   }
 }
 
