@@ -91,7 +91,15 @@
 }
 
 .prose {
-  margin: 30px;
+  height: calc(100vh - 52px);
+  background: url('../images/ember-bkg.svg');
+}
+
+.herounit {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
 }
 
 .search-box {
