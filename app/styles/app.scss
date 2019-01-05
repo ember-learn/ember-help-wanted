@@ -1,6 +1,7 @@
 @charset "utf-8";
 @import 'loading-cube';
 
+
 /* Navbar */
 .navbar {
   .navbar-toggler {
@@ -91,15 +92,34 @@
 }
 
 .prose {
-  height: calc(100vh - 52px);
-  background: url('../images/ember-bkg.svg');
-}
-
-.herounit {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   height: 100%;
+  background: url('../images/ember-bkg.svg');
+
+  .herounit {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 30vh;
+  }
+
+  .searchbox {
+    outline: 0;
+    padding: 7px 10px;
+    width: 50%;
+    font-size: 16px;
+    border-radius: 5px;
+    border: thin solid lightgray;
+  }
+
+  .section {
+    background-color: white;
+    padding: 30px 0 30px;
+    p {
+      font-size: 16px;
+      line-height: 25px;
+    }
+  }
 }
 
 .search-box {
