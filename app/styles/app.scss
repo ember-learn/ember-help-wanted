@@ -1,13 +1,11 @@
 @charset "utf-8";
 @import 'loading-cube';
 
-
 /* Navbar */
 .navbar {
   .navbar-toggler {
     font-size: 16px;
     border: none;
-    margin-right: 20px;
     outline: 0;
   }
 }
@@ -140,7 +138,13 @@
   padding: 1em 0.5em;
   text-align:center;
 }
-
+// tile
+.tile {
+  min-height: 100px;
+  border: thin solid lightgray;
+  margin: 10px;
+  padding: 10px;
+}
 //Table display for mobile view
 @media only screen and (max-width: 900px) {
   thead {

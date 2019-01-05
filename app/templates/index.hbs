@@ -1,10 +1,23 @@
 <div class="prose">
     <div class="herounit">
-    	
     	<img src="../images/ember-help-wanted-logo.svg" alt="Image">
-    	<input class="searchbox" type="search" placeholder="Search repo to contribute" />
     </div>
     <div class="section">
+    	<div class="article container">
+    		{{#es-heading}}
+				  Repo
+				{{/es-heading}}
+    		
+    		{{#each model as | repo |}}
+    			{{#if (eq repo.archived "false")}}
+	    			<div class="tile">
+	    				<div class="">{{repo.fullName}}</div>
+	    				<div class="">Forks: {{repo.forks}}</div>
+	    			</div>
+					{{/if}}
+    		{{/each}}
+	    	
+    	</div>
     	<div class="article container">
     		{{#es-heading}}
 				  You can also contribute
@@ -42,5 +55,3 @@
     	</div>
     </div>
 </div>
-
-{{es-footer}}
