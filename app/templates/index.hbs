@@ -7,16 +7,23 @@
     		{{#es-heading}}
 				  Repo
 				{{/es-heading}}
-    		
-    		{{#each model as | repo |}}
-    			{{#if (eq repo.archived "false")}}
-	    			<div class="tile">
-	    				<div class="">{{repo.fullName}}</div>
-	    				<div class="">Forks: {{repo.forks}}</div>
-	    			</div>
-					{{/if}}
-    		{{/each}}
-	    	
+				<div class="container">
+	    		<div class="row">
+	    		{{#each model as | repo |}}
+	    			{{#if (eq repo.archived "false")}}
+		    			<div class="col-md-3 tile">
+		    				<div class="">{{repo.displayName}}</div>
+		    				<div class="">Forks: {{repo.forks}}</div>
+		    				<div class="linkbutton">
+		    					<a href={{repo.htmlUrl}} target="_blank">
+		    							Take me there
+			    				</a>
+		    				</div>
+		    			</div>
+						{{/if}}
+	    		{{/each}}
+		    	</div>
+		    </div>
     	</div>
     	<div class="article container">
     		{{#es-heading}}
