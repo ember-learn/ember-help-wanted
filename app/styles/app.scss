@@ -113,6 +113,11 @@
   .section {
     background-color: white;
     padding: 30px 0 30px;
+
+    .container {
+      width: auto;
+    }
+    
     p {
       font-size: 16px;
       line-height: 25px;
@@ -143,7 +148,8 @@
   min-height: 150px;
   border-radius: 5px;
   margin: 10px;
-  padding: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   box-shadow: 0 6px 16px 0 lightgray;
 }
 
@@ -151,6 +157,21 @@
   position: absolute;
   padding-bottom: 10px;
   bottom: 0;
+}
+
+/* Should Remove when adding support for Bootstrap 4*/
+.d-flex {
+  display: flex;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.es-header {
+  .container {
+    width: auto;
+  }
 }
 //Table display for mobile view
 @media only screen and (max-width: 900px) {

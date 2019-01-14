@@ -3,17 +3,16 @@
     	<img src="../images/ember-help-wanted-logo.svg" alt="Image">
     </div>
     <div class="section">
-    	<div class="article container">
+    	<div class="article container d-flex flex-column">
     		{{#es-heading}}
 				  Repo
 				{{/es-heading}}
-				<div class="container">
 	    		<div class="row">
 	    		{{#each model as | repo |}}
 	    			{{#if (eq repo.archived "false")}}
-		    			<div class="col-md-3 tile">
-		    				<div class="">{{repo.displayName}}</div>
-		    				<div class="">Forks: {{repo.forks}}</div>
+		    			<div class="col-sm-3 tile d-flex flex-column">
+		    				<div class="">{{repo.displayName}}</div><br>
+		    				<div class="">Forks: {{#if (not repo.forks)}} No forks {{else}} {{repo.forks}} {{/if}}</div>
 		    				<div class="linkbutton">
 		    					<a href={{repo.htmlUrl}} target="_blank">
 		    							Take me there
@@ -23,7 +22,6 @@
 						{{/if}}
 	    		{{/each}}
 		    	</div>
-		    </div>
     	</div>
     	<div class="article container">
     		{{#es-heading}}
