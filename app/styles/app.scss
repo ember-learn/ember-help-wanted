@@ -6,7 +6,6 @@
   .navbar-toggler {
     font-size: 16px;
     border: none;
-    margin-right: 20px;
     outline: 0;
   }
 }
@@ -91,7 +90,39 @@
 }
 
 .prose {
-  margin: 30px;
+  height: 100%;
+  background: url('../images/ember-bkg.svg');
+
+  .herounit {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 30vh;
+  }
+
+  .searchbox {
+    outline: 0;
+    padding: 7px 10px;
+    width: 50%;
+    font-size: 16px;
+    border-radius: 5px;
+    border: thin solid lightgray;
+  }
+
+  .section {
+    background-color: white;
+    padding: 30px 0 30px;
+
+    .container {
+      width: auto;
+    }
+    
+    p {
+      font-size: 16px;
+      line-height: 25px;
+    }
+  }
 }
 
 .search-box {
@@ -111,4 +142,45 @@
   display: block;
   padding: 1em 0.5em;
   text-align:center;
+}
+// tile
+.tile {
+  min-height: 150px;
+  border-radius: 5px;
+  margin: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  box-shadow: 0 6px 16px 0 lightgray;
+}
+
+.linkbutton {
+  position: absolute;
+  padding-bottom: 10px;
+  bottom: 0;
+}
+
+/* Should Remove when adding support for Bootstrap 4*/
+.d-flex {
+  display: flex;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.es-header {
+  .container {
+    width: auto;
+  }
+}
+//Table display for mobile view
+@media only screen and (max-width: 900px) {
+  thead {
+    display: none;
+  }
+  td {
+    display: block;
+    width: 90vw;
+    padding: 5vw;
+  }
 }
