@@ -47,9 +47,8 @@ determined) or in other ways editorialize as issues show up in the app.
 
 ## Future goals
 
-Once the initial MVP is off the ground, we also wonder about using this tool
-as a means for meetup organizers (and contributor workshops at various Ember
-conferences) to sort through issues and pick subsets for their meetings. For example,
+We hope that meetup organizers (and contributor workshops at various Ember
+conferences) are able to sort through issues and pick subsets for their meetings. For example,
 if a meetup group wants to help its members learn more about Ember Data,
 a meetup organizer could go through the existing pool of issues and cherry-pick
 5-10 issues for folks to focus on for that evening that would help with that.
