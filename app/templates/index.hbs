@@ -1,6 +1,11 @@
 <div class="prose">
     <div class="herounit">
     	<img src="../images/ember-help-wanted-logo.svg" alt="Image">
+    	<div class="help-wanted-links">
+	    	{{#each navLinks.navLinks as |link|}}
+					<a href={{link.href}}>{{es-button label=link.name isTiny=true}}</a>
+				{{/each}}
+			</div>
     </div>
     <div class="section">
     	<div class="article container d-flex flex-column">

@@ -8,6 +8,20 @@
     border: none;
     outline: 0;
   }
+
+  .dropdown-item {
+    width: auto;
+  }
+}
+
+.help-wanted-links {
+  padding: 20px;
+
+  @media screen and (max-width: 768px) {
+    .es-button {
+      width: auto;
+    }
+  }
 }
 
 .github-issue-link {
@@ -96,9 +110,9 @@
   .herounit {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
-    height: 30vh;
+    height: 40vh;
   }
 
   .searchbox {

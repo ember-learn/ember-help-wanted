@@ -1,8 +1,7 @@
-import Controller from '@ember/controller';
+import Service from '@ember/service';
 
-export default Controller.extend({
-
-  navLinks: '',
+export default Service.extend({ 
+	navLinks: '',
 
   init() {
     this._super(...arguments);
@@ -11,10 +10,6 @@ export default Controller.extend({
 
   setupNavLinks() {
     let navlinks = [{
-      type: 'link',
-      href: '/',
-      name: 'Home'
-    }, {
       type: 'link',
       href: '/core',
       name: 'Core'
@@ -39,4 +34,5 @@ export default Controller.extend({
     this.set('navLinks', navlinks);
 
   }
+
 });

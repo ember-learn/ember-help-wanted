@@ -1,3 +1,9 @@
+<div class="help-wanted-links">
+  <a href="/">{{es-button label="Home" isTiny=true}}</a>
+  {{#each navLinks.navLinks as |link|}}
+    <a href={{link.href}}>{{es-button label=link.name isTiny=true}}</a>
+  {{/each}}
+</div>
 <form {{action "searchByWildcard" queryInput on="submit"}} class="search-box">
   {{input value=queryInput}} <button type="submit">Search</button>
   {{#if label}}
