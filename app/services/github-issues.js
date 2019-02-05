@@ -19,7 +19,9 @@ let core = [
 
 let learning = [
   { repo: 'ember-learn/ember-styleguide', labels: 'help wanted :sos:' },
-  { repo: 'ember-learn/guides-source', labels: 'help wanted' }
+  { repo: 'ember-learn/guides-source', labels: 'help wanted' },
+  { repo: 'ember-learn/ember-api-docs', labels: 'help wanted' },
+  { repo: 'ember-learn/ember-website', labels: 'help wanted' }
 ];
 
 let community = [
