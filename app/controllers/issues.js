@@ -7,7 +7,7 @@ export default Controller.extend({
   query: '',
   label: '',
 
-  navLinks : service(),
+  navLinks: service(),
 
   queryInput: computed('query', function() {
     return this.get('query');

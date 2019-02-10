@@ -1,7 +1,7 @@
 import Service from '@ember/service';
 
-export default Service.extend({ 
-	navLinks: '',
+export default Service.extend({
+  navLinks: '',
 
   init() {
     this._super(...arguments);

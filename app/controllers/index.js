@@ -3,6 +3,6 @@ import { inject as service } from '@ember/service';
 
 export default Controller.extend({
 
-  navLinks : service()
+  navLinks: service()
 
 });
