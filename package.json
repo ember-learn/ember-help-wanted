@@ -65,5 +65,8 @@
   },
   "dependencies": {
     "invert-color": "^1.2.3"
+  },
+  "resolutions": {
+    "ajv": "6.8.1"
   }
 }
