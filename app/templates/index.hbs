@@ -14,26 +14,24 @@
 				{{/es-heading}}
 	    		<div class="row">
 	    		{{#each model as | repo |}}
-	    			{{#if (eq repo.archived "false")}}
 		    			<div class="col-sm-3 tile d-flex flex-column">
 		    				<div class="">{{repo.displayName}}</div><br>
 		    				<div class="">Forks: {{#if (not repo.forks)}} No forks {{else}} {{repo.forks}} {{/if}}</div>
 		    				<div class="linkbutton">
-		    					<a href={{repo.htmlUrl}} target="_blank">
+		    					<a href={{repo.html_url}} target="_blank">
 		    							Take me there
 			    				</a>
 		    				</div>
 		    			</div>
-						{{/if}}
 	    		{{/each}}
 		    	</div>
     	</div>
     	<div class="article container">
     		<h2>Improving the contributor experience</h2>
-				<p> 
+				<p>
 					This app is designed to help community members find issues in the Ember ecosystem that are requesting some extra help! The goal would be for this to work well for project nights for meetups, conferences and anyone else interested in hacking on various projects while also helping the main Ember repositories get much needed help with issues.
 				</p>
-				
+
 				<h3>Big Picture</h3>
 				<p>
 					To accomplish this, we use <a href="https://github.com/ember-learn/ember-help-wanted-server"> a Node backend</a> that receives Github webhook notifications about issues across a number of Ember projects. The backend will filter those issues and store them to act as our "pool" of potential issues that potential contributors can work on.
@@ -45,7 +43,7 @@
 					Meetup organizers (and contributor workshops at various Ember conferences) can also use this as a tool to sort through issues and pick subsets for their meetings. For example, if a Meetup group wants to help its members learn more about Ember Data, a meetup organizer could go through the existing pool of issues and cherry-pick 5-10 issues for folks to focus on for that evening that would help with that. This tool could be used as a foundation for running the Contributors Workshop that occurs each year at EmberConf.
 				</p>
 				<p>
-					Long-term, we are considering ways to make this easily findable by anyone who wants to contribute to Ember- tweeting out major new issues, or in other ways that communicate key pieces of info to the Ember community. We could potentially use it as a way of posting "maintainer wanted" messages as well. Do you have more ideas? Let us know! 
+					Long-term, we are considering ways to make this easily findable by anyone who wants to contribute to Ember- tweeting out major new issues, or in other ways that communicate key pieces of info to the Ember community. We could potentially use it as a way of posting "maintainer wanted" messages as well. Do you have more ideas? Let us know!
 				</p>
 
 				<p>Read More <a href="https://github.com/ember-learn/ember-help-wanted">here</a>.</p>
