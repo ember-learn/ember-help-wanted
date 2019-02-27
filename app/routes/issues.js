@@ -68,7 +68,7 @@ export default Route.extend({
 
   _isInCategory(category, repo) {
     const GithubIssues = this.get('githubIssues');
-    let categoryMap = GithubIssues.allCategories();
-    return category === categoryMap[repo];
+    let categoryRepos = GithubIssues.fetchCategoryRepos(category);
+    return categoryRepos.isAny('repo', repo);
   }
 });

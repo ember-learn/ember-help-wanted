@@ -29,6 +29,10 @@ export default Service.extend({
       type: 'link',
       href: '/emberHelpWanted',
       name: 'Ember Help Wanted'
+    }, {
+      type: 'link',
+      href: '/octane',
+      name: 'Octane'
     }];
 
     this.set('navLinks', navlinks);
