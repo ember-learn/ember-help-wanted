@@ -221,15 +221,7 @@ export default Service.extend({
     });
   },
 
-  allCategories() {
-    let allRepos = {};
-
-    Object.keys(categoryRepos).forEach((category) => {
-      categoryRepos[category].forEach((mapping) => {
-        allRepos[mapping.repo] = category;
-      });
-    });
-
-    return allRepos;
+  fetchCategoryRepos(categoryName) {
+    return categoryRepos[categoryName];
   }
 });
