@@ -27,7 +27,10 @@ let learning = [
 let community = [
   { repo: 'typed-ember/ember-cli-typescript', labels: 'help wanted' },
   { repo: 'typed-ember/ember-cli-typescript', labels: 'good first issue' },
-  { repo: 'ember-engines/ember-engines', labels: 'help wanted' }
+  { repo: 'ember-engines/ember-engines', labels: 'help wanted' },
+  { repo: 'miguelcobain/ember-paper', labels: 'help wanted' },
+  { repo: 'miguelcobain/ember-leaflet', labels: 'help wanted' },
+  { repo: 'machty/ember-concurrency', labels: 'good first issue' }
 ];
 
 let rfcs = [
