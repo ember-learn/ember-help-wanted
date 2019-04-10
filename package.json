@@ -50,7 +50,7 @@
     "ember-resolver": "^4.0.0",
     "ember-sass-bootstrap": "^0.2.0",
     "ember-source": "~3.3.0",
-    "ember-styleguide": "^2.1.0",
+    "ember-styleguide": "^2.5.0",
     "eslint-plugin-ember": "^5.0.3",
     "eslint-plugin-ember-suave": "^1.0.0",
     "glob": "^4.0.5",
