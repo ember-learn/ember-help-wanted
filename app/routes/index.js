@@ -3,10 +3,9 @@ import Route from '@ember/routing/route';
 export default Route.extend({
 
   model() {
-    fetch('https://api.github.com/search/repositories?q=user:ember-learn+NOT+builds+NOT+statusboard+help-wanted-issues:%3E0+archived:false')
+    fetch('/github-repositories')
       .then((response) => response.json())
-      .then((repos) => this.store.pushPayload('github-repository', { githubRepository: repos.items }));
+      .then((repos) => this.store.pushPayload('github-repository', { githubRepository: repos }));
     return this.store.peekAll('github-repository');
   }
-
 });
