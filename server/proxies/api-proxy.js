@@ -2,7 +2,8 @@
 'use strict';
 
 const httpProxy = require('http-proxy');
-const proxyPath = '/github-issues';
+const issuesProxyPath = '/github-issues';
+const reposProxyPath = '/github-repositories';
 let target;
 
 if (process.env.LOCAL_API) {
@@ -29,8 +30,12 @@ module.exports = function(app) {
     console.error(err, req.url);
   });
 
-  app.use(proxyPath, function(req, res) {
-    req.url = `${proxyPath}/${req.url}`;
+  app.use(issuesProxyPath, function(req, res) {
+    req.url = `${issuesProxyPath}/${req.url}`;
+    proxy.web(req, res, { target });
+  });
+  app.use(reposProxyPath, function(req, res) {
+    req.url = `${reposProxyPath}/${req.url}`;
     proxy.web(req, res, { target });
   });
 };

@@ -1,12 +1,14 @@
 import Route from '@ember/routing/route';
+import ENV from 'ember-help-wanted/config/environment';
 
 export default Route.extend({
 
   model() {
-    fetch('https://api.github.com/search/repositories?q=user:ember-learn+NOT+builds+NOT+statusboard+help-wanted-issues:%3E0+archived:false')
+    let host = ENV.API_HOST || '';
+
+    fetch(`${host}/github-repositories`)
       .then((response) => response.json())
-      .then((repos) => this.store.pushPayload('github-repository', { githubRepository: repos.items }));
+      .then((repos) => this.store.pushPayload('github-repository', { githubRepository: repos }));
     return this.store.peekAll('github-repository');
   }
-
 });
