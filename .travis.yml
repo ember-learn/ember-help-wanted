@@ -29,6 +29,6 @@ install:
   - yarn install --no-lockfile --non-interactive
 
 script:
-  - yarn run lint:hbs
-  - yarn run lint:js
+  - yarn lint:hbs
+  - yarn lint:js
   - yarn test
