@@ -8,7 +8,8 @@
   {{input value=this.queryInput}} <button type="submit">Search</button>
   {{#if this.label}}
     <span class="current-filter-label">
-      {{label-with-emoji this.label}} <button {{action (mut this.label) null}}>x</button>
+      {{label-with-emoji this.label}}
+      <button class='github-label-button' {{action (mut this.label) null}}>x</button>
     </span>
   {{/if}}
 </form>
@@ -30,7 +31,7 @@
           <a target="_blank" rel="noopener" class="github-issue-link" href={{issue.htmlUrl}}>{{issue.title}}</a>
 
           {{#each issue.labels as |lb|}}
-            <button {{action (mut this.label) lb.name}}>
+            <button class='github-label-button' {{action (mut this.label) lb.name}}>
               {{github-label label=lb.name labelColor=lb.color}}
             </button>
           {{/each}}
