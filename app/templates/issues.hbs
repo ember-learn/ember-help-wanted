@@ -1,17 +1,19 @@
 <div class="help-wanted-links">
   <a href="/">{{es-button label="All Issues" isTiny=true}}</a>
-  {{#each navLinks.navLinks as |link|}}
+  {{#each this.navLinks.navLinks as |link|}}
     <a href={{link.href}}>{{es-button label=link.name isTiny=true}}</a>
   {{/each}}
 </div>
-<form {{action "searchByWildcard" queryInput on="submit"}} class="search-box">
-  {{input value=queryInput}} <button type="submit">Search</button>
-  {{#if label}}
-    <span class="current-filter-label">{{label-with-emoji label}} <span {{action (mut label) null}}>x</span></span>
+<form {{action "searchByWildcard" this.queryInput on="submit"}} class="search-box">
+  {{input value=this.queryInput}} <button type="submit">Search</button>
+  {{#if this.label}}
+    <span class="current-filter-label">
+      {{label-with-emoji this.label}} <button {{action (mut this.label) null}}>x</button>
+    </span>
   {{/if}}
 </form>
 
-<span class="total-issues">{{pluralize model.length "issue"}} displayed</span>
+<span class="total-issues">{{pluralize this.model.length "issue"}} displayed</span>
 
 <table class="github-issue-table">
   <thead>
@@ -21,14 +23,16 @@
     </tr>
   </thead>
   <tbody>
-    {{#each model as |issue|}}
+    {{#each this.model as |issue|}}
       <tr>
-        <td><a target="_blank" href={{issue.repositoryHtml}}>{{issue.repositoryName}}</a></td>
+        <td><a target="_blank" rel="noopener" href={{issue.repositoryHtml}}>{{issue.repositoryName}}</a></td>
         <td>
-          <a target="_blank" class="github-issue-link" href={{issue.htmlUrl}}>{{issue.title}}</a>
+          <a target="_blank" rel="noopener" class="github-issue-link" href={{issue.htmlUrl}}>{{issue.title}}</a>
 
           {{#each issue.labels as |lb|}}
-            <a onclick={{action (mut label) lb.name}}>{{github-label label=lb.name labelColor=lb.color}}</a>
+            <button {{action (mut this.label) lb.name}}>
+              {{github-label label=lb.name labelColor=lb.color}}
+            </button>
           {{/each}}
           <br>
           #{{issue.number}} updated {{moment-from-now issue.updatedAt}}
