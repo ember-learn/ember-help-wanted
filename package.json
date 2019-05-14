@@ -11,11 +11,11 @@
     "test": "tests"
   },
   "scripts": {
-    "build": "ember build",
-    "lint:hbs": "ember-template-lint .",
-    "lint:js": "eslint .",
-    "start": "ember serve",
-    "test": "ember test"
+    "build": "yarn ember build",
+    "lint:hbs": "yarn ember-template-lint .",
+    "lint:js": "yarn eslint .",
+    "start": "yarn ember serve",
+    "test": "yarn ember test"
   },
   "devDependencies": {
     "@ember/jquery": "^0.6.0",
@@ -55,6 +55,7 @@
     "ember-sass-bootstrap": "^0.2.0",
     "ember-source": "~3.9.0",
     "ember-styleguide": "^2.5.0",
+    "eslint": "^5.16.0",
     "eslint-plugin-ember": "^6.4.1",
     "eslint-plugin-ember-suave": "^2.0.0-beta.1",
     "glob": "^4.0.5",

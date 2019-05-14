@@ -4,9 +4,11 @@ export default Factory.extend({
   id(i) {
     return `${i}`;
   },
+
   number(i) {
     return `${i + 3000}`;
   },
+
   title: faker.hacker.phrase,
   state: () => faker.random.arrayElement(['open', 'closed']),
   createdAt: faker.date.recent,

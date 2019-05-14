@@ -8,6 +8,7 @@ export default Route.extend({
     query: {
       refreshModel: true
     },
+
     label: {
       refreshModel: true
     }
@@ -27,9 +28,11 @@ export default Route.extend({
       if (params.query) {
         issues = issues.filter(this._matchWildcard(params.category, params.query));
       }
+
       if (params.label) {
         issues = issues.filter(this._matchLabel(params.category, params.label));
       }
+
       return issues;
     }
 
@@ -37,9 +40,11 @@ export default Route.extend({
       if (params.query) {
         allResults = allResults.filter(this._matchWildcard(params.category, params.query));
       }
+
       if (params.label) {
         allResults = allResults.filter(this._matchLabel(params.category, params.label));
       }
+
       return allResults;
     });
   },
