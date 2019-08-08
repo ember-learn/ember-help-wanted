@@ -1,12 +1,15 @@
-import { Factory, faker } from 'ember-cli-mirage';
+import { Factory } from 'ember-cli-mirage';
+import faker from 'faker';
 
 export default Factory.extend({
   id(i) {
     return `${i}`;
   },
+
   number(i) {
     return `${i + 3000}`;
   },
+
   title: faker.hacker.phrase,
   state: () => faker.random.arrayElement(['open', 'closed']),
   createdAt: faker.date.recent,

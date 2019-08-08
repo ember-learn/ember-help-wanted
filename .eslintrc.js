@@ -1,6 +1,8 @@
+'use strict';
+
 module.exports = {
   globals: {
-    server: true,
+    server: true
   },
   root: true,
   parserOptions: {
@@ -8,7 +10,8 @@ module.exports = {
     sourceType: 'module'
   },
   plugins: [
-    'ember'
+    'ember',
+    'ember-suave'
   ],
   extends: [
     'eslint:recommended',
@@ -20,19 +23,24 @@ module.exports = {
   },
   rules: {
     'ember-suave/no-const-outside-module-scope': 'off'
-  }, 
+  },
   overrides: [
     // node files
     {
       files: [
+        '.ember-cli.js',
+        '.eslintrc.js',
+        '.template-lintrc.js',
         'ember-cli-build.js',
         'testem.js',
         'blueprints/*/index.js',
         'config/**/*.js',
-        'lib/*/index.js'
+        'lib/*/index.js',
+        'server/**/*.js'
       ],
       rules: {
         'camelcase': ['error', { 'properties': 'never' }],
+        'ember-suave/lines-between-object-properties': 'off'
       },
       parserOptions: {
         sourceType: 'script',

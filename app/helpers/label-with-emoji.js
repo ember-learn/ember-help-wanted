@@ -10,6 +10,7 @@ export function labelWithEmoji([label]) {
     let labelWithEmoji = label.replace(/:\w+:/, `<img src="${emojiUrl}">`);
     return htmlSafe(labelWithEmoji);
   }
+
   return label;
 }
 

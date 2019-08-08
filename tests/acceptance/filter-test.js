@@ -16,9 +16,10 @@ module('Acceptance | filter', function(hooks) {
     await visit('/learning');
     assert.dom('.current-filter-label').doesNotExist();
     assert.dom('.github-issue-table tbody tr').exists({ count: 10 });
-    await click('.github-issue-table tbody tr:first-child a:nth-child(2)');
+    // TODO: use semantic selections / data-test-*
+    await click('.github-issue-table tbody tr:first-child button:nth-child(2)');
     assert.dom('.github-issue-table tbody tr').exists({ count: 5 });
-    await click('.current-filter-label span');
+    await click('.current-filter-label button');
     assert.dom('.github-issue-table tbody tr').exists({ count: 10 });
   });
 });

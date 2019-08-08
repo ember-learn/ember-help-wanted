@@ -3,7 +3,7 @@ language: node_js
 node_js:
   - "8"
 
-sudo: false 
+sudo: false
 dist: trusty
 
 branches:
@@ -29,5 +29,6 @@ install:
   - yarn install --no-lockfile --non-interactive
 
 script:
-  - yarn run lint:js
+  - yarn lint:hbs
+  - yarn lint:js
   - yarn test
