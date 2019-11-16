@@ -1,44 +1,46 @@
-<div class="help-wanted-links">
-  <a href="/" class="es-button">All Issues</a>
-  {{#each this.navLinks.navLinks as |link|}}
-    <a href={{link.href}} class="es-button">{{link.name}}</a>
-  {{/each}}
-</div>
-<form {{action "searchByWildcard" this.queryInput on="submit"}} class="search-box">
-  {{input value=this.queryInput}} <button type="submit">Search</button>
-  {{#if this.label}}
-    <span class="current-filter-label">
-      {{label-with-emoji this.label}}
-      <button class="github-label-button" {{action (mut this.label) null}}>x</button>
-    </span>
-  {{/if}}
-</form>
-
-<span class="total-issues">{{pluralize this.model.length "issue"}} displayed</span>
-
-<table class="github-issue-table">
-  <thead>
-    <tr>
-      <th>Project</th>
-      <th>Title</th>
-    </tr>
-  </thead>
-  <tbody>
-    {{#each this.model as |issue|}}
-      <tr>
-        <td><a target="_blank" rel="noopener" href={{issue.repositoryHtml}}>{{issue.repositoryName}}</a></td>
-        <td>
-          <a target="_blank" rel="noopener" class="github-issue-link" href={{issue.htmlUrl}}>{{issue.title}}</a>
-
-          {{#each issue.labels as |lb|}}
-            <button class="github-label-button" {{action (mut this.label) lb.name}}>
-              {{github-label label=lb.name labelColor=lb.color}}
-            </button>
-          {{/each}}
-          <br>
-          #{{issue.number}} updated {{moment-from-now issue.updatedAt}}
-        </td>
-      </tr>
+<div class="container">
+  <div class="help-wanted-links">
+    <a href="/" class="es-button margin-bottom-small">All Issues</a>
+    {{#each this.navLinks.navLinks as |link|}}
+      <a href={{link.href}} class="es-button margin-bottom-small">{{link.name}}</a>
     {{/each}}
-  </tbody>
-</table>
+  </div>
+  <form {{action "searchByWildcard" this.queryInput on="submit"}} class="search-box margin-vertical-large">
+    {{input value=this.queryInput}} <button type="submit">Search</button>
+    {{#if this.label}}
+      <span class="current-filter-label">
+        {{label-with-emoji this.label}}
+        <button class="github-label-button" {{action (mut this.label) null}}>x</button>
+      </span>
+    {{/if}}
+  </form>
+</div>
+
+  <div class="total-issues small">{{pluralize this.model.length "issue"}} displayed</div>
+
+  <table class="github-issue-table">
+    <thead>
+      <tr class="medium regular">
+        <th>Project</th>
+        <th>Title</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each this.model as |issue|}}
+        <tr>
+          <td><a class="medium" target="_blank" rel="noopener" href={{issue.repositoryHtml}}>{{issue.repositoryName}}</a></td>
+          <td>
+            <a target="_blank" rel="noopener" href={{issue.htmlUrl}}>{{issue.title}}</a>
+
+            {{#each issue.labels as |lb|}}
+              <button class="github-label-button" {{action (mut this.label) lb.name}}>
+                {{github-label label=lb.name labelColor=lb.color}}
+              </button>
+            {{/each}}
+            <br>
+            #{{issue.number}} updated {{moment-from-now issue.updatedAt}}
+          </td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
