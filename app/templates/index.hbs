@@ -1,29 +1,29 @@
-<div class="prose">
-  <div class="herounit">
+<div class="prose bg-shape-boxes py-5">
+  <div class="herounit m-4">
     <img src="../images/ember-help-wanted-logo.svg" alt="Image">
+    <h1 class="text-hero-xl">Ember Help Wanted</h1>
     <div class="help-wanted-links">
       {{#each this.navLinks.navLinks as |link|}}
         <a href={{link.href}}>{{es-button label=link.name isTiny=true}}</a>
       {{/each}}
     </div>
   </div>
-  <div class="section">
+  <div class="section bg-light-muted">
     <div class="article container d-flex flex-column">
-      {{#es-heading}}
+      <h2 class="text-xl">
         Repositories with help-wanted issues
-      {{/es-heading}}
+      </h2>
       <div class="row">
-        {{#each this.model as | repo |}}
-          <div class="col-sm-3 tile d-flex flex-column">
-            <div class="">{{repo.displayName}}</div><br>
-            <div class="">Forks: {{#if (not repo.forks)}} No forks {{else}} {{repo.forks}} {{/if}}</div>
-            <div class="linkbutton">
-              <a href={{repo.htmlUrl}} target="_blank" rel="noopener">
-                Take me there
-              </a>
-            </div>
-          </div>
-        {{/each}}
+        <ul class="list-unstyled layout">
+          {{#each this.model as | repo |}}
+            <EsLinkCard
+              class="lg:col-3 bg-dark"
+              @href={{repo.htmlUrl}}
+              @title={{repo.displayName}}>
+              <p>Forks: {{#if (not repo.forks)}} No forks {{else}} {{repo.forks}} {{/if}}</p>
+            </EsLinkCard>
+          {{/each}}
+        </ul>
       </div>
     </div>
     <div class="article container">
@@ -66,5 +66,3 @@
     </div>
   </div>
 </div>
-
-<EsFooter />

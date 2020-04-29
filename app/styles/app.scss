@@ -15,8 +15,7 @@
 }
 
 .help-wanted-links {
-  padding: 20px;
-
+  margin-bottom: var(--spacing-4);
   @media screen and (max-width: 768px) {
     .es-button {
       width: auto;
@@ -111,7 +110,7 @@
 
 .prose {
   height: 100%;
-  background: url('../images/ember-bkg.svg');
+  background-color: var(--color-gray-900);
 
   .herounit {
     display: flex;
@@ -119,6 +118,11 @@
     justify-content: space-evenly;
     align-items: center;
     height: 40vh;
+    text-align: left;
+
+    h1 {
+      color: var(--color-white);
+    }
   }
 
   .searchbox {
@@ -131,7 +135,6 @@
   }
 
   .section {
-    background-color: white;
     padding: 30px 0 30px;
 
     .container {
@@ -155,14 +158,9 @@
   }
 }
 
-.search-box {
-  margin: 20px;
-}
 
 .total-issues {
-  margin-left: 20px;
-  margin-bottom: 5px;
-  font-size: 80%;
+  margin: var(--spacing-2) 0;
   display: inline-block;
 }
 
@@ -203,6 +201,32 @@
     width: auto;
   }
 }
+
+.bg-dark {
+  &.card--link:focus-within,
+  &.card--link:hover {
+    color: var(--color-gray-300);
+  }
+}
+
+.search-label {
+  display: block;
+}
+
+.search-input {
+  border-radius: var(--radius);
+  padding: var(--spacing-1);
+}
+
+.search-button {
+  margin-left: var(--spacing-1);
+}
+
+.issues-header {
+  padding-top: var(--spacing-4);
+  padding-bottom: var(--spacing-2);
+}
+
 //Table display for mobile view
 @media only screen and (max-width: 900px) {
   thead {
