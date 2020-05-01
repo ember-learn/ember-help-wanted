@@ -13,6 +13,10 @@ export default Controller.extend({
     return this.get('query');
   }),
 
+  clearMessage: computed('label', function() {
+    return `Clear search filter ${this.label}`;
+  }),
+
   actions: {
     searchByWildcard(query) {
       this.set('query', query);

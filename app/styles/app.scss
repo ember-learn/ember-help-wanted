@@ -1,6 +1,14 @@
 @charset "utf-8";
 @import 'loading-cube';
 
+*, body {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--color-gray-100);
+}
+
 /* Navbar */
 .navbar {
   .navbar-toggler {
@@ -16,6 +24,12 @@
 
 .help-wanted-links {
   margin-bottom: var(--spacing-4);
+
+  a {
+    margin: 0.2rem;
+    display: inline-block;
+  }
+
   @media screen and (max-width: 768px) {
     .es-button {
       width: auto;
@@ -72,10 +86,8 @@
 }
 
 .github-label {
-  cursor: pointer;
   border-radius: 4px;
   display: inline-block;
-  margin-right: 5px;
   padding: 6px;
   font-size: 12px;
 
@@ -89,16 +101,23 @@
 
 .current-filter-label {
   @extend .github-label;
-  background-color: #e9e9e9;
+  background-color: var(--color-gray-700);
+  opacity: 1;
+  color: var(--color-white);
+  position: relative;
+  text-align: right;
+  font-size: 14px;
+
+  &:hover {
+    opacity: 1;
+  }
 
   button {
     cursor: pointer;
-    border-left: 1px dotted;
-    padding-left: 6px;
-    color: #b1b1b1;
-    &:hover {
-      opacity: 0.7;
-    }
+    margin-left: 0.4rem;
+    right: 0.2rem;
+    padding: var(--spacing-1);
+    font-size: 14px;
   }
 }
 
@@ -106,6 +125,8 @@
   background: none;
   border: none;
   padding: 0;
+  margin: 0.2rem;
+  cursor: pointer;
 }
 
 .prose {
@@ -123,15 +144,6 @@
     h1 {
       color: var(--color-white);
     }
-  }
-
-  .searchbox {
-    outline: 0;
-    padding: 7px 10px;
-    width: 50%;
-    font-size: 16px;
-    border-radius: 5px;
-    border: thin solid lightgray;
   }
 
   .section {
@@ -225,6 +237,54 @@
 .issues-header {
   padding-top: var(--spacing-4);
   padding-bottom: var(--spacing-2);
+}
+
+.bg-white {
+  background-color: var(--color-white);
+
+  &.card--link:hover {
+    background-color: var(--color-gray-100);
+  }
+}
+
+.github-issue-number {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0.2rem 0.5rem;
+  background-color: var(--color-brand);
+  color: var(--color-white);
+  border-bottom-left-radius: var(--radius);
+
+  a.text-white {
+    color: var(--color-white);
+  }
+}
+
+.search-box {
+  outline: 0;
+  font-size: 16px;
+  position: relative;
+
+  .search-input {
+    display: inline-block;
+  }
+
+  .search-button {
+    display: inline-block;
+  }
+
+  @media screen and (max-width: 415px) {
+    .search-input {
+      width: 100%;
+      display: block;
+    }
+
+    .search-button, .current-filter-label {
+      width: 100%;
+      margin: 0.2rem 0;
+    }
+  }
 }
 
 //Table display for mobile view
