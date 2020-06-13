@@ -9,19 +9,6 @@ body {
   background-color: var(--color-gray-100);
 }
 
-/* Navbar */
-.navbar {
-  .navbar-toggler {
-    font-size: 16px;
-    border: none;
-    outline: 0;
-  }
-
-  .dropdown-item {
-    width: auto;
-  }
-}
-
 .help-wanted-links {
   margin-bottom: var(--spacing-4);
 
@@ -40,49 +27,6 @@ body {
 .github-issue-link {
   border-bottom: solid 2px;
   margin-right: 8px;
-}
-
-.github-issue-table {
-  border-collapse: collapse;
-  margin-top: 3px;
-  table-layout: fixed;
-  width: 100%;
-
-  thead tr {
-    background-color: #f6f8fa;
-  }
-
-  thead th {
-    font-size: 1.2em;
-    font-weight: 400;
-    text-align: left;
-  }
-
-  thead th:nth-child(1) {
-    width: 15vw;
-  }
-
-  tbody td:nth-child(1) {
-    font-weight: 200;
-  }
-
-  tbody tr {
-    background-color: #fefefe;
-    border-top: 1px solid #e1e4e8;
-    font-weight: 500;
-
-    &:hover {
-      background-color: #d25f461f;
-    }
-  }
-  tbody tr:last-child {
-    border-bottom: 1px solid #e1e4e8;
-  }
-
-  th,
-  td {
-    padding: 20px;
-  }
 }
 
 .github-label {
@@ -284,17 +228,5 @@ body {
       width: 100%;
       margin: 0.2rem 0;
     }
-  }
-}
-
-//Table display for mobile view
-@media only screen and (max-width: 900px) {
-  thead {
-    display: none;
-  }
-  td {
-    display: block;
-    width: 90vw;
-    padding: 5vw;
   }
 }
