@@ -1,21 +1,21 @@
 @charset "utf-8";
 @import 'loading-cube';
 
-/* Navbar */
-.navbar {
-  .navbar-toggler {
-    font-size: 16px;
-    border: none;
-    outline: 0;
-  }
+*, body {
+  box-sizing: border-box;
+}
 
-  .dropdown-item {
-    width: auto;
-  }
+body {
+  background-color: var(--color-gray-100);
 }
 
 .help-wanted-links {
-  padding: 20px;
+  margin-bottom: var(--spacing-4);
+
+  a {
+    margin: 0.2rem;
+    display: inline-block;
+  }
 
   @media screen and (max-width: 768px) {
     .es-button {
@@ -29,54 +29,9 @@
   margin-right: 8px;
 }
 
-.github-issue-table {
-  border-collapse: collapse;
-  margin-top: 3px;
-  table-layout: fixed;
-  width: 100%;
-
-  thead tr {
-    background-color: #f6f8fa;
-  }
-
-  thead th {
-    font-size: 1.2em;
-    font-weight: 400;
-    text-align: left;
-  }
-
-  thead th:nth-child(1) {
-    width: 15vw;
-  }
-
-  tbody td:nth-child(1) {
-    font-weight: 200;
-  }
-
-  tbody tr {
-    background-color: #fefefe;
-    border-top: 1px solid #e1e4e8;
-    font-weight: 500;
-
-    &:hover {
-      background-color: #d25f461f;
-    }
-  }
-  tbody tr:last-child {
-    border-bottom: 1px solid #e1e4e8;
-  }
-
-  th,
-  td {
-    padding: 20px;
-  }
-}
-
 .github-label {
-  cursor: pointer;
   border-radius: 4px;
   display: inline-block;
-  margin-right: 5px;
   padding: 6px;
   font-size: 12px;
 
@@ -90,16 +45,23 @@
 
 .current-filter-label {
   @extend .github-label;
-  background-color: #e9e9e9;
+  background-color: var(--color-gray-700);
+  opacity: 1;
+  color: var(--color-white);
+  position: relative;
+  text-align: right;
+  font-size: 14px;
+
+  &:hover {
+    opacity: 1;
+  }
 
   button {
     cursor: pointer;
-    border-left: 1px dotted;
-    padding-left: 6px;
-    color: #b1b1b1;
-    &:hover {
-      opacity: 0.7;
-    }
+    margin-left: 0.4rem;
+    right: 0.2rem;
+    padding: var(--spacing-1);
+    font-size: 14px;
   }
 }
 
@@ -107,11 +69,13 @@
   background: none;
   border: none;
   padding: 0;
+  margin: 0.2rem;
+  cursor: pointer;
 }
 
 .prose {
   height: 100%;
-  background: url('../images/ember-bkg.svg');
+  background-color: var(--color-gray-900);
 
   .herounit {
     display: flex;
@@ -119,19 +83,14 @@
     justify-content: space-evenly;
     align-items: center;
     height: 40vh;
-  }
+    text-align: left;
 
-  .searchbox {
-    outline: 0;
-    padding: 7px 10px;
-    width: 50%;
-    font-size: 16px;
-    border-radius: 5px;
-    border: thin solid lightgray;
+    h1 {
+      color: var(--color-white);
+    }
   }
 
   .section {
-    background-color: white;
     padding: 30px 0 30px;
 
     .container {
@@ -155,14 +114,9 @@
   }
 }
 
-.search-box {
-  margin: 20px;
-}
 
 .total-issues {
-  margin-left: 20px;
-  margin-bottom: 5px;
-  font-size: 80%;
+  margin: var(--spacing-2) 0;
   display: inline-block;
 }
 
@@ -203,14 +157,76 @@
     width: auto;
   }
 }
-//Table display for mobile view
-@media only screen and (max-width: 900px) {
-  thead {
-    display: none;
+
+.bg-dark {
+  &.card--link:focus-within,
+  &.card--link:hover {
+    color: var(--color-gray-300);
   }
-  td {
-    display: block;
-    width: 90vw;
-    padding: 5vw;
+}
+
+.search-label {
+  display: block;
+}
+
+.search-input {
+  border-radius: var(--radius);
+  padding: var(--spacing-1);
+}
+
+.search-button {
+  margin-left: var(--spacing-1);
+}
+
+.issues-header {
+  padding-top: var(--spacing-4);
+  padding-bottom: var(--spacing-2);
+}
+
+.bg-white {
+  background-color: var(--color-white);
+
+  &.card--link:hover {
+    background-color: var(--color-gray-100);
+  }
+}
+
+.github-issue-number {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0.2rem 0.5rem;
+  background-color: var(--color-brand);
+  color: var(--color-white);
+  border-bottom-left-radius: var(--radius);
+
+  a.text-white {
+    color: var(--color-white);
+  }
+}
+
+.search-box {
+  outline: 0;
+  font-size: 16px;
+  position: relative;
+
+  .search-input {
+    display: inline-block;
+  }
+
+  .search-button {
+    display: inline-block;
+  }
+
+  @media screen and (max-width: 415px) {
+    .search-input {
+      width: 100%;
+      display: block;
+    }
+
+    .search-button, .current-filter-label {
+      width: 100%;
+      margin: 0.2rem 0;
+    }
   }
 }
