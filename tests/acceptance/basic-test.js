@@ -23,14 +23,14 @@ module('Acceptance | basic', function(hooks) {
 
     const projects = findAll('[data-test-github-issue]:first-child [data-test-github-issue-project]');
     assert.ok(projects.length > 0, 'can list projects');
-    await percySnapshot('Learning tab')
+    await percySnapshot('Learning tab');
   });
 
   test('visit /', async function(assert) {
     server.createList('github-repository', 5);
     await visit('/');
     assert.equal(currentURL(), '/');
-    await percySnapshot('Index')
+    await percySnapshot('Index');
   });
 
   test('total issues displayed', async function(assert) {

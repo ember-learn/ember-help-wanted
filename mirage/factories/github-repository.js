@@ -5,6 +5,8 @@ export default Factory.extend({
   id(i) {
     return `${i}`;
   },
+
   fullName: faker.hacker.phrase,
-  htmlUrl: 'https://github.com/ember-learn/guides-source',
+
+  htmlUrl: 'https://github.com/ember-learn/guides-source'
 });
