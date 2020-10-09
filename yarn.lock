@@ -6161,10 +6161,10 @@ ember-source@~3.16.0:
     semver "^6.1.1"
     silent-error "^1.1.1"
 
-ember-styleguide@^4.0.1:
-  version "4.0.1"
-  resolved "https://registry.yarnpkg.com/ember-styleguide/-/ember-styleguide-4.0.1.tgz#4eae5cba9a98c31ad056367735d631b09987f415"
-  integrity sha512-YoauKlvUz4QRwvS7ABqwoljoqo4ey23TjkJD8uejM2TDHv8adotjf5wunGqV7uhhtW3GzGz5MzpI1J2RP2AGFw==
+ember-styleguide@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/ember-styleguide/-/ember-styleguide-5.0.0.tgz#ad5e2590af8a1a34179b590fb5a0918444b8ec46"
+  integrity sha512-5gG5kseojhUU8g8OsAzCr+Cd+EW47PXdGD527Aw1TkoLynxgI+DuiPLAUqdPVeN0bskrOy7mxi/djD1M4pfTsw==
   dependencies:
     "@ember/render-modifiers" "^1.0.2"
     "@glimmer/component" "^1.0.0"
@@ -6179,6 +6179,7 @@ ember-styleguide@^4.0.1:
     normalize.css "^8.0.1"
     postcss-import "^12.0.1"
     postcss-preset-env "^6.7.0"
+    static-postcss-addon-tree "^2.0.0"
 
 ember-svg-jar@^1.2.2:
   version "1.2.2"
@@ -12297,6 +12298,17 @@ static-extend@^0.1.1:
   dependencies:
     define-property "^0.2.5"
     object-copy "^0.1.0"
+
+static-postcss-addon-tree@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/static-postcss-addon-tree/-/static-postcss-addon-tree-2.0.0.tgz#f610ccdbba6f2106699fcfae850a233bb53d7ed4"
+  integrity sha512-Xc8EWmsCCvb9in1v++Qn6spmqOC+pQBB1h5JbvZJ9rCUJIBKnrCvRQNj1d6ySQQNddtNWUtL2zbcGTcM/n8nJQ==
+  dependencies:
+    broccoli-merge-trees "^4.2.0"
+    broccoli-postcss "^5.1.0"
+    lodash.get "^4.4.2"
+    postcss-import "^12.0.1"
+    postcss-preset-env "^6.7.0"
 
 "statuses@>= 1.4.0 < 2":
   version "1.5.0"
