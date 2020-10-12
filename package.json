@@ -2,7 +2,7 @@
   "name": "ember-help-wanted",
   "version": "0.0.0",
   "private": true,
-  "description": "help share needs of various projects in the Ember community",
+  "description": "Search help wanted issues in the Ember community",
   "repository": "",
   "license": "MIT",
   "author": "",
