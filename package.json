@@ -39,7 +39,6 @@
     "ember-cli-mirage": "^1.0.0",
     "ember-cli-moment-shim": "^3.8.0",
     "ember-cli-netlify": "^0.4.1",
-    "ember-cli-release": "^1.0.0-beta.2",
     "ember-cli-sass": "^10.0.1",
     "ember-cli-sri": "^2.1.1",
     "ember-cli-terser": "^4.0.0",
