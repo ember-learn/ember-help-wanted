@@ -56,7 +56,6 @@
     "ember-styleguide": "^5.0.0",
     "eslint": "^6.0.1",
     "eslint-plugin-ember": "^7.7.2",
-    "eslint-plugin-ember-suave": "^2.0.0",
     "glob": "^7.1.4",
     "http-proxy": "^1.1.6",
     "loader.js": "^4.7.0",

@@ -14,19 +14,16 @@ module.exports = {
     }
   },
   plugins: [
-    'ember',
-    'ember-suave'
+    'ember'
   ],
   extends: [
     'eslint:recommended',
-    'plugin:ember/recommended',
-    'plugin:ember-suave/recommended'
+    'plugin:ember/recommended'
   ],
   env: {
     browser: true
   },
   rules: {
-    'ember-suave/no-const-outside-module-scope': 'off',
     'ember/no-jquery': 'off'
   },
   overrides: [
@@ -45,7 +42,6 @@ module.exports = {
       ],
       rules: {
         'camelcase': ['error', { 'properties': 'never' }],
-        'ember-suave/lines-between-object-properties': 'off'
       },
       parserOptions: {
         sourceType: 'script'
