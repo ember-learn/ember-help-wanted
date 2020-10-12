@@ -1,9 +1,6 @@
 'use strict';
 
 module.exports = {
-  globals: {
-    server: true
-  },
   root: true,
   parser: 'babel-eslint',
   parserOptions: {
@@ -24,13 +21,17 @@ module.exports = {
     browser: true
   },
   rules: {
-    'ember/no-jquery': 'off'
+    'ember/no-get': 'off',
+    'ember/require-computed-macros': 'off',
+    'ember/use-ember-data-rfc-395-imports': 'off',
+  },
+  globals: {
+    server: true
   },
   overrides: [
     // node files
     {
       files: [
-        '.ember-cli.js',
         '.eslintrc.js',
         '.template-lintrc.js',
         'ember-cli-build.js',
@@ -40,15 +41,19 @@ module.exports = {
         'lib/*/index.js',
         'server/**/*.js'
       ],
-      rules: {
-        'camelcase': ['error', { 'properties': 'never' }],
-      },
       parserOptions: {
         sourceType: 'script'
       },
       env: {
         browser: false,
         node: true
+      },
+      plugins: ['node'],
+      extends: ['plugin:node/recommended'],
+      rules: {
+        // this can be removed once the following is fixed
+        // https://github.com/mysticatea/eslint-plugin-node/issues/77
+        'node/no-unpublished-require': 'off'
       }
     }
   ]
