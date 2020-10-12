@@ -1,7 +1,7 @@
 import Service from '@ember/service';
 
 export default Service.extend({
-  navLinks: '',
+  navLinks: undefined,
 
   init() {
     this._super(...arguments);
@@ -10,29 +10,27 @@ export default Service.extend({
 
   setupNavLinks() {
     let navlinks = [{
-      type: 'link',
-      href: '/core',
+      route: 'issues',
+      model: 'core',
       name: 'Core'
     }, {
-      type: 'link',
-      href: '/rfcs',
+      route: 'issues',
+      model: 'rfcs',
       name: 'RFCs'
     }, {
-      type: 'link',
-      href: '/learning',
+      route: 'issues',
+      model: 'learning',
       name: 'Learning'
     }, {
-      type: 'link',
-      href: '/community',
+      route: 'issues',
+      model: 'community',
       name: 'Community'
     }, {
-      type: 'link',
-      href: '/emberHelpWanted',
+      route: 'issues',
+      model: 'emberHelpWanted',
       name: 'Ember Help Wanted'
     }];
 
     this.set('navLinks', navlinks);
-
   }
-
 });
