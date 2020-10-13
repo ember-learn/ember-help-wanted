@@ -34,12 +34,12 @@
           data-test-github-issue={{issue.number}}>
           <header>
             <h3 class="text-lg">
-              <a target="_blank" rel="noopener" href={{issue.htmlUrl}} data-test-github-issue-title>{{issue.title}}</a>
+              <a target="_blank" rel="noopener noreferrer" href={{issue.htmlUrl}} data-test-github-issue-title>{{issue.title}}</a>
             </h3>
           </header>
           <section>
             <p>
-              in <a target="_blank" rel="noopener" href={{issue.repositoryHtml}} data-test-github-issue-project>{{issue.repositoryName}}</a>,
+              in <a target="_blank" rel="noopener noreferrer" href={{issue.repositoryHtml}} data-test-github-issue-project>{{issue.repositoryName}}</a>,
               updated <b>{{moment-from-now issue.updatedAt}}</b>
             </p>
             {{#each issue.labels as |lb|}}
@@ -49,7 +49,7 @@
             {{/each}}
             <br>
             <p class="github-issue-number">
-              <a class="text-white" target="_blank" rel="noopener" href={{issue.htmlUrl}} data-test-github-issue-side-link>#{{issue.number}}</a>
+              <a class="text-white" target="_blank" rel="noopener noreferrer" href={{issue.htmlUrl}} data-test-github-issue-side-link>#{{issue.number}}</a>
             </p>
           </section>
         </EsCard>
