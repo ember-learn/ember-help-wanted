@@ -1,7 +1,7 @@
 <section class="container issues-header">
   <div class="help-wanted-links">
     {{#each this.navLinks.navLinks as |link|}}
-      <LinkTo class="es-button" @route={{link.route}} @model={{link.model}}>{{link.name}}</LinkTo>
+      <LinkTo class="es-button" @route={{link.route}} @model={{link.model}} @query={{hash query=""}}>{{link.name}}</LinkTo>
     {{/each}}
   </div>
   <form {{on "submit" this.searchByWildcard}} class="search-box">

@@ -4,7 +4,7 @@
     <h1 class="text-hero-xl">Ember Help Wanted</h1>
     <div class="help-wanted-links">
       {{#each this.navLinks.navLinks as |link|}}
-        <LinkTo class="es-button" @route={{link.route}} @model={{link.model}}>{{link.name}}</LinkTo>
+        <LinkTo class="es-button" @route={{link.route}} @model={{link.model}} @query={{hash query=""}}>{{link.name}}</LinkTo>
       {{/each}}
     </div>
   </div>

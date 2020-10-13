@@ -4,13 +4,12 @@ import { inject as service } from '@ember/service';
 import { action } from '@ember/object';
 
 export default Controller.extend({
+  navLinks: service(),
+
   queryParams: ['query', 'label'],
   query: '',
   label: '',
-
-  navLinks: service(),
-
-  queryInput: computed.reads('query'),
+  queryInput: '',  // TODO: Track this
 
   clearMessage: computed('label', function() {
     return `Clear search filter ${this.label}`;
@@ -18,6 +17,7 @@ export default Controller.extend({
 
   @action searchByWildcard(event) {
     event.preventDefault();
+
     this.set('query', this.queryInput);
   }
 });
