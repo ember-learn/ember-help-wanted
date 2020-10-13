@@ -43,7 +43,7 @@
               updated <b>{{moment-from-now issue.updatedAt}}</b>
             </p>
             {{#each issue.labels as |lb|}}
-              <button class="github-label-button" {{action (mut this.label) lb.name}} data-test-github-issue-filter-label>
+              <button class="github-label-button" {{action (mut this.label) lb.name}} data-test-github-issue-filter-label type="button">
                 <GithubLabel @label={{lb.name}} @labelColor={{lb.color}} />
               </button>
             {{/each}}
