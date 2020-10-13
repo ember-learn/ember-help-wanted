@@ -1,6 +1,7 @@
 import Controller from '@ember/controller';
 import { computed } from '@ember/object';
 import { inject as service } from '@ember/service';
+import { action } from '@ember/object';
 
 export default Controller.extend({
   queryParams: ['query', 'label'],
@@ -17,9 +18,8 @@ export default Controller.extend({
     return `Clear search filter ${this.label}`;
   }),
 
-  actions: {
-    searchByWildcard(query) {
-      this.set('query', query);
-    }
+  @action searchByWildcard(event) {
+    event.preventDefault();
+    this.set('query', this.queryInput);
   }
 });
