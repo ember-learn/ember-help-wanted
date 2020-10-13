@@ -21,9 +21,6 @@ module.exports = {
     browser: true
   },
   rules: {
-    'ember/no-get': 'off',
-    'ember/require-computed-macros': 'off',
-    'ember/use-ember-data-rfc-395-imports': 'off',
   },
   globals: {
     server: true

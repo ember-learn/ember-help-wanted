@@ -4,7 +4,7 @@
       <LinkTo class="es-button" @route={{link.route}} @model={{link.model}}>{{link.name}}</LinkTo>
     {{/each}}
   </div>
-  <form {{action "searchByWildcard" this.queryInput on="submit"}} class="search-box">
+  <form {{on "submit" this.searchByWildcard}} class="search-box">
     <label for="search-input-issues" class="search-label">Keyword</label>
     <Input id="search-input-issues" class="search-input" @value={{this.queryInput}} />
     <EsButton @type="submit" @label="Search" class="search-button" />
@@ -16,7 +16,9 @@
           @label="Clear filter"
           aria-label={{this.clearMessage}}
           title={{this.clearMessage}}
-          {{action (mut this.label) null}} @secondary={{true}} />
+          @onClicked={{fn (mut this.label) null}}
+          @secondary={{true}}
+        />
       </div>
     {{/if}}
   </form>
@@ -34,22 +36,22 @@
           data-test-github-issue={{issue.number}}>
           <header>
             <h3 class="text-lg">
-              <a target="_blank" rel="noopener" href={{issue.htmlUrl}} data-test-github-issue-title>{{issue.title}}</a>
+              <a target="_blank" rel="noopener noreferrer" href={{issue.htmlUrl}} data-test-github-issue-title>{{issue.title}}</a>
             </h3>
           </header>
           <section>
             <p>
-              in <a target="_blank" rel="noopener" href={{issue.repositoryHtml}} data-test-github-issue-project>{{issue.repositoryName}}</a>,
+              in <a target="_blank" rel="noopener noreferrer" href={{issue.repositoryHtml}} data-test-github-issue-project>{{issue.repositoryName}}</a>,
               updated <b>{{moment-from-now issue.updatedAt}}</b>
             </p>
             {{#each issue.labels as |lb|}}
-              <button class="github-label-button" {{action (mut this.label) lb.name}} data-test-github-issue-filter-label>
-                {{github-label label=lb.name labelColor=lb.color}}
+              <button class="github-label-button" {{on "click" (fn (mut this.label) lb.name)}} data-test-github-issue-filter-label type="button">
+                <GithubLabel @label={{lb.name}} @labelColor={{lb.color}} />
               </button>
             {{/each}}
             <br>
             <p class="github-issue-number">
-              <a class="text-white" target="_blank" rel="noopener" href={{issue.htmlUrl}} data-test-github-issue-side-link>#{{issue.number}}</a>
+              <a class="text-white" target="_blank" rel="noopener noreferrer" href={{issue.htmlUrl}} data-test-github-issue-side-link>#{{issue.number}}</a>
             </p>
           </section>
         </EsCard>

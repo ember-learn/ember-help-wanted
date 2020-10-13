@@ -1,5 +1,4 @@
-import Model from 'ember-data/model';
-import attr from 'ember-data/attr';
+import Model, { attr } from '@ember-data/model';
 import { computed } from '@ember/object';
 import moment from 'moment';
 
@@ -19,7 +18,7 @@ export default Model.extend({
   labels: attr(),
 
   updatedAtFormatted: computed('updatedAt', function() {
-    let updatedAt = this.get('updatedAt');
+    let updatedAt = this.updatedAt;
     return moment(updatedAt).format('MM-DD-YYYY hh:mm Z');
   })
 });

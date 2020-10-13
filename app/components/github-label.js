@@ -9,7 +9,7 @@ export default Component.extend({
   attributeBindings: ['style'],
 
   style: computed('labelColor', function() {
-    let labelColor = this.get('labelColor');
+    let labelColor = this.labelColor;
     let color = invert(`#${labelColor}`, true);
     return htmlSafe(`background-color: #${labelColor}; color: ${color};`);
   })

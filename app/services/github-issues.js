@@ -49,7 +49,7 @@ export default Service.extend({
   store: service('store'),
 
   findAllFromCategory(category) {
-    return this.get('store').query('github-issue', {
+    return this.store.query('github-issue', {
       group: category
     }).then((allIssues) => {
       return allIssues.sortBy('updatedAt').reverse();
