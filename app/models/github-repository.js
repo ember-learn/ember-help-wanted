@@ -6,7 +6,7 @@ export default githubRepository.extend({
   archived: attr('string'),
 
   displayName: computed('fullName', function() {
-    let getName = this.get('fullName');
+    let getName = this.fullName;
     return getName.split('/')[1];
   })
 });

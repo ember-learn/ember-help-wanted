@@ -18,7 +18,7 @@ export default Model.extend({
   labels: attr(),
 
   updatedAtFormatted: computed('updatedAt', function() {
-    let updatedAt = this.get('updatedAt');
+    let updatedAt = this.updatedAt;
     return moment(updatedAt).format('MM-DD-YYYY hh:mm Z');
   })
 });

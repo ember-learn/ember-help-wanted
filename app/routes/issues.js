@@ -50,7 +50,7 @@ export default Route.extend({
   },
 
   _findAllFromCategory(category) {
-    const GithubIssues = this.get('githubIssues');
+    const GithubIssues = this.githubIssues;
     return GithubIssues.findAllFromCategory(category);
   },
 
@@ -72,7 +72,7 @@ export default Route.extend({
   },
 
   _isInCategory(category, repo) {
-    const GithubIssues = this.get('githubIssues');
+    const GithubIssues = this.githubIssues;
     let categoryRepos = GithubIssues.fetchCategoryRepos(category);
     return categoryRepos.isAny('repo', repo);
   }
