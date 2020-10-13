@@ -20,7 +20,7 @@
               class="lg:col-3 bg-dark"
               @href="{{repo.htmlUrl}}/issues?q=is%3Aissue+is%3Aopen+label%3A%22Help+Wanted%22+sort%3Acreate-date"
               @title={{repo.displayName}}>
-              <p>Forks: {{if repo.forks repo.forks "No forks"}}</p>
+              <p>Forks: {{repo.forks}}</p>
             </EsLinkCard>
           {{/each}}
         </ul>
