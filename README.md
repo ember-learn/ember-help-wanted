@@ -1,13 +1,15 @@
-# Ember-Help-Wanted
+[![This project uses GitHub Actions for continuous integration.](https://github.com/ember-learn/ember-help-wanted/workflows/CI/badge.svg)](https://github.com/ember-learn/ember-help-wanted/actions?query=workflow%3ACI)
 
-This app is designed to help new folks to the Ember ecosystem find issues to work on
-that most need help.  The goal would be for this to work well for project nights for 
-meetups, conferences and anyone else interested in hacking on various projects while
-also helping the main Ember repositories get much needed help with issues.
+ember-help-wanted
+==============================================================================
 
-The goal is for this app to interface with https://github.com/ember-learn/ember-help-wanted-server as the backend.
+This app helps you find Ember-related issues and contribute to open source. It works well for project nights for meetups, conferences, and hackathons.
 
-## Big picture aim of this app
+The app is designed to interface with [ember-help-wanted-server](https://github.com/ember-learn/ember-help-wanted-server) as the backend.
+
+
+Big picture
+------------------------------------------------------------------------------
 
 Our goal with this app is to do two major things in the Ember community.
 
@@ -33,7 +35,9 @@ and made generally available. This might also increase the number of regular
 contributors to various projects, which in turn could help the entire community
 accomplish ambitious things faster.
 
-## Big picture technically
+
+Big picture, technically
+------------------------------------------------------------------------------
 
 To accomplish the above, we aim to have [a Node backend](https://github.com/ember-learn/ember-help-wanted-server)
 that receives Github webhook notifications about issues across a number of Ember
@@ -45,7 +49,9 @@ and filtered in various ways as each potential contributor desires.  We may
 add some level of curation to the issues (whether that is needed is still to be
 determined) or in other ways editorialize as issues show up in the app.
 
-## Future goals
+
+Future goals
+------------------------------------------------------------------------------
 
 We hope that meetup organizers (and contributor workshops at various Ember
 conferences) are able to sort through issues and pick subsets for their meetings. For example,
@@ -60,7 +66,10 @@ Long-term, we also wonder about tweeting out major new issues or in other ways
 exposing key pieces of info to the greater Ember world (we could potentially use it
 as a way of posting "maintainer wanted" messages as well).
 
-## More immediately
+
+More immediately
+------------------------------------------------------------------------------
+
 But first, we have to build this tool. Which is where we hope (o reader), you
 come in :grinning:.  Currently, we organize our issues using milestones
 and are [close to being done with the MVP](https://github.com/ember-learn/ember-help-wanted/issues?q=is%3Aopen+is%3Aissue+milestone%3AMVP) of this tool.  After that, we'd like
@@ -70,24 +79,29 @@ If you're interested, please speak up on issues or contact us on the Ember Commu
 Discord `#st-help-wanted-board` channel.  Look forward to working on these things with you
 further!
 
-## Prerequisites
+
+Prerequisites
+------------------------------------------------------------------------------
 
 You will need the following things properly installed on your computer.
 
 * [Git](https://git-scm.com/)
-* [Node.js](https://nodejs.org/) (with npm)
-* [Bower](https://bower.io/)
+* [Node.js](https://nodejs.org/)
+* [Yarn](https://yarnpkg.com/)
 * [Ember CLI](https://ember-cli.com/)
 * [Google Chrome](https://google.com/chrome/)
 
-## Installation
+
+Installation
+------------------------------------------------------------------------------
 
 * `git clone <repository-url>` this repository
 * `cd ember-help-wanted`
-* `npm install`
-* `bower install`
+* `yarn install`
 
-## Running / Development
+
+Running / Development
+------------------------------------------------------------------------------
 
 * `ember serve`
 * Visit your app at [http://localhost:4200](http://localhost:4200).
@@ -95,10 +109,13 @@ You will need the following things properly installed on your computer.
 
 By default we have an api-proxy that uses the production API when developing
 locally, so you don't need to run the ember-help-wanted-server when editing the
-Ember frontend. If you are developing the backend and want your local Ember
-frontend to hit your local server then you can start the server like this:
+Ember frontend.
 
-`LOCAL_API=true ember s`
+If you are developing the backend and want your local Ember frontend to hit your local server, then you can start the server like this:
+
+```bash
+LOCAL_API=true ember s
+```
 
 ### Code Generators
 
@@ -106,14 +123,13 @@ Make use of the many generators for code, try `ember help generate` for more det
 
 ### Running Tests
 
-* `ember test`
-* `ember test --server`
+* `yarn test`
+* `yarn test --server`
 
 ### Linting
 
-* `npm run lint:hbs`
-* `npm run lint:js`
-* `npm run lint:js -- --fix`
+* `yarn lint`
+* `yarn lint:js --fix`
 
 ### Building
 
@@ -124,7 +140,9 @@ Make use of the many generators for code, try `ember help generate` for more det
 
 Specify what it takes to deploy your app.
 
-## Further Reading / Useful Links
+
+Further Reading / Useful Links
+------------------------------------------------------------------------------
 
 * [ember.js](https://emberjs.com/)
 * [ember-cli](https://ember-cli.com/)
