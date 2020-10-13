@@ -1,7 +1,5 @@
 import GithubSerializer from 'ember-data-github/serializers/github';
-import DS from 'ember-data';
-
-const { EmbeddedRecordsMixin } = DS;
+import { EmbeddedRecordsMixin } from '@ember-data/serializer/rest';
 
 export default GithubSerializer.extend(EmbeddedRecordsMixin, {
   attrs: {
