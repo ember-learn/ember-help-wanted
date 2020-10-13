@@ -22,6 +22,12 @@ export default Route.extend({
     return this._findAllFromCategory(params.category);
   },
 
+  setupController(controller, model) {
+    this._super(controller, model);
+
+    controller.queryInput = '';
+  },
+
   _filter(params) {
     let issues = this.store.peekAll('github-issue');
     if (issues.length) {
