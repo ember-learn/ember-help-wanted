@@ -10,9 +10,7 @@ export default Controller.extend({
 
   navLinks: service(),
 
-  queryInput: computed('query', function() {
-    return this.get('query');
-  }),
+  queryInput: computed.reads('query'),
 
   clearMessage: computed('label', function() {
     return `Clear search filter ${this.label}`;

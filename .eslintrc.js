@@ -22,7 +22,6 @@ module.exports = {
   },
   rules: {
     'ember/no-get': 'off',
-    'ember/require-computed-macros': 'off',
   },
   globals: {
     server: true
