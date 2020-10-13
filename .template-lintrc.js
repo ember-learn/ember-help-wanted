@@ -10,7 +10,6 @@ module.exports = {
       and remove the rule exceptions one by one.
     */
     'no-action': false,
-    'no-negated-condition': false,
     'require-button-type': false,
     'require-valid-alt-text': false,
   }
