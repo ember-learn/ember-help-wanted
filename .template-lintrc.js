@@ -10,6 +10,5 @@ module.exports = {
       and remove the rule exceptions one by one.
     */
     'no-action': false,
-    'require-valid-alt-text': false,
   }
 };
