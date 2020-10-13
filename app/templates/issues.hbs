@@ -44,7 +44,7 @@
             </p>
             {{#each issue.labels as |lb|}}
               <button class="github-label-button" {{action (mut this.label) lb.name}} data-test-github-issue-filter-label>
-                {{github-label label=lb.name labelColor=lb.color}}
+                <GithubLabel @label={{lb.name}} @labelColor={{lb.color}} />
               </button>
             {{/each}}
             <br>
