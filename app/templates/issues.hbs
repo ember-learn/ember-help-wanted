@@ -46,7 +46,7 @@
             </p>
             {{#each issue.labels as |lb|}}
               <button class="github-label-button" {{on "click" (fn (mut this.label) lb.name)}} data-test-github-issue-filter-label type="button">
-                <GithubLabel @label={{lb.name}} @labelColor={{lb.color}} />
+                <GithubLabel @label={{lb.name}} @backgroundColor={{lb.color}} />
               </button>
             {{/each}}
             <br>

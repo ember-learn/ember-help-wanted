@@ -1,16 +1,11 @@
-import Component from '@ember/component';
-import { computed } from '@ember/object';
+import Component from '@glimmer/component';
 import { htmlSafe } from '@ember/string';
 import invert from 'invert-color';
 
-export default Component.extend({
-  classNames: ['github-label'],
-  tagName: 'span',
-  attributeBindings: ['style'],
-
-  style: computed('labelColor', function() {
-    let labelColor = this.labelColor;
-    let color = invert(`#${labelColor}`, true);
-    return htmlSafe(`background-color: #${labelColor}; color: ${color};`);
-  })
-});
+export default class GithubLabelComponent extends Component {
+  get styleForLabel() {
+    const backgroundColor = this.args.backgroundColor;
+    const color = invert(`#${backgroundColor}`, true);
+    return htmlSafe(`background-color: #${backgroundColor}; color: ${color};`);
+  }
+}
