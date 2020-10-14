@@ -1,0 +1,13 @@
+<div class="help-wanted-links">
+  {{#each this.filterNames as |filterName|}}
+    <LinkTo
+      class="es-button"
+      data-test-link={{filterName}}
+      @route="issues"
+      @model={{filterName}}
+      @query={{hash query=""}}
+    >
+      {{filterName}}
+    </LinkTo>
+  {{/each}}
+</div>
