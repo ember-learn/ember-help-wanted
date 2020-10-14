@@ -2,11 +2,7 @@
   <div class="herounit mb-4 pt-4">
     <img src="../images/ember-help-wanted-logo.svg" alt="" role="presentation">
     <h1 class="text-hero-xl">Ember Help Wanted</h1>
-    <div class="help-wanted-links">
-      {{#each this.navLinks.navLinks as |link|}}
-        <LinkTo class="es-button" @route={{link.route}} @model={{link.model}} @query={{hash query=""}}>{{link.name}}</LinkTo>
-      {{/each}}
-    </div>
+    <FilterMenu />
   </div>
   <div class="section bg-light-muted">
     <div class="article container d-flex flex-column">
