@@ -1,5 +1,5 @@
 [![This project uses GitHub Actions for continuous integration.](https://github.com/ember-learn/ember-help-wanted/workflows/CI/badge.svg)](https://github.com/ember-learn/ember-help-wanted/actions?query=workflow%3ACI)
-
+Awesome Project
 ember-help-wanted
 ==============================================================================
 
