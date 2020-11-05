@@ -11,12 +11,12 @@
       </h2>
       <div class="row">
         <ul class="list-unstyled layout">
-          {{#each this.model as | repo |}}
+          {{#each @model as |githubRepository|}}
             <EsLinkCard
               class="lg:col-3 bg-dark"
-              @href="{{repo.htmlUrl}}/issues?q=is%3Aissue+is%3Aopen+label%3A%22Help+Wanted%22+sort%3Acreate-date"
-              @title={{repo.displayName}}>
-              <p>Forks: {{repo.forks}}</p>
+              @href="{{githubRepository.htmlUrl}}/issues?q=is%3Aissue+is%3Aopen+label%3A%22Help+Wanted%22+sort%3Acreate-date"
+              @title={{githubRepository.name}}>
+              <p>Forks: {{githubRepository.forksCount}}</p>
             </EsLinkCard>
           {{/each}}
         </ul>
