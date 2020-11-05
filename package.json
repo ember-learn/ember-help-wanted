@@ -18,7 +18,7 @@
     "lint:js": "eslint .",
     "start": "ember serve",
     "test": "npm-run-all test:*",
-    "test:ember": "ember test"
+    "test:ember": "percy exec -- ember test"
   },
   "devDependencies": {
     "@ember/optional-features": "^2.0.0",
