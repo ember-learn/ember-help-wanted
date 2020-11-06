@@ -1,4 +1,5 @@
 import { click, currentURL, find, visit } from '@ember/test-helpers';
+import percySnapshot from '@percy/ember';
 import { setupMirage } from 'ember-cli-mirage/test-support';
 import { setupApplicationTest } from 'ember-qunit';
 import loadDefaultScenario from 'ember-help-wanted/mirage/scenarios/default';
@@ -10,6 +11,14 @@ module('Acceptance | index', function(hooks) {
 
   hooks.beforeEach(function() {
     loadDefaultScenario(this.server);
+  });
+
+
+  test('Percy snapshot', async function(assert) {
+    await visit('/');
+    await percySnapshot(assert);
+
+    assert.ok(true);
   });
 
 
