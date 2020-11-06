@@ -1,12 +1,10 @@
-import githubRepository from 'ember-data-github/models/github-repository';
-import { computed } from '@ember/object';
-import { attr } from '@ember-data/model';
+import Model, { attr } from '@ember-data/model';
 
-export default githubRepository.extend({
-  archived: attr('string'),
-
-  displayName: computed('fullName', function() {
-    let getName = this.fullName;
-    return getName.split('/')[1];
-  })
-});
+export default class GithubRepositoryModel extends Model {
+  @attr('string') description;
+  @attr('number') forksCount;
+  @attr('string') fullName;
+  @attr('string') htmlUrl;
+  @attr('string') name;
+  @attr('number') openIssuesCount;
+}

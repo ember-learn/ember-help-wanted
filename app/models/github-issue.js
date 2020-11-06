@@ -1,24 +1,24 @@
 import Model, { attr } from '@ember-data/model';
-import { computed } from '@ember/object';
-import moment from 'moment';
 
-export default Model.extend({
-  number: attr('number'),
-  title: attr('string'),
-  state: attr('string'),
-  createdAt: attr('date'),
-  updatedAt: attr('date'),
-  body: attr('string'),
-  repositoryName: attr('string'),
-  url: attr('string'),
-  htmlUrl: attr('string'),
-  repositoryHtml: attr('string'),
-  repositoryUrl: attr('string'),
+const API_URL = 'https://api.github.com/repos/';
 
-  labels: attr(),
+export default class GithubIssueModel extends Model {
+  @attr('string') htmlUrl;
+  @attr() labels;
+  @attr('number') number;
+  @attr('string') repositoryUrl;
+  @attr('string') title;
+  @attr('date') updatedAt;
 
-  updatedAtFormatted: computed('updatedAt', function() {
-    let updatedAt = this.updatedAt;
-    return moment(updatedAt).format('MM-DD-YYYY hh:mm Z');
-  })
-});
+  get repositoryHtml() {
+    const url = this.repositoryUrl ?? '';
+
+    return url.replace(API_URL, 'https://github.com/');
+  }
+
+  get repositoryName() {
+    const url = this.repositoryUrl ?? '';
+
+    return url.replace(API_URL, '');
+  }
+}

@@ -4842,7 +4842,7 @@ ember-cli-babel-plugin-helpers@^1.0.0, ember-cli-babel-plugin-helpers@^1.1.0:
   resolved "https://registry.yarnpkg.com/ember-cli-babel-plugin-helpers/-/ember-cli-babel-plugin-helpers-1.1.1.tgz#5016b80cdef37036c4282eef2d863e1d73576879"
   integrity sha512-sKvOiPNHr5F/60NLd7SFzMpYPte/nnGkq/tMIfXejfKHIhaiIkYFqX8Z9UFTKWLLn+V7NOaby6niNPZUdvKCRw==
 
-ember-cli-babel@^6.0.0-beta.4, ember-cli-babel@^6.16.0, ember-cli-babel@^6.3.0, ember-cli-babel@^6.6.0, ember-cli-babel@^6.7.2, ember-cli-babel@^6.8.1, ember-cli-babel@^6.9.0:
+ember-cli-babel@^6.0.0-beta.4, ember-cli-babel@^6.16.0, ember-cli-babel@^6.3.0, ember-cli-babel@^6.6.0, ember-cli-babel@^6.7.2, ember-cli-babel@^6.8.1:
   version "6.18.0"
   resolved "https://registry.yarnpkg.com/ember-cli-babel/-/ember-cli-babel-6.18.0.tgz#3f6435fd275172edeff2b634ee7b29ce74318957"
   integrity sha512-7ceC8joNYxY2wES16iIBlbPSxwKDBhYwC8drU3ZEvuPDMwVv1KzxCNu1fvxyFEBWhwaRNTUxSCsEVoTd9nosGA==
@@ -5310,16 +5310,6 @@ ember-compatibility-helpers@^1.1.1, ember-compatibility-helpers@^1.1.2, ember-co
     ember-cli-version-checker "^2.1.1"
     semver "^5.4.1"
 
-ember-data-github@^0.9.0:
-  version "0.9.0"
-  resolved "https://registry.yarnpkg.com/ember-data-github/-/ember-data-github-0.9.0.tgz#6e4776a502f284bf5ef462d51660c52b5728bdc3"
-  integrity sha512-Nj9kQ5aTTupU5kxOjmgBjU6hadFEwyPWMZk5fFjQVyzps/qlUD2NxBtuoo8ZDM38qrHQ9ZdcEa1Gj74yx2c8lA==
-  dependencies:
-    broccoli-funnel "^2.0.1"
-    broccoli-merge-trees "^3.0.1"
-    ember-cli-babel "^6.9.0"
-    ember-inflector "^3.0.1"
-
 ember-data@~3.21.0:
   version "3.21.2"
   resolved "https://registry.yarnpkg.com/ember-data/-/ember-data-3.21.2.tgz#d3537319a8d1c80a8a567f08d86b740722d502fe"
@@ -5610,6 +5600,15 @@ ember-template-recast@^4.2.0:
     slash "^3.0.0"
     tmp "^0.2.1"
     workerpool "^6.0.1"
+
+ember-test-selectors@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/ember-test-selectors/-/ember-test-selectors-5.0.0.tgz#36c30f64498039cb88797cdda682275a460ee624"
+  integrity sha512-hqAPqyJLEGBYcQ9phOKvHhSCyvcSbUL8Yj2si8OASsQWxwRqbxrtk5YlkN2aZiZdp9PAd2wErS8uClG0U7tNpA==
+  dependencies:
+    calculate-cache-key-for-tree "^2.0.0"
+    ember-cli-babel "^7.22.1"
+    ember-cli-version-checker "^5.1.1"
 
 ember-test-waiters@^1.1.1:
   version "1.2.0"
@@ -6205,11 +6204,6 @@ fake-xml-http-request@^2.1.1:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/fake-xml-http-request/-/fake-xml-http-request-2.1.1.tgz#279fdac235840d7a4dff77d98ec44bce9fc690a6"
   integrity sha512-Kn2WYYS6cDBS5jq/voOfSGCA0TafOYAUPbEp8mUVpD/DVV5bQIDjlq+MLLvNUokkbTpjBVlLDaM5PnX+PwZMlw==
-
-faker@^5.1.0:
-  version "5.1.0"
-  resolved "https://registry.yarnpkg.com/faker/-/faker-5.1.0.tgz#e10fa1dec4502551aee0eb771617a7e7b94692e8"
-  integrity sha512-RrWKFSSA/aNLP0g3o2WW1Zez7/MnMr7xkiZmoCfAGZmdkDQZ6l2KtuXHN5XjdvpRjDl8+3vf+Rrtl06Z352+Mw==
 
 fast-deep-equal@^3.1.1:
   version "3.1.3"
