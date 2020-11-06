@@ -1,5 +1,6 @@
 import { click, currentURL, visit } from '@ember/test-helpers';
 import percySnapshot from '@percy/ember';
+import FakeTimers from '@sinonjs/fake-timers';
 import { setupMirage } from 'ember-cli-mirage/test-support';
 import { setupApplicationTest } from 'ember-qunit';
 import loadDefaultScenario from 'ember-help-wanted/mirage/scenarios/default';
@@ -11,6 +12,15 @@ module('Acceptance | issues', function(hooks) {
 
   hooks.beforeEach(function() {
     loadDefaultScenario(this.server);
+
+    this.clock = FakeTimers.install({
+      now: new Date('2020-11-05T20:59:54Z'),
+      shouldAdvanceTime: true,
+    });
+  });
+
+  hooks.afterEach(function() {
+    this.clock.uninstall();
   });
 
 

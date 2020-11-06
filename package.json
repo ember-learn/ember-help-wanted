@@ -25,6 +25,7 @@
     "@glimmer/component": "^1.0.1",
     "@glimmer/tracking": "^1.0.1",
     "@percy/ember": "^2.1.4",
+    "@sinonjs/fake-timers": "^6.0.1",
     "babel-eslint": "^10.1.0",
     "bootstrap-sass": "^3.4.1",
     "broccoli-asset-rev": "^3.0.0",
