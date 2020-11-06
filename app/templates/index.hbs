@@ -14,8 +14,10 @@
           {{#each @model as |githubRepository|}}
             <EsLinkCard
               class="lg:col-3 bg-dark"
+              data-test-github-repository={{githubRepository.name}}
               @href="{{githubRepository.htmlUrl}}/issues?q=is%3Aissue+is%3Aopen+label%3A%22Help+Wanted%22+sort%3Acreate-date"
-              @title={{githubRepository.name}}>
+              @title={{githubRepository.name}}
+            >
               <p>Forks: {{githubRepository.forksCount}}</p>
             </EsLinkCard>
           {{/each}}

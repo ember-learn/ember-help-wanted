@@ -29,25 +29,54 @@
       {{#each @model as |githubIssue|}}
         <EsCard
           class="bg-white pt-2"
-          data-test-github-issue={{githubIssue.number}}>
+          data-test-github-issue={{githubIssue.number}}
+        >
           <header>
             <h3 class="text-lg">
-              <a target="_blank" rel="noopener noreferrer" href={{githubIssue.htmlUrl}} data-test-github-issue-title>{{githubIssue.title}}</a>
+              <a
+                href={{githubIssue.htmlUrl}}
+                data-test-field="Title"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                {{githubIssue.title}}
+              </a>
             </h3>
           </header>
           <section>
             <p>
-              in <a target="_blank" rel="noopener noreferrer" href={{githubIssue.repositoryHtml}} data-test-github-issue-project>{{githubIssue.repositoryName}}</a>,
+              in
+              <a
+                href={{githubIssue.repositoryHtml}}
+                data-test-field="Repository Name"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                {{githubIssue.repositoryName}}
+              </a>,
               updated <b>{{moment-from-now githubIssue.updatedAt}}</b>
             </p>
             {{#each githubIssue.labels as |label|}}
-              <button class="github-label-button" {{on "click" (fn (mut this.label) label.name)}} data-test-github-issue-filter-label type="button">
+              <button
+                class="github-label-button"
+                data-test-button={{label.name}}
+                type="button"
+                {{on "click" (fn (mut this.label) label.name)}}
+              >
                 <GithubLabel @label={{label.name}} @backgroundColor={{label.color}} />
               </button>
             {{/each}}
             <br>
             <p class="github-issue-number">
-              <a class="text-white" target="_blank" rel="noopener noreferrer" href={{githubIssue.htmlUrl}} data-test-github-issue-side-link>#{{githubIssue.number}}</a>
+              <a
+                class="text-white"
+                data-test-field="Issue Number"
+                href={{githubIssue.htmlUrl}}
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                #{{githubIssue.number}}
+              </a>
             </p>
           </section>
         </EsCard>
