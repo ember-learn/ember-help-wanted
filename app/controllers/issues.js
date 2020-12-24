@@ -1,3 +1,4 @@
+/* eslint-disable ember/no-classic-classes */
 import Controller from '@ember/controller';
 import { computed } from '@ember/object';
 import { action } from '@ember/object';
