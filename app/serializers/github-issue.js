@@ -8,9 +8,15 @@ export default class GithubIssueSerializer extends RESTSerializer {
 
   normalizeQueryResponse(store, primaryModelClass, payload, id, requestType) {
     const newPayload = {
-      githubIssues: payload
+      githubIssues: payload,
     };
 
-    return super.normalizeQueryResponse(store, primaryModelClass, newPayload, id, requestType);
+    return super.normalizeQueryResponse(
+      store,
+      primaryModelClass,
+      newPayload,
+      id,
+      requestType
+    );
   }
 }

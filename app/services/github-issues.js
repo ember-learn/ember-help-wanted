@@ -14,7 +14,7 @@ let core = [
   { repo: 'emberjs/ember-optional-features', labels: 'help wanted' },
   { repo: 'emberjs/ember-optional-features', labels: 'good first issue' },
   { repo: 'emberjs/website', labels: 'help wanted' },
-  { repo: 'emberjs/website', labels: 'good first issue' }
+  { repo: 'emberjs/website', labels: 'good first issue' },
 ];
 
 let learning = [
@@ -22,7 +22,7 @@ let learning = [
   { repo: 'ember-learn/guides-source', labels: 'help wanted' },
   { repo: 'ember-learn/ember-api-docs', labels: 'help wanted' },
   { repo: 'ember-learn/ember-website', labels: 'help wanted' },
-  { repo: 'ember-learn/deprecation-app', labels: 'help wanted' }
+  { repo: 'ember-learn/deprecation-app', labels: 'help wanted' },
 ];
 
 let community = [
@@ -31,17 +31,17 @@ let community = [
   { repo: 'ember-engines/ember-engines', labels: 'help wanted' },
   { repo: 'miguelcobain/ember-paper', labels: 'help wanted' },
   { repo: 'miguelcobain/ember-leaflet', labels: 'help wanted' },
-  { repo: 'machty/ember-concurrency', labels: 'good first issue' }
+  { repo: 'machty/ember-concurrency', labels: 'good first issue' },
 ];
 
 let rfcs = [
   { repo: 'emberjs/rfcs', labels: 'Final Comment Period' },
-  { repo: 'emberjs/rfcs', labels: 'Needs Champion' }
+  { repo: 'emberjs/rfcs', labels: 'Needs Champion' },
 ];
 
 let emberHelpWanted = [
   { repo: 'ember-learn/ember-help-wanted', labels: 'help wanted' },
-  { repo: 'ember-learn/ember-help-wanted', labels: 'good first issue' }
+  { repo: 'ember-learn/ember-help-wanted', labels: 'good first issue' },
 ];
 
 let categoryRepos = { core, learning, community, rfcs, emberHelpWanted };
@@ -50,18 +50,21 @@ export default Service.extend({
   store: service('store'),
 
   findAllFromCategory(category) {
-    return this.store.query('github-issue', {
-      group: category
-    }).then((allIssues) => {
-      return allIssues.sortBy('updatedAt').reverse();
-    }).catch((error) => {
-      // eslint-disable-next-line no-console
-      console.error(error);
-      return [];
-    });
+    return this.store
+      .query('github-issue', {
+        group: category,
+      })
+      .then((allIssues) => {
+        return allIssues.sortBy('updatedAt').reverse();
+      })
+      .catch((error) => {
+        // eslint-disable-next-line no-console
+        console.error(error);
+        return [];
+      });
   },
 
   fetchCategoryRepos(categoryName) {
     return categoryRepos[categoryName];
-  }
+  },
 });

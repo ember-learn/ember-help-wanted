@@ -7,15 +7,16 @@ export default Controller.extend({
   queryParams: ['query', 'label'],
   query: '',
   label: '',
-  queryInput: '',  // TODO: Track this
+  queryInput: '', // TODO: Track this
 
-  clearMessage: computed('label', function() {
+  clearMessage: computed('label', function () {
     return `Clear search filter ${this.label}`;
   }),
 
-  @action searchByWildcard(event) {
+  @action
+  searchByWildcard(event) {
     event.preventDefault();
 
     this.set('query', this.queryInput);
-  }
+  },
 });

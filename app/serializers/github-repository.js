@@ -8,9 +8,15 @@ export default class GithubRepositorySerializer extends RESTSerializer {
 
   normalizeFindAllResponse(store, primaryModelClass, payload, id, requestType) {
     const newPayload = {
-      githubRepositories: payload
+      githubRepositories: payload,
     };
 
-    return super.normalizeFindAllResponse(store, primaryModelClass, newPayload, id, requestType);
+    return super.normalizeFindAllResponse(
+      store,
+      primaryModelClass,
+      newPayload,
+      id,
+      requestType
+    );
   }
 }

@@ -7,12 +7,12 @@ export default Route.extend({
 
   queryParams: {
     query: {
-      refreshModel: true
+      refreshModel: true,
     },
 
     label: {
-      refreshModel: true
-    }
+      refreshModel: true,
+    },
   },
 
   model(params) {
@@ -33,7 +33,9 @@ export default Route.extend({
     let issues = this.store.peekAll('github-issue');
     if (issues.length) {
       if (params.query) {
-        issues = issues.filter(this._matchWildcard(params.category, params.query));
+        issues = issues.filter(
+          this._matchWildcard(params.category, params.query)
+        );
       }
 
       if (params.label) {
@@ -45,11 +47,15 @@ export default Route.extend({
 
     return this._findAllFromCategory(params.category).then((allResults) => {
       if (params.query) {
-        allResults = allResults.filter(this._matchWildcard(params.category, params.query));
+        allResults = allResults.filter(
+          this._matchWildcard(params.category, params.query)
+        );
       }
 
       if (params.label) {
-        allResults = allResults.filter(this._matchLabel(params.category, params.label));
+        allResults = allResults.filter(
+          this._matchLabel(params.category, params.label)
+        );
       }
 
       return allResults;
@@ -63,7 +69,10 @@ export default Route.extend({
 
   _matchWildcard(category, query) {
     return (issue) => {
-      let inCategory = this._isInCategory(category, issue.get('repositoryName'));
+      let inCategory = this._isInCategory(
+        category,
+        issue.get('repositoryName')
+      );
       let inTitle = issue.get('title').includes(query);
       let inBody = issue.get('body').includes(query);
       return inCategory && (inTitle || inBody);
@@ -72,8 +81,14 @@ export default Route.extend({
 
   _matchLabel(category, label) {
     return (issue) => {
-      let inCategory = this._isInCategory(category, issue.get('repositoryName'));
-      let included = issue.get('labels').map((lb) => lb.name).includes(label);
+      let inCategory = this._isInCategory(
+        category,
+        issue.get('repositoryName')
+      );
+      let included = issue
+        .get('labels')
+        .map((lb) => lb.name)
+        .includes(label);
       return inCategory && included;
     };
   },
@@ -82,5 +97,5 @@ export default Route.extend({
     const GithubIssues = this.githubIssues;
     let categoryRepos = GithubIssues.fetchCategoryRepos(category);
     return categoryRepos.isAny('repo', repo);
-  }
+  },
 });

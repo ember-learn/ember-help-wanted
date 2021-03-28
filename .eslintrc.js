@@ -19,10 +19,9 @@ module.exports = {
   env: {
     browser: true,
   },
-  rules: {
-  },
+  rules: {},
   globals: {
-    server: true
+    server: true,
   },
   overrides: [
     // node files
