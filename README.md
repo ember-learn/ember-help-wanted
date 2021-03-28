@@ -67,18 +67,9 @@ Long-term, we also wonder about tweeting out major new issues or in other ways
 exposing key pieces of info to the greater Ember world (we could potentially use it
 as a way of posting "maintainer wanted" messages as well).
 
-
-More immediately
-------------------------------------------------------------------------------
-
-But first, we have to build this tool. Which is where we hope (o reader), you
-come in :grinning:.  Currently, we organize our issues using milestones
-and are [close to being done with the MVP](https://github.com/ember-learn/ember-help-wanted/issues?q=is%3Aopen+is%3Aissue+milestone%3AMVP) of this tool.  After that, we'd like
-to [work through v1](https://github.com/ember-learn/ember-help-wanted/issues?q=is%3Aopen+is%3Aissue+milestone%3Av1)
-
-If you're interested, please speak up on issues or contact us on the Ember Community
-Discord `#st-help-wanted-board` channel.  Look forward to working on these things with you
-further!
+If you're interested in helping out or have other ideas on how to improve this, please
+write up an issue or contact us on the Ember Community Discord `#st-help-wanted-board`
+channel.  Look forward to working on these things with you further!
 
 
 Prerequisites
