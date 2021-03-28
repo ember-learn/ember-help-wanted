@@ -1,14 +1,15 @@
 import { setupTest } from 'ember-qunit';
 import { module, test } from 'qunit';
 
-module('Unit | Model | github issue', function(hooks) {
+module('Unit | Model | github issue', function (hooks) {
   setupTest(hooks);
 
-  test('repositoryHtml returns the GitHub repo\'s URL', function(assert) {
+  test("repositoryHtml returns the GitHub repo's URL", function (assert) {
     const store = this.owner.lookup('service:store');
 
     const model = store.createRecord('github-issue', {
-      repositoryUrl: 'https://api.github.com/repos/ember-learn/ember-help-wanted'
+      repositoryUrl:
+        'https://api.github.com/repos/ember-learn/ember-help-wanted',
     });
 
     assert.strictEqual(
@@ -18,11 +19,12 @@ module('Unit | Model | github issue', function(hooks) {
     );
   });
 
-  test('repositoryName returns the GitHub repo\'s name', function(assert) {
+  test("repositoryName returns the GitHub repo's name", function (assert) {
     const store = this.owner.lookup('service:store');
 
     const model = store.createRecord('github-issue', {
-      repositoryUrl: 'https://api.github.com/repos/ember-learn/ember-help-wanted'
+      repositoryUrl:
+        'https://api.github.com/repos/ember-learn/ember-help-wanted',
     });
 
     assert.strictEqual(

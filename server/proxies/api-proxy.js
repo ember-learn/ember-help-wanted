@@ -12,7 +12,7 @@ if (process.env.LOCAL_API) {
   target = 'https://ember-help-wanted-server.herokuapp.com';
 }
 
-module.exports = function(app) {
+module.exports = function (app) {
   let proxy;
 
   if (process.env.LOCAL_API) {
@@ -20,21 +20,21 @@ module.exports = function(app) {
   } else {
     proxy = httpProxy.createProxyServer({
       headers: {
-        host: 'ember-help-wanted-server.herokuapp.com'
-      }
+        host: 'ember-help-wanted-server.herokuapp.com',
+      },
     });
   }
 
-  proxy.on('error', function(err, req) {
+  proxy.on('error', function (err, req) {
     // eslint-disable-next-line no-console
     console.error(err, req.url);
   });
 
-  app.use(issuesProxyPath, function(req, res) {
+  app.use(issuesProxyPath, function (req, res) {
     req.url = `${issuesProxyPath}/${req.url}`;
     proxy.web(req, res, { target });
   });
-  app.use(reposProxyPath, function(req, res) {
+  app.use(reposProxyPath, function (req, res) {
     req.url = `${reposProxyPath}/${req.url}`;
     proxy.web(req, res, { target });
   });

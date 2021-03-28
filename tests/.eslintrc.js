@@ -1,8 +1,8 @@
 module.exports = {
   globals: {
-    server: true
+    server: true,
   },
   env: {
-    embertest: true
-  }
+    embertest: true,
+  },
 };
