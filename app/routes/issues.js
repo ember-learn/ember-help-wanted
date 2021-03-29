@@ -33,9 +33,7 @@ export default Route.extend({
     let issues = this.store.peekAll('github-issue');
     if (issues.length) {
       if (params.query) {
-        issues = issues.filter(
-          this._matchWildcard(params.category, params.query)
-        );
+        issues = issues.filter(this._byTitle(params.query));
       }
 
       if (params.label) {
@@ -47,9 +45,7 @@ export default Route.extend({
 
     return this._findAllFromCategory(params.category).then((allResults) => {
       if (params.query) {
-        allResults = allResults.filter(
-          this._matchWildcard(params.category, params.query)
-        );
+        allResults = allResults.filter(this._byTitle(params.query));
       }
 
       if (params.label) {
@@ -67,15 +63,14 @@ export default Route.extend({
     return GithubIssues.findAllFromCategory(category);
   },
 
-  _matchWildcard(category, query) {
+  _byTitle(query) {
     return (issue) => {
-      let inCategory = this._isInCategory(
-        category,
-        issue.get('repositoryName')
-      );
-      let inTitle = issue.get('title').includes(query);
-      let inBody = issue.get('body').includes(query);
-      return inCategory && (inTitle || inBody);
+      if (!query) {
+        return true;
+      }
+      const issueText = issue.title.toLowerCase();
+      const queryText = query.toLowerCase();
+      return issueText.includes(queryText);
     };
   },
 
