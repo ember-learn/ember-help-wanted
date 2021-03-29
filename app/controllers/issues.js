@@ -1,22 +1,22 @@
-/* eslint-disable ember/no-classic-classes */
 import Controller from '@ember/controller';
-import { computed } from '@ember/object';
+import { tracked } from '@glimmer/tracking';
 import { action } from '@ember/object';
 
-export default Controller.extend({
-  queryParams: ['query', 'label'],
-  query: '',
-  label: '',
-  queryInput: '', // TODO: Track this
+export default class IssuesController extends Controller {
+  queryParams = ['query', 'label'];
 
-  clearMessage: computed('label', function () {
+  @tracked query = '';
+  @tracked label = '';
+  @tracked queryInput = '';
+
+  get clearMessage() {
     return `Clear search filter ${this.label}`;
-  }),
+  }
 
   @action
   searchByWildcard(event) {
     event.preventDefault();
 
-    this.set('query', this.queryInput);
-  },
-});
+    this.query = this.queryInput;
+  }
+}
