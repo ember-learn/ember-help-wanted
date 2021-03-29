@@ -1,4 +1,3 @@
-/* eslint-disable ember/no-classic-classes */
 import Service, { inject as service } from '@ember/service';
 
 let core = [
@@ -46,8 +45,8 @@ let emberHelpWanted = [
 
 let categoryRepos = { core, learning, community, rfcs, emberHelpWanted };
 
-export default Service.extend({
-  store: service('store'),
+export default class GithubIssuesService extends Service {
+  @service store;
 
   findAllFromCategory(category) {
     return this.store
@@ -62,9 +61,9 @@ export default Service.extend({
         console.error(error);
         return [];
       });
-  },
+  }
 
   fetchCategoryRepos(categoryName) {
     return categoryRepos[categoryName];
-  },
-});
+  }
+}
