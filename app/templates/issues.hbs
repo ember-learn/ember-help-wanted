@@ -54,7 +54,7 @@
               >
                 {{githubIssue.repositoryName}}
               </a>,
-              updated <b>{{moment-from-now githubIssue.updatedAt}}</b>
+              updated <b>{{time-from-now githubIssue.updatedAt}}</b>
             </p>
             {{#each githubIssue.labels as |label|}}
               <button
