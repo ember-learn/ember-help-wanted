@@ -15,20 +15,6 @@ body {
   margin-right: 8px;
 }
 
-.github-label {
-  border-radius: 4px;
-  display: inline-block;
-  padding: 6px;
-  font-size: 12px;
-
-  &:hover {
-    opacity: 0.7;
-  }
-  img {
-    height: 12px;
-  }
-}
-
 .current-filter-label {
   @extend .github-label;
   background-color: var(--color-gray-700);

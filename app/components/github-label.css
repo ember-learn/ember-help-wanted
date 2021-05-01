@@ -1,0 +1,10 @@
+.label {
+  border-radius: 4px;
+  display: inline-block;
+  font-size: 12px;
+  padding: 6px;
+}
+
+.label img {
+  height: 12px;
+}
