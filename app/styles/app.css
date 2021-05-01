@@ -1,3 +1,4 @@
+/*
 @charset "utf-8";
 @import 'loading-cube';
 
@@ -129,8 +130,10 @@ body {
   padding-bottom: 10px;
   bottom: 0;
 }
+*/
 
 /* Should Remove when adding support for Bootstrap 4*/
+/*
 .d-flex {
   display: flex;
 }
@@ -217,3 +220,4 @@ body {
     }
   }
 }
+*/
