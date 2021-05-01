@@ -1,0 +1,30 @@
+.container {
+  background-color: var(--color-gray-900);
+  height: 100%;
+}
+
+.header-container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  min-height: 36vh;
+  text-align: center;
+}
+
+.header {
+  color: var(--color-white);
+}
+
+.body-container {
+  padding: 30px 0 30px;
+}
+
+.link-card:focus-within,
+.link-card:hover {
+  color: var(--color-gray-300);
+}
+
+.paragraph {
+  font-size: 16px;
+  line-height: 25px;
+}

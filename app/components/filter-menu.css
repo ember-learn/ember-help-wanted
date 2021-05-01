@@ -1,0 +1,12 @@
+.container {
+  margin-bottom: var(--spacing-4);
+  max-width: 1024px;
+}
+
+.link {
+  margin: 0.4rem 0.2rem;
+}
+
+.link:last-of-type {
+  margin-right: 0;
+}

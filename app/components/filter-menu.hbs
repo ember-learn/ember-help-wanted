@@ -1,11 +1,12 @@
-<div class="help-wanted-links">
+<div local-class="container">
   {{#each this.filterNames as |filterName|}}
     <LinkTo
       class="es-button"
       data-test-link={{filterName}}
-      @route="issues"
+      local-class="link"
       @model={{filterName}}
       @query={{hash query=""}}
+      @route="issues"
     >
       {{filterName}}
     </LinkTo>
