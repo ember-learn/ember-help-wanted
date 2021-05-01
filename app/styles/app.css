@@ -45,37 +45,6 @@ body {
   cursor: pointer;
 }
 
-.prose {
-  height: 100%;
-  background-color: var(--color-gray-900);
-
-  .herounit {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    min-height: 40vh;
-    text-align: center;
-
-    h1 {
-      color: var(--color-white);
-    }
-  }
-
-  .section {
-    padding: 30px 0 30px;
-
-    .container {
-      width: auto;
-    }
-
-    p {
-      font-size: 16px;
-      line-height: 25px;
-    }
-  }
-}
-
 .footer {
   .container {
     width: auto;
@@ -122,13 +91,6 @@ body {
 .es-header {
   .container {
     width: auto;
-  }
-}
-
-.bg-dark {
-  &.card--link:focus-within,
-  &.card--link:hover {
-    color: var(--color-gray-300);
   }
 }
 
