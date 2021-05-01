@@ -10,33 +10,6 @@ body {
   background-color: var(--color-gray-100);
 }
 
-.github-issue-link {
-  border-bottom: solid 2px;
-  margin-right: 8px;
-}
-
-.current-filter-label {
-  @extend .github-label;
-  background-color: var(--color-gray-700);
-  opacity: 1;
-  color: var(--color-white);
-  position: relative;
-  text-align: right;
-  font-size: 14px;
-
-  &:hover {
-    opacity: 1;
-  }
-
-  button {
-    cursor: pointer;
-    margin-left: 0.4rem;
-    right: 0.2rem;
-    padding: var(--spacing-1);
-    font-size: 14px;
-  }
-}
-
 .github-label-button {
   background: none;
   border: none;
@@ -53,12 +26,6 @@ body {
   .footer-tagline {
     padding: 0 !important;
   }
-}
-
-
-.total-issues {
-  margin: var(--spacing-2) 0;
-  display: inline-block;
 }
 
 // tile
@@ -94,19 +61,6 @@ body {
   }
 }
 
-.search-label {
-  display: block;
-}
-
-.search-input {
-  border-radius: var(--radius);
-  padding: var(--spacing-1);
-}
-
-.search-button {
-  margin-left: var(--spacing-1);
-}
-
 .issues-header {
   padding-top: var(--spacing-4);
   padding-bottom: var(--spacing-2);
@@ -131,32 +85,6 @@ body {
 
   a.text-white {
     color: var(--color-white);
-  }
-}
-
-.search-box {
-  outline: 0;
-  font-size: 16px;
-  position: relative;
-
-  .search-input {
-    display: inline-block;
-  }
-
-  .search-button {
-    display: inline-block;
-  }
-
-  @media screen and (max-width: 415px) {
-    .search-input {
-      width: 100%;
-      display: block;
-    }
-
-    .search-button, .current-filter-label {
-      width: 100%;
-      margin: 0.2rem 0;
-    }
   }
 }
 */
