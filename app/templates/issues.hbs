@@ -45,35 +45,47 @@
   </p>
 </section>
 
-<div class="article container d-flex flex-column">
+<div class="container" local-class="body-container">
   <h2 class="text-xl pb-3">
     Issues that could use your help!
   </h2>
+
   <div class="row">
     <ul class="list-unstyled layout">
       {{#each @model as |githubIssue|}}
         <EsCard
-          class="bg-white pt-2"
           data-test-github-issue={{githubIssue.number}}
+          local-class="card"
         >
           <header>
             <h3 class="text-lg">
               <a
-                href={{githubIssue.htmlUrl}}
                 data-test-field="Title"
+                href={{githubIssue.htmlUrl}}
                 rel="noopener noreferrer"
                 target="_blank"
               >
                 {{githubIssue.title}}
               </a>
             </h3>
+
+            <div local-class="github-issue-number-container">
+              <p
+                data-test-field="Issue Number"
+                local-class="github-issue-number"
+              >
+                #{{githubIssue.number}}
+              </p>
+            </div>
           </header>
+
           <section>
             <p>
               in
               <a
-                href={{githubIssue.repositoryHtml}}
                 data-test-field="Repository Name"
+                href={{githubIssue.repositoryHtml}}
+                local-class="github-repository-name"
                 rel="noopener noreferrer"
                 target="_blank"
               >
@@ -81,28 +93,20 @@
               </a>,
               updated <b>{{time-from-now githubIssue.updatedAt}}</b>
             </p>
+
             {{#each githubIssue.labels as |label|}}
               <button
-                class="github-label-button"
                 data-test-button={{label.name}}
+                local-class="github-label-button"
                 type="button"
                 {{on "click" (fn (mut this.label) label.name)}}
               >
-                <GithubLabel @label={{label.name}} @backgroundColor={{label.color}} />
+                <GithubLabel
+                  @backgroundColor={{label.color}}
+                  @label={{label.name}}
+                />
               </button>
             {{/each}}
-            <br>
-            <p class="github-issue-number">
-              <a
-                class="text-white"
-                data-test-field="Issue Number"
-                href={{githubIssue.htmlUrl}}
-                rel="noopener noreferrer"
-                target="_blank"
-              >
-                #{{githubIssue.number}}
-              </a>
-            </p>
           </section>
         </EsCard>
       {{/each}}

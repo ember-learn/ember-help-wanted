@@ -10,14 +10,6 @@ body {
   background-color: var(--color-gray-100);
 }
 
-.github-label-button {
-  background: none;
-  border: none;
-  padding: 0;
-  margin: 0.2rem;
-  cursor: pointer;
-}
-
 .footer {
   .container {
     width: auto;
@@ -58,33 +50,6 @@ body {
 .es-header {
   .container {
     width: auto;
-  }
-}
-
-.issues-header {
-  padding-top: var(--spacing-4);
-  padding-bottom: var(--spacing-2);
-}
-
-.bg-white {
-  background-color: var(--color-white);
-
-  &.card--link:hover {
-    background-color: var(--color-gray-100);
-  }
-}
-
-.github-issue-number {
-  position: absolute;
-  top: 0;
-  right: 0;
-  padding: 0.2rem 0.5rem;
-  background-color: var(--color-brand);
-  color: var(--color-white);
-  border-bottom-left-radius: var(--radius);
-
-  a.text-white {
-    color: var(--color-white);
   }
 }
 */

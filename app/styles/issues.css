@@ -41,3 +41,38 @@
   display: inline-block;
   margin: var(--spacing-2) 0;
 }
+
+/* Body */
+.body-container {
+  padding-top: var(--spacing-4);
+}
+
+.card {
+  background-color: var(--color-white);
+  position: relative;
+}
+
+.github-issue-number-container {
+  background-color: var(--color-brand);
+  border-bottom-left-radius: var(--radius);
+  color: var(--color-white);
+  padding: 0.2rem 0.5rem;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.github-issue-number-container .github-issue-number {
+  color: var(--color-white);
+}
+
+.github-repository-name {
+  display: inline-block;
+}
+
+.github-label-button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
