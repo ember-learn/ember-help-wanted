@@ -10,15 +10,6 @@ body {
   background-color: var(--color-gray-100);
 }
 
-.help-wanted-links {
-  margin-bottom: var(--spacing-4);
-  max-width: 1024px;
-
-  .es-button {
-    margin: 0.4rem 0.2rem;
-  }
-}
-
 .github-issue-link {
   border-bottom: solid 2px;
   margin-right: 8px;
