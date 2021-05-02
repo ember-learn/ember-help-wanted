@@ -1,7 +1,7 @@
 <section class="container" local-class="header-container">
   <FilterMenu />
 
-  <form {{on "submit" this.searchByWildcard}}>
+  <form {{on "submit" this.filterIssues}}>
     <label
       for="search-input-issues"
       local-class="search-label"
@@ -11,11 +11,13 @@
 
     <Input
       id="search-input-issues"
+      data-test-field="Keyword"
       local-class="search-input"
-      @value={{this.queryInput}}
+      @value={{this.keyword}}
     />
 
     <EsButton
+      data-test-button="Search"
       local-class="search-button"
       @label="Search"
       @type="submit"
@@ -29,9 +31,10 @@
 
         <EsButton
           aria-label={{this.clearMessage}}
+          data-test-button="Clear Filter"
           local-class="clear-label-filter-button"
           title={{this.clearMessage}}
-          @label="Clear filter"
+          @label="Clear Filter"
           @onClicked={{fn (mut this.label) null}}
           @secondary={{true}}
           @type="button"
@@ -52,7 +55,7 @@
 
   <div class="row">
     <ul class="list-unstyled layout">
-      {{#each @model as |githubIssue|}}
+      {{#each this.githubIssuesSorted as |githubIssue|}}
         <EsCard
           data-test-github-issue={{githubIssue.number}}
           local-class="card"

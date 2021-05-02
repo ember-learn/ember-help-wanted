@@ -1,96 +1,51 @@
-/* eslint-disable ember/no-classic-classes */
 import Route from '@ember/routing/route';
 import { inject as service } from '@ember/service';
+import filterIssues from 'ember-help-wanted/utils/filter-issues';
 
-export default Route.extend({
-  githubIssues: service('github-issues'),
+export default class IssuesRoute extends Route {
+  @service store;
 
-  queryParams: {
-    query: {
-      refreshModel: true,
-    },
-
+  queryParams = {
     label: {
       refreshModel: true,
     },
-  },
 
-  model(params) {
-    if (params.query || params.label) {
-      return this._filter(params);
+    query: {
+      refreshModel: true,
+    },
+  };
+
+  async model(params) {
+    const { category, label, query } = params;
+
+    const issues = await this.findIssues(category);
+    const hasFilters = Boolean(label) || Boolean(query);
+
+    if (hasFilters) {
+      return filterIssues(issues, { label, query });
     }
 
-    return this._findAllFromCategory(params.category);
-  },
+    return issues;
+  }
+
+  async findIssues(category) {
+    try {
+      const issues = await this.store.query('github-issue', {
+        group: category,
+      });
+
+      return issues.toArray();
+    } catch (error) {
+      // eslint-disable-next-line no-console
+      console.error(error);
+
+      return [];
+    }
+  }
 
   setupController(controller, model) {
-    this._super(controller, model);
+    super.setupController(controller, model);
 
-    controller.queryInput = '';
-  },
-
-  _filter(params) {
-    let issues = this.store.peekAll('github-issue');
-    if (issues.length) {
-      if (params.query) {
-        issues = issues.filter(this._byTitle(params.query));
-      }
-
-      if (params.label) {
-        issues = issues.filter(this._matchLabel(params.category, params.label));
-      }
-
-      return issues;
-    }
-
-    return this._findAllFromCategory(params.category).then((allResults) => {
-      if (params.query) {
-        allResults = allResults.filter(this._byTitle(params.query));
-      }
-
-      if (params.label) {
-        allResults = allResults.filter(
-          this._matchLabel(params.category, params.label)
-        );
-      }
-
-      return allResults;
-    });
-  },
-
-  _findAllFromCategory(category) {
-    const GithubIssues = this.githubIssues;
-    return GithubIssues.findAllFromCategory(category);
-  },
-
-  _byTitle(query) {
-    return (issue) => {
-      if (!query) {
-        return true;
-      }
-      const issueText = issue.title.toLowerCase();
-      const queryText = query.toLowerCase();
-      return issueText.includes(queryText);
-    };
-  },
-
-  _matchLabel(category, label) {
-    return (issue) => {
-      let inCategory = this._isInCategory(
-        category,
-        issue.get('repositoryName')
-      );
-      let included = issue
-        .get('labels')
-        .map((lb) => lb.name)
-        .includes(label);
-      return inCategory && included;
-    };
-  },
-
-  _isInCategory(category, repo) {
-    const GithubIssues = this.githubIssues;
-    let categoryRepos = GithubIssues.fetchCategoryRepos(category);
-    return categoryRepos.isAny('repo', repo);
-  },
-});
+    controller.keyword = controller.query ?? '';
+  }
+}
