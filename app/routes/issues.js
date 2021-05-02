@@ -1,5 +1,6 @@
 import Route from '@ember/routing/route';
 import { inject as service } from '@ember/service';
+import filterIssues from 'ember-help-wanted/utils/filter-issues';
 
 export default class IssuesRoute extends Route {
   @service store;
@@ -21,14 +22,10 @@ export default class IssuesRoute extends Route {
     const hasFilters = Boolean(label) || Boolean(query);
 
     if (hasFilters) {
-      return this.filterIssues(issues, { label, query });
+      return filterIssues(issues, { label, query });
     }
 
     return issues;
-  }
-
-  filterIssues(/*issues, { label, query }*/) {
-    return [];
   }
 
   async findIssues(category) {
