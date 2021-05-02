@@ -11,11 +11,13 @@
 
     <Input
       id="search-input-issues"
+      data-test-field="Keyword"
       local-class="search-input"
       @value={{this.keyword}}
     />
 
     <EsButton
+      data-test-button="Search"
       local-class="search-button"
       @label="Search"
       @type="submit"
@@ -29,9 +31,10 @@
 
         <EsButton
           aria-label={{this.clearMessage}}
+          data-test-button="Clear Filter"
           local-class="clear-label-filter-button"
           title={{this.clearMessage}}
-          @label="Clear filter"
+          @label="Clear Filter"
           @onClicked={{fn (mut this.label) null}}
           @secondary={{true}}
           @type="button"
