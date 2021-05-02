@@ -52,7 +52,7 @@
 
   <div class="row">
     <ul class="list-unstyled layout">
-      {{#each @model as |githubIssue|}}
+      {{#each this.githubIssuesSorted as |githubIssue|}}
         <EsCard
           data-test-github-issue={{githubIssue.number}}
           local-class="card"

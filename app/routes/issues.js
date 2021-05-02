@@ -37,7 +37,7 @@ export default class IssuesRoute extends Route {
         group: category,
       });
 
-      return issues.sortBy('updatedAt').reverse();
+      return issues.toArray();
     } catch (error) {
       // eslint-disable-next-line no-console
       console.error(error);
