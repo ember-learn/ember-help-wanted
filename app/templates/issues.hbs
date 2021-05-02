@@ -1,7 +1,7 @@
 <section class="container" local-class="header-container">
   <FilterMenu />
 
-  <form {{on "submit" this.searchByWildcard}}>
+  <form {{on "submit" this.filterIssues}}>
     <label
       for="search-input-issues"
       local-class="search-label"
@@ -12,7 +12,7 @@
     <Input
       id="search-input-issues"
       local-class="search-input"
-      @value={{this.queryInput}}
+      @value={{this.keyword}}
     />
 
     <EsButton

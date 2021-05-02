@@ -42,4 +42,10 @@ export default class IssuesRoute extends Route {
       return [];
     }
   }
+
+  setupController(controller, model) {
+    super.setupController(controller, model);
+
+    controller.keyword = controller.query ?? '';
+  }
 }

@@ -4,11 +4,11 @@ import { tracked } from '@glimmer/tracking';
 import dayjs from 'dayjs';
 
 export default class IssuesController extends Controller {
-  queryParams = ['query', 'label'];
+  queryParams = ['label', 'query'];
 
-  @tracked query = '';
+  @tracked keyword = '';
   @tracked label = '';
-  @tracked queryInput = '';
+  @tracked query = '';
 
   get clearMessage() {
     return `Clear search filter ${this.label}`;
@@ -25,9 +25,9 @@ export default class IssuesController extends Controller {
     });
   }
 
-  @action searchByWildcard(event) {
+  @action filterIssues(event) {
     event.preventDefault();
 
-    this.query = this.queryInput;
+    this.query = this.keyword;
   }
 }
