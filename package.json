@@ -25,6 +25,9 @@
   "devDependencies": {
     "@ember/optional-features": "^2.0.0",
     "@ember/test-helpers": "^2.2.5",
+    "@embroider/compat": "^0.40.0",
+    "@embroider/core": "^0.40.0",
+    "@embroider/webpack": "^0.40.0",
     "@glimmer/component": "^1.0.4",
     "@glimmer/tracking": "^1.0.4",
     "@percy/cli": "^1.0.0-beta.48",
@@ -72,7 +75,8 @@
     "npm-run-all": "^4.1.5",
     "prettier": "^2.2.1",
     "qunit": "^2.15.0",
-    "qunit-dom": "^1.6.0"
+    "qunit-dom": "^1.6.0",
+    "webpack": "^5.37.1"
   },
   "dependencies": {
     "invert-color": "^2.0.0"
