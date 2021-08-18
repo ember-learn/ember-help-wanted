@@ -33,7 +33,7 @@
     "babel-eslint": "^10.1.0",
     "broccoli-asset-rev": "^3.0.0",
     "dayjs": "^1.10.6",
-    "ember-auto-import": "^1.11.3",
+    "ember-auto-import": "^2.1.0",
     "ember-cli": "~3.27.0",
     "ember-cli-app-version": "^5.0.0",
     "ember-cli-babel": "^7.26.6",
@@ -73,7 +73,8 @@
     "npm-run-all": "^4.1.5",
     "prettier": "^2.3.2",
     "qunit": "^2.16.0",
-    "qunit-dom": "^1.6.0"
+    "qunit-dom": "^1.6.0",
+    "webpack": "^5.50.0"
   },
   "dependencies": {
     "invert-color": "^2.0.0"
