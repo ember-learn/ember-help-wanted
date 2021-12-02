@@ -1,7 +1,30 @@
-{{page-title "Pull Requests"}}
+{{page-title 'Pull Requests'}}
 {{outlet}}
 
-{{log @model}}
+<div class='container' local-class='body-container'>
+  <h2 class='text-xl pb-3'>
+    Open pull requests
+  </h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Opened</th>
+        <th>Last updated</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each @model as |pr|}}
+        <tr>
+          <td><a href={{pr.url}}>{{pr.title}}</a></td>
+          <td>{{pr.created_at}}</td>
+          <td>{{pr.updated_at}}</td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</div>
 
 {{!-- <section class="container" local-class="header-container">
   <FilterMenu />
@@ -121,4 +144,3 @@
     </ul>
   </div>
 </div> --}}
-
