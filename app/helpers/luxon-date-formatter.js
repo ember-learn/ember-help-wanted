@@ -1,6 +1,8 @@
 import { helper } from '@ember/component/helper';
-import luxon from 'luxon';
+import { DateTime } from 'luxon';
 
-export default helper(function luxonDateFormatter(d) {
-  return d;
+// Takes an ISO datestring and returns relative time
+// Like "12 days ago"
+export default helper(function luxonDateFormatter(datestring) {
+  return DateTime.fromISO(datestring).toRelative();
 });
