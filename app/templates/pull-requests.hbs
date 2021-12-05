@@ -18,8 +18,8 @@
       {{#each @model as |pr|}}
         <tr>
           <td><a href={{pr.url}}>{{pr.title}}</a></td>
-          <td>{{pr.created_at}}</td>
-          <td>{{pr.updated_at}}</td>
+          <td>{{luxon-date-formatter pr.created_at}}</td>
+          <td>{{luxon-date-formatter pr.updated_at}}</td>
         </tr>
       {{/each}}
     </tbody>
