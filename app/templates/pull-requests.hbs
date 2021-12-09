@@ -9,134 +9,15 @@
     <thead>
       <tr>
         <th>Title</th>
+        <th>Repository</th>
         <th>Opened</th>
         <th>Last updated</th>
       </tr>
     </thead>
     <tbody>
       {{#each @model as |pr|}}
-      <PrRow @pr={{pr}} />
-
+        <PrRow @pr={{pr}} />
       {{/each}}
     </tbody>
   </table>
 </div>
-
-{{!-- <section class="container" local-class="header-container">
-  <FilterMenu />
-
-  <form {{on "submit" this.filterIssues}}>
-    <label
-      for="search-input-issues"
-      local-class="search-label"
-    >
-      Keyword
-    </label>
-
-    <Input
-      id="search-input-issues"
-      data-test-field="Keyword"
-      local-class="search-input"
-      @value={{this.keyword}}
-    />
-
-    <EsButton
-      data-test-button="Search"
-      local-class="search-button"
-      @label="Search"
-      @type="submit"
-    />
-
-    {{#if this.label}}
-      <div local-class="label-filter-container">
-        <p>
-          In addition, look for issues with the label <span local-class="label-filter">{{remove-emoji-shortcode this.label}}</span>.
-        </p>
-
-        <EsButton
-          aria-label={{this.clearMessage}}
-          data-test-button="Clear Filter"
-          local-class="clear-label-filter-button"
-          title={{this.clearMessage}}
-          @label="Clear Filter"
-          @onClicked={{fn (mut this.label) null}}
-          @secondary={{true}}
-          @type="button"
-        />
-      </div>
-    {{/if}}
-  </form>
-
-  <p class="text-sm" local-class="num-results-found">
-    {{@model.length}} issues displayed
-  </p>
-</section>
-
-<div class="container" local-class="body-container">
-  <h2 class="text-xl pb-3">
-    Issues that could use your help!
-  </h2>
-
-  <div class="row">
-    <ul class="list-unstyled layout">
-      {{#each this.githubIssuesSorted as |githubIssue|}}
-        <EsCard
-          data-test-github-issue={{githubIssue.number}}
-          local-class="card"
-        >
-          <header>
-            <h3 class="text-lg">
-              <a
-                data-test-field="Title"
-                href={{githubIssue.htmlUrl}}
-                rel="noopener noreferrer"
-                target="_blank"
-              >
-                {{githubIssue.title}}
-              </a>
-            </h3>
-
-            <div local-class="github-issue-number-container">
-              <p
-                data-test-field="Issue Number"
-                local-class="github-issue-number"
-              >
-                #{{githubIssue.number}}
-              </p>
-            </div>
-          </header>
-
-          <section>
-            <p>
-              in
-              <a
-                data-test-field="Repository Name"
-                href={{githubIssue.repositoryHtml}}
-                local-class="github-repository-name"
-                rel="noopener noreferrer"
-                target="_blank"
-              >
-                {{githubIssue.repositoryName}}
-              </a>,
-              updated <b>{{time-from-now githubIssue.updatedAt}}</b>
-            </p>
-
-            {{#each githubIssue.labels as |label|}}
-              <button
-                data-test-button={{label.name}}
-                local-class="github-label-button"
-                type="button"
-                {{on "click" (fn (mut this.label) label.name)}}
-              >
-                <GithubLabel
-                  @backgroundColor={{label.color}}
-                  @label={{label.name}}
-                />
-              </button>
-            {{/each}}
-          </section>
-        </EsCard>
-      {{/each}}
-    </ul>
-  </div>
-</div> --}}
