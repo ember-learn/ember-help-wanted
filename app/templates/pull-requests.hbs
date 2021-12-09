@@ -5,7 +5,6 @@
   <h2 class='text-xl pb-3'>
     Open pull requests
   </h2>
-
   <table>
     <thead>
       <tr>
@@ -16,11 +15,8 @@
     </thead>
     <tbody>
       {{#each @model as |pr|}}
-        <tr>
-          <td><a href={{pr.url}}>{{pr.title}}</a></td>
-          <td>{{luxon-date-formatter pr.created_at}}</td>
-          <td>{{luxon-date-formatter pr.updated_at}}</td>
-        </tr>
+      <PrRow @pr={{pr}} />
+
       {{/each}}
     </tbody>
   </table>
