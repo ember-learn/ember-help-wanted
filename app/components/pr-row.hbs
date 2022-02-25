@@ -1,5 +1,5 @@
 <tr>
-    <td><a href={{@pr.url}}>{{@pr.title}}</a></td>
+    <td><a href={{@pr.pull_request.html_url}}>{{@pr.title}}</a></td>
     <td>{{this.repo}}</td>
     <td>{{luxon-date-formatter @pr.created_at}}</td>
     <td>{{luxon-date-formatter @pr.updated_at}}</td>
