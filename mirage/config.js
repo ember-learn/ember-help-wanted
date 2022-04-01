@@ -23,4 +23,6 @@ export default function() {
   });
 
   this.get('/github-repositories');
+
+  this.get('/api/pull-requests');
 }
