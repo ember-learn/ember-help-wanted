@@ -14,7 +14,7 @@
         <th>Last updated</th>
       </tr>
     </thead>
-    <tbody>
+    <tbody data-test-pr-table-body>
       {{#each @model as |pr|}}
         <PrRow @pr={{pr}} />
       {{/each}}
