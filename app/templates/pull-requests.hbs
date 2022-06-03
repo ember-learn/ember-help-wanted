@@ -1,0 +1,23 @@
+{{page-title 'Pull Requests'}}
+{{outlet}}
+
+<div class='container' local-class='body-container'>
+  <h2 class='text-xl pb-3'>
+    Open pull requests
+  </h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Repository</th>
+        <th>Opened</th>
+        <th>Last updated</th>
+      </tr>
+    </thead>
+    <tbody data-test-pr-table-body>
+      {{#each @model as |pr|}}
+        <PrRow @pr={{pr}} />
+      {{/each}}
+    </tbody>
+  </table>
+</div>
