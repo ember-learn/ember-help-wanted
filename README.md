@@ -79,7 +79,7 @@ You will need the following things properly installed on your computer.
 
 * [Git](https://git-scm.com/)
 * [Node.js](https://nodejs.org/)
-* [Yarn](https://yarnpkg.com/)
+* [NPM](https://npmpkg.com/)
 * [Ember CLI](https://ember-cli.com/)
 * [Google Chrome](https://google.com/chrome/)
 
@@ -89,7 +89,7 @@ Installation
 
 * `git clone <repository-url>` this repository
 * `cd ember-help-wanted`
-* `yarn install`
+* `npm install`
 
 
 Running / Development
@@ -115,17 +115,17 @@ Make use of the many generators for code, try `ember help generate` for more det
 
 ### Running Tests
 
-* `yarn test`
-* `yarn test --server`
+* `npm test`
+* `npm test --server`
 
 ### Linting
 
-* `yarn lint`
-* `yarn lint:fix`
+* `npm run lint`
+* `npm run lint:fix`
 
 ### Building
 
-* `yarn build` (production)
+* `npm build` (production)
 
 ### Deploying
 
