@@ -4,6 +4,7 @@ import ENV from 'ember-help-wanted/config/environment';
 
 export default class PullRequestsRoute extends Route {
   async model() {
+    return;
     let res = await fetch(ENV.API_HOST + '/api/pull-requests');
     let prs = await res.json();
     // remove WIP Pull Requests
