@@ -5,6 +5,7 @@ export default class IndexRoute extends Route {
   @service store;
 
   model() {
+    return;
     return this.store.findAll('github-repository');
   }
 }
