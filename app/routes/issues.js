@@ -18,8 +18,6 @@ export default class IssuesRoute extends Route {
   async model(params) {
     const { category, label, query } = params;
 
-    return
-
     const issues = await this.findIssues(category);
     const hasFilters = Boolean(label) || Boolean(query);
 
