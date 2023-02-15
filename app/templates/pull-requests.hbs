@@ -1,9 +1,9 @@
-{{page-title 'Pull Requests'}}
+{{page-title 'Pull Requests (' @model.length ')'}}
 {{outlet}}
 
 <div class='container' local-class='body-container'>
   <h2 class='text-xl pb-3'>
-    Open pull requests
+    {{ @model.length }} open pull requests
   </h2>
   <table>
     <thead>
