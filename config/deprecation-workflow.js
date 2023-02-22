@@ -6,6 +6,9 @@ self.deprecationWorkflow.config = {
   workflow: [
     { handler: 'silence', matchId: 'ember.component.reopen' },
     { handler: 'silence', matchId: 'manager-capabilities.modifiers-3-13' },
-    { handler: "silence", matchId: "ember-cli-mirage-config-routes-only-export" }
+    {
+      handler: 'silence',
+      matchId: 'ember-cli-mirage-config-routes-only-export',
+    },
   ],
 };
