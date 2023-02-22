@@ -9,7 +9,11 @@ module('Integration | Helper | remove-emoji-shortcode', function (hooks) {
   test('returns an empty string when label is undefined', async function (assert) {
     await render(hbs`
       <div data-test-output>
-        {{remove-emoji-shortcode undefined}}
+        {{!--
+          this lint requires manually adding the () around the helper, which is
+          not supported in ember 3.28 --}}
+        {{! template-lint-disable no-curly-component-invocation}}
+        {{remove-emoji-shortcode}}
       </div>
     `);
 
