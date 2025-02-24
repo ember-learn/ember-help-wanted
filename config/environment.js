@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = function (environment) {
-  let ENV = {
+  const ENV = {
     modulePrefix: 'ember-help-wanted',
     environment,
     contentSecurityPolicy: { 'connect-src': "'self'" },
@@ -9,6 +9,7 @@ module.exports = function (environment) {
     locationType: 'auto',
     API_HOST: '',
     EmberENV: {
+      EXTEND_PROTOTYPES: false,
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
         // e.g. EMBER_NATIVE_DECORATOR_SUPPORT: true
