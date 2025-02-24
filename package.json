@@ -98,6 +98,6 @@
     "edition": "octane"
   },
   "volta": {
-    "node": "16.19.1"
+    "node": "18.20.7"
   }
 }
