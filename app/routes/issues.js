@@ -1,5 +1,5 @@
 import Route from '@ember/routing/route';
-import { inject as service } from '@ember/service';
+import { service } from '@ember/service';
 import filterIssues from 'ember-help-wanted/utils/filter-issues';
 
 export default class IssuesRoute extends Route {

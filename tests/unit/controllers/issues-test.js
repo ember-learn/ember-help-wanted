@@ -13,7 +13,7 @@ module('Unit | Controller | issues', function (hooks) {
       assert.strictEqual(
         this.controller.clearMessage,
         'Clear search filter ',
-        'We get the correct value. (1)'
+        'We get the correct value. (1)',
       );
 
       this.controller.label = 'help wanted';
@@ -21,7 +21,7 @@ module('Unit | Controller | issues', function (hooks) {
       assert.strictEqual(
         this.controller.clearMessage,
         'Clear search filter help wanted',
-        'We get the correct value. (2)'
+        'We get the correct value. (2)',
       );
     });
   });
@@ -31,7 +31,7 @@ module('Unit | Controller | issues', function (hooks) {
       assert.deepEqual(
         this.controller.githubIssuesSorted.map(({ id }) => id),
         [],
-        'We get the correct value. (1)'
+        'We get the correct value. (1)',
       );
 
       this.controller.model = [
@@ -52,7 +52,7 @@ module('Unit | Controller | issues', function (hooks) {
       assert.deepEqual(
         this.controller.githubIssuesSorted.map(({ id }) => id),
         ['3', '1', '2'],
-        'We get the correct value. (2)'
+        'We get the correct value. (2)',
       );
     });
   });

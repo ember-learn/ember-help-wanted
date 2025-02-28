@@ -53,7 +53,7 @@ module('Acceptance | index', function (hooks) {
       .hasAttribute(
         'href',
         'https://github.com/ember-learn/guides-source/issues?q=is%3Aissue+is%3Aopen+label%3A%22Help+Wanted%22+sort%3Acreate-date',
-        'The redirect URL is correct.'
+        'The redirect URL is correct.',
       );
   });
 
@@ -64,7 +64,7 @@ module('Acceptance | index', function (hooks) {
     assert.strictEqual(
       currentURL(),
       '/adopted-ember-addons',
-      'The URL is correct.'
+      'The URL is correct.',
     );
 
     assert

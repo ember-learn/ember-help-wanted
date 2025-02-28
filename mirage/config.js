@@ -1,6 +1,6 @@
 const API_URL = 'https://api.github.com/repos/';
 
-export default function() {
+export default function () {
   this.get('/github-issues', (schema, request) => {
     const groupName = request.queryParams.group;
 
@@ -10,7 +10,7 @@ export default function() {
 
     const githubIssues = schema.githubIssues.all().models;
 
-    return githubIssues.filter(githubIssue => {
+    return githubIssues.filter((githubIssue) => {
       const repositoryUrl = githubIssue.repository_url ?? '';
       const fullName = repositoryUrl.replace(API_URL, '');
 

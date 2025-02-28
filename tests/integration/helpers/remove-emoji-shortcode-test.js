@@ -13,7 +13,7 @@ module('Integration | Helper | remove-emoji-shortcode', function (hooks) {
           this lint requires manually adding the () around the helper, which is
           not supported in ember 3.28 --}}
         {{! template-lint-disable no-curly-component-invocation}}
-        {{remove-emoji-shortcode}}
+        {{(remove-emoji-shortcode)}}
       </div>
     `);
 
@@ -47,7 +47,7 @@ module('Integration | Helper | remove-emoji-shortcode', function (hooks) {
   test('removes all emoji shortcodes when the label includes them', async function (assert) {
     await render(hbs`
       <div data-test-output>
-        {{remove-emoji-shortcode "  :hamster: help  :revolving_hearts:  wanted :pray::pray:  " }}
+        {{remove-emoji-shortcode "  :hamster: help  :revolving_hearts:  wanted :pray::pray:  "}}
       </div>
     `);
 

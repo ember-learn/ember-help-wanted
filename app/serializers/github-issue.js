@@ -16,7 +16,7 @@ export default class GithubIssueSerializer extends RESTSerializer {
       primaryModelClass,
       newPayload,
       id,
-      requestType
+      requestType,
     );
   }
 }

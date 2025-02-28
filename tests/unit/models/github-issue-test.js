@@ -15,7 +15,7 @@ module('Unit | Model | github issue', function (hooks) {
     assert.strictEqual(
       model.repositoryHtml,
       'https://github.com/ember-learn/ember-help-wanted',
-      'We get the correct value.'
+      'We get the correct value.',
     );
   });
 
@@ -30,7 +30,7 @@ module('Unit | Model | github issue', function (hooks) {
     assert.strictEqual(
       model.repositoryName,
       'ember-learn/ember-help-wanted',
-      'We get the correct value.'
+      'We get the correct value.',
     );
   });
 });
