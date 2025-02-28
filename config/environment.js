@@ -6,7 +6,7 @@ module.exports = function (environment) {
     environment,
     contentSecurityPolicy: { 'connect-src': "'self'" },
     rootURL: '/',
-    locationType: 'auto',
+    locationType: 'history',
     API_HOST: '',
     EmberENV: {
       EXTEND_PROTOTYPES: false,
