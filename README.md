@@ -77,27 +77,26 @@ Prerequisites
 
 You will need the following things properly installed on your computer.
 
-* [Git](https://git-scm.com/)
-* [Node.js](https://nodejs.org/) (with npm)
-* [NPM](https://npmpkg.com/)
-* [Ember CLI](https://cli.emberjs.com/release/)
-* [Google Chrome](https://google.com/chrome/)
+- [Git](https://git-scm.com/)
+- [Node.js](https://nodejs.org/) (with npm)
+- [Ember CLI](https://cli.emberjs.com/release/)
+- [Google Chrome](https://google.com/chrome/)
 
 
 Installation
 ------------------------------------------------------------------------------
 
-* `git clone <repository-url>` this repository
-* `cd ember-help-wanted`
-* `npm install`
+- `git clone <repository-url>` this repository
+- `cd ember-help-wanted`
+- `npm install`
 
 
 Running / Development
 ------------------------------------------------------------------------------
 
-* `ember serve`
-* Visit your app at [http://localhost:4200](http://localhost:4200).
-* Visit your tests at [http://localhost:4200/tests](http://localhost:4200/tests).
+- `npm run start`
+- Visit your app at [http://localhost:4200](http://localhost:4200).
+- Visit your tests at [http://localhost:4200/tests](http://localhost:4200/tests).
 
 By default we have an api-proxy that uses the production API when developing
 locally, so you don't need to run the ember-help-wanted-server when editing the
@@ -120,8 +119,8 @@ Make use of the many generators for code, try `ember help generate` for more det
 
 ### Linting
 
-* `npm run lint`
-* `npm run lint:fix`
+- `npm run lint`
+- `npm run lint:fix`
 
 ### Building
 
@@ -135,8 +134,8 @@ Specify what it takes to deploy your app.
 Further Reading / Useful Links
 ------------------------------------------------------------------------------
 
-* [ember.js](https://emberjs.com/)
-* [ember-cli](https://cli.emberjs.com/release/)
-* Development Browser Extensions
-  * [ember inspector for chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
-  * [ember inspector for firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector/)
+- [ember.js](https://emberjs.com/)
+- [ember-cli](https://cli.emberjs.com/release/)
+- Development Browser Extensions
+  - [ember inspector for chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
+  - [ember inspector for firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector/)
