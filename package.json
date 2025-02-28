@@ -70,7 +70,7 @@
     "ember-qunit": "^8.1.1",
     "ember-resolver": "^12.0.1",
     "ember-source": "~6.0.0",
-    "ember-styleguide": "^7.1.0",
+    "ember-styleguide": "^8.5.0",
     "ember-template-lint": "^6.1.0",
     "ember-test-selectors": "^6.0.0",
     "eslint": "^8.57.1",
@@ -88,6 +88,7 @@
     "prettier": "^3.5.2",
     "qunit": "^2.24.1",
     "qunit-dom": "^3.4.0",
+    "rimraf": "^5.0.10",
     "stylelint": "^15.11.0",
     "stylelint-config-standard": "^34.0.0",
     "stylelint-prettier": "^4.1.0",
@@ -97,6 +98,12 @@
   },
   "dependencies": {
     "invert-color": "^2.0.0"
+  },
+  "overrides": {
+    "ember-styleguide": {
+      "@ember/render-modifiers": "^2.1.0",
+      "ember-source": "~6.0.1"
+    }
   },
   "engines": {
     "node": ">= 18"
