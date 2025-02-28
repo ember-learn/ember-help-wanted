@@ -34,7 +34,7 @@ export default class IssuesRoute extends Route {
         group: category,
       });
 
-      return issues.toArray();
+      return [...issues];
     } catch (error) {
       // eslint-disable-next-line no-console
       console.error(error);
