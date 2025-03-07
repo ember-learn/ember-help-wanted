@@ -1,3 +1,4 @@
+/* eslint-disable qunit/require-expect */
 import { currentURL, visit, findAll } from '@ember/test-helpers';
 import percySnapshot from '@percy/ember';
 import FakeTimers from '@sinonjs/fake-timers';

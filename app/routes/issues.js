@@ -34,7 +34,7 @@ export default class IssuesRoute extends Route {
         group: category,
       });
 
-      return issues.toArray();
+      return Array.from(issues); // convert RecordArray to normal array
     } catch (error) {
       // eslint-disable-next-line no-console
       console.error(error);
