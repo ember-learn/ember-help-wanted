@@ -44,7 +44,7 @@ jobs:
           cache: 'pnpm'
           node-version: ${{ env.NODE_VERSION }}
       - run: pnpm install
-      - run: pnpm percy exec -- npm test
+      - run: pnpm percy exec -- pnpm run test:ember
         env:
           PERCY_PARALLEL_NONCE: ${{ env.PERCY_PARALLEL_NONCE }}
           PERCY_PARALLEL_TOTAL: ${{ env.PERCY_PARALLEL_TOTAL }}

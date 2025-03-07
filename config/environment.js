@@ -4,7 +4,6 @@ module.exports = function (environment) {
   const ENV = {
     modulePrefix: 'ember-help-wanted',
     environment,
-    contentSecurityPolicy: { 'connect-src': "'self'" },
     rootURL: '/',
     locationType: 'history',
     EmberENV: {
