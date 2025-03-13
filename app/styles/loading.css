@@ -48,7 +48,6 @@
   animation-delay: 0.2s;
 }
 
-/* stylelint-disable-next-line keyframes-name-pattern */
 @keyframes sk-cube-grid-scale-delay {
   0%,
   70%,
