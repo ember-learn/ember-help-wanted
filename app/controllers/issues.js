@@ -20,9 +20,14 @@ export default class IssuesController extends Controller {
     return githubIssues.sort((issue1, issue2) => {
       const date1 = dayjs(issue1.updatedAt);
       const date2 = dayjs(issue2.updatedAt);
-
       return date2.diff(date1);
     });
+  }
+
+  @action updateKeyword(event) {
+    event.preventDefault();
+
+    this.keyword = event.target.value;
   }
 
   @action filterIssues(event) {

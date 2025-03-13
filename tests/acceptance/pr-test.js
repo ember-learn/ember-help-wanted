@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier, qunit/require-expect */
 import { currentURL, visit, findAll } from '@ember/test-helpers';
 import percySnapshot from '@percy/ember';
 import FakeTimers from '@sinonjs/fake-timers';
@@ -48,7 +47,7 @@ module('Acceptance | pull-requests', function (hooks) {
     assert
       .dom(last)
       .hasText(
-        'Update editor plugin information for VSCode, neovim, and Atom guides-source 4 months ago 19 hours ago'
+        'Update editor plugin information for VSCode, neovim, and Atom guides-source 4 months ago 19 hours ago',
       );
   });
 
