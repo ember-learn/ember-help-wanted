@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import RESTSerializer from '@ember-data/serializer/rest';
 import { underscore } from '@ember/string';
 
