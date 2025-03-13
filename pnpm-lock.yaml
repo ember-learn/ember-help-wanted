@@ -7803,8 +7803,11 @@ snapshots:
 
   '@ember-data/tracking@5.0.1':
     dependencies:
+      '@ember-data/private-build-infra': 4.12.8
+      '@embroider/macros': 1.16.11
       ember-cli-babel: 7.26.11
     transitivePeerDependencies:
+      - '@glint/template'
       - supports-color
 
   '@ember/edition-utils@1.2.0': {}
