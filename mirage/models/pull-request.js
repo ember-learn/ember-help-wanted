@@ -1,3 +1,3 @@
-import { Model } from 'ember-cli-mirage';
+import { Model } from 'miragejs';
 
-export default Model;
+export default Model.extend({});

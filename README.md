@@ -1,16 +1,14 @@
 [![This project uses GitHub Actions for continuous integration.](https://github.com/ember-learn/ember-help-wanted/workflows/CI/badge.svg)](https://github.com/ember-learn/ember-help-wanted/actions?query=workflow%3ACI)
 [![This project uses Percy.io for visual regression testing.](https://percy.io/static/images/percy-badge.svg)](https://percy.io/Ember/ember-help-wanted)
 
-ember-help-wanted
-==============================================================================
+# ember-help-wanted
 
 This app helps you find Ember-related issues and contribute to open source. It works well for project nights for meetups, conferences, and hackathons.
 
 The app is designed to interface with [ember-help-wanted-server](https://github.com/ember-learn/ember-help-wanted-server) as the backend.
 
 
-Big picture
-------------------------------------------------------------------------------
+## Big picture
 
 Our goal with this app is to do two major things in the Ember community.
 
@@ -37,8 +35,7 @@ contributors to various projects, which in turn could help the entire community
 accomplish ambitious things faster.
 
 
-Big picture, technically
-------------------------------------------------------------------------------
+### Big picture, technically
 
 To accomplish the above, we aim to have [a Node backend](https://github.com/ember-learn/ember-help-wanted-server)
 that receives Github webhook notifications about issues across a number of Ember
@@ -51,8 +48,7 @@ add some level of curation to the issues (whether that is needed is still to be
 determined) or in other ways editorialize as issues show up in the app.
 
 
-Future goals
-------------------------------------------------------------------------------
+### Future goals
 
 We hope that meetup organizers (and contributor workshops at various Ember
 conferences) are able to sort through issues and pick subsets for their meetings. For example,
@@ -72,28 +68,24 @@ write up an issue or contact us on the Ember Community Discord `#st-help-wanted-
 channel.  Look forward to working on these things with you further!
 
 
-Prerequisites
-------------------------------------------------------------------------------
+## Prerequisites
 
 You will need the following things properly installed on your computer.
 
 * [Git](https://git-scm.com/)
-* [Node.js](https://nodejs.org/)
-* [NPM](https://npmpkg.com/)
-* [Ember CLI](https://ember-cli.com/)
+* [Node.js](https://nodejs.org/) (with npm)
+* [Ember CLI](https://cli.emberjs.com/release/)
 * [Google Chrome](https://google.com/chrome/)
 
 
-Installation
-------------------------------------------------------------------------------
+## Installation
 
 * `git clone <repository-url>` this repository
 * `cd ember-help-wanted`
-* `npm install`
+* `pnpm install`
 
 
-Running / Development
-------------------------------------------------------------------------------
+## Running / Development
 
 * `ember serve`
 * Visit your app at [http://localhost:4200](http://localhost:4200).
@@ -115,28 +107,27 @@ Make use of the many generators for code, try `ember help generate` for more det
 
 ### Running Tests
 
-* `npm test`
-* `npm test --server`
+* `pnpm test`
+* `pnpm test --server`
 
 ### Linting
 
-* `npm run lint`
-* `npm run lint:fix`
+* `pnpm run lint`
+* `pnpm run lint:fix`
 
 ### Building
 
-* `npm build` (production)
+* `pnpm build` (production)
 
 ### Deploying
 
 Specify what it takes to deploy your app.
 
 
-Further Reading / Useful Links
-------------------------------------------------------------------------------
+## Further Reading / Useful Links
 
 * [ember.js](https://emberjs.com/)
-* [ember-cli](https://ember-cli.com/)
+* [ember-cli](https://cli.emberjs.com/release/)
 * Development Browser Extensions
   * [ember inspector for chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
   * [ember inspector for firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector/)

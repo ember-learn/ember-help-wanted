@@ -19,10 +19,12 @@
 /npm-debug.log*
 /testem.log
 /.vscode
+/yarn-error.log
 
 # intellij data
 .idea
 *.iml
+
 # ember-try
 /.node_modules.ember-try/
 /bower.json.ember-try
@@ -30,3 +32,6 @@
 /package.json.ember-try
 /package-lock.json.ember-try
 /yarn.lock.ember-try
+
+# broccoli-debug
+/DEBUG/

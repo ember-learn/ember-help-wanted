@@ -1,19 +1,17 @@
 'use strict';
 
 module.exports = function (environment) {
-  let ENV = {
+  const ENV = {
     modulePrefix: 'ember-help-wanted',
     environment,
-    contentSecurityPolicy: { 'connect-src': "'self'" },
     rootURL: '/',
-    locationType: 'auto',
-    API_HOST: '',
+    locationType: 'history',
     EmberENV: {
+      EXTEND_PROTOTYPES: false,
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
         // e.g. EMBER_NATIVE_DECORATOR_SUPPORT: true
       },
-      EXTEND_PROTOTYPES: false,
     },
 
     APP: {
@@ -43,6 +41,7 @@ module.exports = function (environment) {
 
     ENV.APP.rootElement = '#ember-testing';
     ENV.APP.autoboot = false;
+    ENV.API_HOST = '';
   }
 
   if (environment === 'production') {
