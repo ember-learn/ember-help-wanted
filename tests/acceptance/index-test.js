@@ -1,4 +1,4 @@
-/* eslint-disable qunit/require-expect */
+/* eslint-disable prettier/prettier, qunit/require-expect */
 import { click, currentURL, visit } from '@ember/test-helpers';
 import percySnapshot from '@percy/ember';
 import FakeTimers from '@sinonjs/fake-timers';
