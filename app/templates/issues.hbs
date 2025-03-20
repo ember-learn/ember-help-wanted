@@ -1,4 +1,3 @@
-{{! template-lint-disable no-builtin-form-components }}
 {{page-title "Issues"}}
 <section class="container" local-class="header-container">
   <FilterMenu />
@@ -11,11 +10,13 @@
       Keyword
     </label>
 
-    <Input
+    <input
       id="search-input-issues"
       data-test-field="Keyword"
       local-class="search-input"
-      @value={{this.keyword}}
+      type="text"
+      value={{this.keyword}}
+     {{on "input" this.updateKeyword}}
     />
 
     <EsButton

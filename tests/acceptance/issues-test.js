@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier, qunit/require-expect */
 import { click, currentURL, fillIn, visit } from '@ember/test-helpers';
 import percySnapshot from '@percy/ember';
 import FakeTimers from '@sinonjs/fake-timers';
@@ -51,7 +50,7 @@ module('Acceptance | issues', function (hooks) {
     assert.strictEqual(
       currentURL(),
       '/ember-learn?label=good%20first%20issue',
-      'The URL is correct.'
+      'The URL is correct.',
     );
 
     assert
@@ -69,7 +68,7 @@ module('Acceptance | issues', function (hooks) {
     assert.strictEqual(
       currentURL(),
       '/ember-learn?query=guides',
-      'The URL is correct.'
+      'The URL is correct.',
     );
 
     assert
@@ -87,7 +86,7 @@ module('Acceptance | issues', function (hooks) {
     assert.strictEqual(
       currentURL(),
       '/ember-learn?label=good%20first%20issue&query=guides',
-      'The URL is correct.'
+      'The URL is correct.',
     );
 
     assert
@@ -121,7 +120,7 @@ module('Acceptance | issues', function (hooks) {
     assert.strictEqual(
       currentURL(),
       '/ember-learn?label=good%20first%20issue',
-      'The URL is correct.'
+      'The URL is correct.',
     );
 
     assert
@@ -159,7 +158,7 @@ module('Acceptance | issues', function (hooks) {
     assert.strictEqual(
       currentURL(),
       '/ember-learn?query=guides',
-      'The URL is correct.'
+      'The URL is correct.',
     );
 
     assert
@@ -200,7 +199,7 @@ module('Acceptance | issues', function (hooks) {
     assert.strictEqual(
       currentURL(),
       '/ember-learn?label=good%20first%20issue&query=guides',
-      'The URL is correct.'
+      'The URL is correct.',
     );
 
     assert
