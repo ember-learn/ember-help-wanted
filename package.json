@@ -34,6 +34,8 @@
     "@ember/string": "^4.0.1",
     "@ember/test-helpers": "^5.1.0",
     "@ember/test-waiters": "^4.1.0",
+    "@embroider/compat": "^3.8.5",
+    "@embroider/webpack": "^4.1.0",
     "@glimmer/component": "^1.1.2",
     "@glimmer/tracking": "^1.1.2",
     "@percy/cli": "^1.30.7",
