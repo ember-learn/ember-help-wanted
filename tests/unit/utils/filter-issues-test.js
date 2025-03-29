@@ -1,4 +1,4 @@
-import { setupMirage } from 'ember-cli-mirage/test-support';
+import { setupMirage } from 'ember-mirage/test-support';
 import loadDefaultScenario from 'ember-help-wanted/mirage/scenarios/default';
 import filterIssues from 'ember-help-wanted/utils/filter-issues';
 import { setupTest } from 'ember-qunit';

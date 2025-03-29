@@ -1,7 +1,7 @@
 import { click, currentURL, visit } from '@ember/test-helpers';
 import percySnapshot from '@percy/ember';
 import FakeTimers from '@sinonjs/fake-timers';
-import { setupMirage } from 'ember-cli-mirage/test-support';
+import { setupMirage } from 'ember-mirage/test-support';
 import loadDefaultScenario from 'ember-help-wanted/mirage/scenarios/default';
 import { setupApplicationTest } from 'ember-qunit';
 import { module, test } from 'qunit';
