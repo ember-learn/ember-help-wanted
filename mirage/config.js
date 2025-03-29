@@ -1,7 +1,4 @@
 import { createServer, Model } from 'miragejs';
-import {
-  discoverEmberDataModels,
-} from 'ember-cli-mirage';
 
 export default function (config) {
   let finalConfig = {
@@ -10,7 +7,6 @@ export default function (config) {
       githubIssue: Model,
       githubRepository: Model,
       pullRequest: Model,
-      ...discoverEmberDataModels(config.store),
       ...config.models
     },
     routes() {
