@@ -34,7 +34,10 @@ export default function (config) {
         });
       });
 
-      this.get('/github-repositories');
+      this.get('/github-repositories', (schema) => {
+        return schema.db.githubRepositories;
+      });
+
       this.get('/api/pull-requests', (schema) => {
         return schema.db.pullRequests;
       });
