@@ -10,6 +10,9 @@ module.exports = function (defaults) {
         DEPRECATE_STORE_EXTENDS_EMBER_OBJECT: false,
       },
     },
+    'ember-scoped-css': {
+      layerName: 'scoped-components',
+    },
   });
 
   return require('@embroider/compat').compatBuild(app, Webpack, {

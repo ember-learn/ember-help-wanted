@@ -1,3 +1,7 @@
+:root {
+  --ember-orange: rgb(255, 92, 68);
+}
+
 body {
   background-color: var(--color-gray-100);
 }

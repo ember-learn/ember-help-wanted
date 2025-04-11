@@ -1,11 +1,11 @@
 {{page-title "Issues"}}
-<section class="container" local-class="header-container">
+<section class="header-container">
   <FilterMenu />
 
   <form {{on "submit" this.filterIssues}}>
     <label
       for="search-input-issues"
-      local-class="search-label"
+      class="search-label"
     >
       Keyword
     </label>
@@ -13,7 +13,7 @@
     <input
       id="search-input-issues"
       data-test-field="Keyword"
-      local-class="search-input"
+      class="search-input"
       type="text"
       value={{this.keyword}}
      {{on "input" this.updateKeyword}}
@@ -21,21 +21,21 @@
 
     <EsButton
       data-test-button="Search"
-      local-class="search-button"
+      class="search-button"
       @label="Search"
       @type="submit"
     />
 
     {{#if this.label}}
-      <div local-class="label-filter-container">
+      <div class="label-filter-container">
         <p>
-          In addition, look for issues with the label <span local-class="label-filter">{{remove-emoji-shortcode this.label}}</span>.
+          In addition, look for issues with the label <span class="label-filter">{{remove-emoji-shortcode this.label}}</span>.
         </p>
 
         <EsButton
           aria-label={{this.clearMessage}}
           data-test-button="Clear Filter"
-          local-class="clear-label-filter-button"
+          class="clear-label-filter-button"
           title={{this.clearMessage}}
           @label="Clear Filter"
           @onClicked={{fn (mut this.label) null}}
@@ -46,12 +46,12 @@
     {{/if}}
   </form>
 
-  <p class="text-sm" local-class="num-results-found">
+  <p class="text-sm num-results-found">
     {{@model.length}} issues displayed
   </p>
 </section>
 
-<div class="container" local-class="body-container">
+<div class="container body-container">
   <h2 class="text-xl pb-3">
     Issues that could use your help!
   </h2>
@@ -61,7 +61,7 @@
       {{#each this.githubIssuesSorted as |githubIssue|}}
         <EsCard
           data-test-github-issue={{githubIssue.number}}
-          local-class="card"
+          class="card"
         >
           <header>
             <h3 class="text-lg">
@@ -75,10 +75,10 @@
               </a>
             </h3>
 
-            <div local-class="github-issue-number-container">
+            <div class="github-issue-number-container">
               <p
                 data-test-field="Issue Number"
-                local-class="github-issue-number"
+                class="github-issue-number"
               >
                 #{{githubIssue.number}}
               </p>
@@ -91,7 +91,7 @@
               <a
                 data-test-field="Repository Name"
                 href={{githubIssue.repositoryHtml}}
-                local-class="github-repository-name"
+                class="github-repository-name"
                 rel="noopener noreferrer"
                 target="_blank"
               >
@@ -103,7 +103,7 @@
             {{#each githubIssue.labels as |label|}}
               <button
                 data-test-button={{label.name}}
-                local-class="github-label-button"
+                class="github-label-button"
                 type="button"
                 {{on "click" (fn (mut this.label) label.name)}}
               >
