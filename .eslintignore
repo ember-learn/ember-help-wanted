@@ -26,4 +26,4 @@
 /yarn.lock.ember-try
 
 # ember-cli-mirage
-/mirage/
+/tests/mirage/

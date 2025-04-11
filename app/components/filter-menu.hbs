@@ -1,9 +1,8 @@
-<div local-class="container">
+<div class="container">
   {{#each this.filterNames as |filterName|}}
     <LinkTo
-      class="es-button"
+      class="es-button link"
       data-test-link={{filterName}}
-      local-class="link"
       @model={{filterName}}
       @query={{hash query=""}}
       @route="issues"

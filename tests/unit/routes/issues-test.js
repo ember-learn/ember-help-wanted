@@ -1,5 +1,5 @@
-import { setupMirage } from 'ember-cli-mirage/test-support';
-import loadDefaultScenario from 'ember-help-wanted/mirage/scenarios/default';
+import { setupMirage } from 'ember-help-wanted/tests/test-support/mirage';
+import loadDefaultScenario from 'ember-help-wanted/tests/mirage/scenarios/default';
 import { setupTest } from 'ember-qunit';
 import { module, test } from 'qunit';
 
