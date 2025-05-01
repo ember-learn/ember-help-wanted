@@ -1,4 +1,3 @@
-/* eslint-env node */
 'use strict';
 
 const httpProxy = require('http-proxy');
@@ -28,7 +27,6 @@ module.exports = function (app) {
   }
 
   proxy.on('error', function (err, req) {
-    // eslint-disable-next-line no-console
     console.error(err, req.url);
   });
 

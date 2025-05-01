@@ -6,5 +6,5 @@ export default RestSerializer.extend({
   embed: true,
   keyForAttribute(attr) {
     return underscore(attr);
-  }
+  },
 });
