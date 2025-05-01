@@ -3,10 +3,7 @@
   <FilterMenu />
 
   <form {{on "submit" this.filterIssues}}>
-    <label
-      for="search-input-issues"
-      local-class="search-label"
-    >
+    <label for="search-input-issues" local-class="search-label">
       Keyword
     </label>
 
@@ -16,7 +13,7 @@
       local-class="search-input"
       type="text"
       value={{this.keyword}}
-     {{on "input" this.updateKeyword}}
+      {{on "input" this.updateKeyword}}
     />
 
     <EsButton
@@ -29,7 +26,10 @@
     {{#if this.label}}
       <div local-class="label-filter-container">
         <p>
-          In addition, look for issues with the label <span local-class="label-filter">{{remove-emoji-shortcode this.label}}</span>.
+          In addition, look for issues with the label
+          <span local-class="label-filter">{{remove-emoji-shortcode
+              this.label
+            }}</span>.
         </p>
 
         <EsButton
@@ -47,7 +47,8 @@
   </form>
 
   <p class="text-sm" local-class="num-results-found">
-    {{@model.length}} issues displayed
+    {{@model.length}}
+    issues displayed
   </p>
 </section>
 
@@ -96,8 +97,8 @@
                 target="_blank"
               >
                 {{githubIssue.repositoryName}}
-              </a>,
-              updated <b>{{time-from-now githubIssue.updatedAt}}</b>
+              </a>, updated
+              <b>{{time-from-now githubIssue.updatedAt}}</b>
             </p>
 
             {{#each githubIssue.labels as |label|}}
