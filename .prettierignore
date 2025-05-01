@@ -4,6 +4,12 @@
 # compiled output
 /dist/
 
+# mirage data
+/mirage/data
+
+# tempoariliy ignore hbs files
+*.hbs
+
 # misc
 /coverage/
 !.*
@@ -11,6 +17,7 @@
 /pnpm-lock.yaml
 ember-cli-update.json
 *.html
+*.md
 
 # ember-try
 /.node_modules.ember-try/
