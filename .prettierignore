@@ -7,9 +7,6 @@
 # mirage data
 /mirage/data
 
-# tempoariliy ignore hbs files
-*.hbs
-
 # misc
 /coverage/
 !.*
