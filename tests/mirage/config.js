@@ -7,7 +7,7 @@ export default function (config) {
       githubIssue: Model,
       githubRepository: Model,
       pullRequest: Model,
-      ...config.models
+      ...config.models,
     },
     routes() {
       this.namespace = '';
