@@ -17,8 +17,8 @@ module.exports = function (defaults) {
       watchDependencies: ['mirage'],
       webpack: {
         // Add any webpack-specific config here if needed
-      }
-    }
+      },
+    },
   });
 
   return app.toTree();
