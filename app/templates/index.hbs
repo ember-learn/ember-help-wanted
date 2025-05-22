@@ -14,9 +14,17 @@
         Repositories with help-wanted issues
       </h2>
 
+      <SortButtons 
+        @onSortByName={{this.sortByName}}
+        @onSortByForks={{this.sortByForks}}
+        @isNameSort={{eq this.sortField "name"}}
+        @isForksSort={{eq this.sortField "forks"}}
+        @isAscending={{eq this.sortDirection "asc"}}
+      />
+
       <div class="row">
         <ul class="list-unstyled layout">
-          {{#each @model as |githubRepository|}}
+          {{#each this.sortedRepositories as |githubRepository|}}
             <EsLinkCard
               class="lg:col-3 bg-dark"
               data-test-github-repository={{githubRepository.name}}
