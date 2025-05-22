@@ -1,5 +1,4 @@
 import { createServer, Model } from 'miragejs';
-import { discoverEmberDataModels } from 'ember-cli-mirage';
 
 export default function (config) {
   let finalConfig = {
@@ -8,7 +7,6 @@ export default function (config) {
       githubIssue: Model,
       githubRepository: Model,
       pullRequest: Model,
-      ...discoverEmberDataModels(config.store),
       ...config.models,
     },
     routes() {
@@ -36,7 +34,10 @@ export default function (config) {
         });
       });
 
-      this.get('/github-repositories');
+      this.get('/github-repositories', (schema) => {
+        return schema.db.githubRepositories;
+      });
+
       this.get('/api/pull-requests', (schema) => {
         return schema.db.pullRequests;
       });

@@ -18,3 +18,5 @@ ember-cli-update.json
 
 # ember-try
 /.node_modules.ember-try/
+
+/tests/mirage/data
