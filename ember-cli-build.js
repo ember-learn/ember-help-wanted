@@ -13,12 +13,7 @@ module.exports = function (defaults) {
         DEPRECATE_STORE_EXTENDS_EMBER_OBJECT: false,
       },
     },
-    autoImport: {
-      watchDependencies: ['mirage'],
-      webpack: {
-        // Add any webpack-specific config here if needed
-      },
-    },
+    // Add options here
   });
 
   return app.toTree();
