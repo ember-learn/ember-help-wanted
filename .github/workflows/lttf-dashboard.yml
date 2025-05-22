@@ -5,6 +5,7 @@ on:
     branches:
       - master
       - main
+      - fix-lttf # delete before merging
 
 jobs:
   deploy:
@@ -12,6 +13,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: pnpm/action-setup@v4
-      - uses: mansona/lttf-dashboard@v1
+      - uses: mansona/lttf-dashboard@fix-folderless-json
         with:
           token: ${{secrets.GITHUB_TOKEN}}
