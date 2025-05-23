@@ -62,7 +62,6 @@
     "ember-cli-terser": "^4.0.2",
     "ember-css-modules": "^1.6.2",
     "ember-data": "~5.3.12",
-    "ember-fetch": "^8.1.2",
     "ember-functions-as-helper-polyfill": "^2.1.2",
     "ember-load-initializers": "^3.0.1",
     "ember-math-helpers": "^3.0.0",
