@@ -1,0 +1,11 @@
+.sort-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .sort-container span {
+    color: var(--color-black);
+    font-weight: 500;
+  } 

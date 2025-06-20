@@ -1,0 +1,16 @@
+{{! app/components/sort-buttons.hbs }}
+<div local-class="sort-container">
+  <span>Sort by:</span>
+  <EsButton
+    @label="Name {{if @isNameSort (if @isAscending '↑' '↓')}}"
+    @onClicked={{this.onSortByName}}
+    @secondary={{true}}
+    data-test-button="sort-by-name"
+  />
+  <EsButton
+    @label="Forks {{if @isForksSort (if @isAscending '↑' '↓')}}"
+    @onClicked={{this.onSortByForks}}
+    @secondary={{true}}
+    data-test-button="sort-by-forks"
+  />
+</div> 
