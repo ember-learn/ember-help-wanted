@@ -24,9 +24,8 @@
     "lint:js": "eslint . --cache",
     "lint:js:fix": "eslint . --fix",
     "start": "vite",
-    "start:local": "cross-env LOCAL_API=true ember s",
-    "test": "concurrently \"npm:lint\" \"npm:test:*\" --names \"lint,test:\" --prefixColors auto",
-    "test:ember": "vite build --mode test && ember test --path dist"
+    "start:local": "cross-env LOCAL_API=true vite",
+    "test": "vite build --mode development && ember test --path dist"
   },
   "devDependencies": {
     "@babel/core": "^7.27.4",
