@@ -4,9 +4,6 @@
 # compiled output
 /dist/
 
-# mirage data
-/mirage/data
-
 # misc
 /coverage/
 !.*
@@ -14,9 +11,3 @@
 /pnpm-lock.yaml
 ember-cli-update.json
 *.html
-*.md
-
-# ember-try
-/.node_modules.ember-try/
-
-/tests/mirage/data
