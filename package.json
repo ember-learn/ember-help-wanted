@@ -90,5 +90,10 @@
   },
   "ember": {
     "edition": "octane"
+  },
+  "pnpm": {
+    "overrides": {
+      "ember-test-waiters": "npm:@ember/test-waiters@^4.1.1"
+    }
   }
 }
