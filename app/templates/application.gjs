@@ -1,8 +1,8 @@
 import { pageTitle } from 'ember-page-title';
-import { WelcomePage } from 'ember-welcome-page';
 
 <template>
   {{pageTitle "EmberHelpWanted"}}
 
+    <h1>Hi there</h1>
   {{outlet}}
 </template>

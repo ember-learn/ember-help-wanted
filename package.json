@@ -47,6 +47,8 @@
     "@embroider/vite": "^1.7.2",
     "@eslint/js": "^9.39.4",
     "@glimmer/component": "^2.0.0",
+    "@percy/cli": "^1.31.13",
+    "@percy/ember": "^5.0.1",
     "@rollup/plugin-babel": "^7.0.0",
     "@warp-drive/core": "~5.8.1",
     "@warp-drive/ember": "~5.8.1",
