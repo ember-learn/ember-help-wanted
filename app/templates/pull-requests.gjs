@@ -1,0 +1,29 @@
+import pageTitle from 'ember-page-title/helpers/page-title';
+import PrRow from '../components/pr-row.gjs';
+
+<template>
+  {{pageTitle "Pull Requests (" @model.length ")"}}
+  {{outlet}}
+
+  <div class="container body-container">
+    <h2 class="text-xl pb-3">
+      {{@model.length}}
+      open pull requests
+    </h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Repository</th>
+          <th>Opened</th>
+          <th>Last updated</th>
+        </tr>
+      </thead>
+      <tbody data-test-pr-table-body>
+        {{#each @model as |pr|}}
+          <PrRow @pr={{pr}} />
+        {{/each}}
+      </tbody>
+    </table>
+  </div>
+</template>

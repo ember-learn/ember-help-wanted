@@ -1,8 +1,8 @@
 import { module, test } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
 import { render } from '@ember/test-helpers';
-import { hbs } from 'ember-cli-htmlbars';
 import FakeTimers from '@sinonjs/fake-timers';
+import luxonDateFormatter from '../../../app/helpers/luxon-date-formatter';
 
 module('Integration | Helper | luxon-date-formatter', function (hooks) {
   setupRenderingTest(hooks);
@@ -13,11 +13,10 @@ module('Integration | Helper | luxon-date-formatter', function (hooks) {
     });
   });
 
-  // TODO: Replace this with your real tests.
   test('it renders', async function (assert) {
-    this.set('inputValue', '2022-04-19');
+    const inputValue = '2022-04-19';
 
-    await render(hbs`{{luxon-date-formatter this.inputValue}}`);
+    await render(<template>{{luxonDateFormatter inputValue}}</template>);
 
     assert.dom(this.element).hasText('9 days ago');
   });

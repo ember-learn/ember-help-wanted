@@ -1,0 +1,101 @@
+import FilterMenu from '../components/filter-menu.gjs';
+import EsLinkCard from 'ember-styleguide/components/es-link-card';
+
+<template>
+  <div class="layout bg-shape-boxes bg-dark pt-5">
+    <div class="container lg:col-4 lg:start-2 mb-4 pt-4">
+      <img alt src="../images/ember-help-wanted-logo.svg" />
+      <h1 class="text-hero-xl header">
+        Ember Help Wanted
+      </h1>
+
+      <FilterMenu />
+    </div>
+  </div>
+
+  <div class="bg-light-muted body-container">
+    <div class="container">
+      <h2 class="text-xl pb-3">
+        Repositories with help-wanted issues
+      </h2>
+
+      <div class="row">
+        <ul class="list-unstyled layout">
+          {{#each @model as |githubRepository|}}
+            <EsLinkCard
+              class="lg:col-3 bg-dark link-card"
+              data-test-github-repository={{githubRepository.name}}
+              @href="{{githubRepository.htmlUrl}}/issues?q=is%3Aissue+is%3Aopen+label%3A%22Help+Wanted%22+sort%3Acreate-date"
+              @title={{githubRepository.name}}
+            >
+              <p>
+                Forks:
+                {{githubRepository.forksCount}}
+              </p>
+            </EsLinkCard>
+          {{/each}}
+        </ul>
+      </div>
+    </div>
+
+    <div class="container">
+      <h2>
+        Improving the contributor experience
+      </h2>
+
+      <p class="paragraph">
+        This app is designed to help community members find issues in the Ember
+        ecosystem that are requesting some extra help! The goal would be for
+        this to work well for project nights for meetups, conferences and anyone
+        else interested in hacking on various projects while also helping the
+        main Ember repositories get much needed help with issues.
+      </p>
+
+      <h3>Big Picture</h3>
+
+      <p class="paragraph">
+        To accomplish this, we use a
+        <a href="https://github.com/ember-learn/ember-help-wanted-server">Node
+          backend</a>
+        that receives Github webhook notifications about issues across a number
+        of Ember projects. The backend will filter those issues and store them
+        to act as our "pool" of potential issues that potential contributors can
+        work on.
+      </p>
+
+      <p class="paragraph">
+        Those issues will then surface in this Ember app, where they can be
+        searched and filtered in various ways as each potential contributor
+        desires. We may add some level of curation to the issues (whether that
+        is needed is still to be determined) or in other ways editorialize as
+        issues show up in the app.
+      </p>
+
+      <p class="paragraph">
+        Meetup organizers (and contributor workshops at various Ember
+        conferences) can also use this as a tool to sort through issues and pick
+        subsets for their meetings. For example, if a Meetup group wants to help
+        its members learn more about Ember Data, a meetup organizer could go
+        through the existing pool of issues and cherry-pick 5-10 issues for
+        folks to focus on for that evening that would help with that. This tool
+        could be used as a foundation for running the Contributors Workshop that
+        occurs each year at EmberConf.
+      </p>
+
+      <p class="paragraph">
+        Long-term, we are considering ways to make this easily findable by
+        anyone who wants to contribute to Ember- tweeting out major new issues,
+        or in other ways that communicate key pieces of info to the Ember
+        community. We could potentially use it as a way of posting "maintainer
+        wanted" messages as well. Do you have more ideas? Let us know!
+      </p>
+
+      <p class="paragraph">
+        To learn more, visit
+        <a
+          href="https://github.com/ember-learn/ember-help-wanted"
+        >ember-help-wanted GitHub repo</a>.
+      </p>
+    </div>
+  </div>
+</template>

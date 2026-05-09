@@ -1,15 +1,13 @@
 import { module, test } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
 import { findAll, render } from '@ember/test-helpers';
-import { hbs } from 'ember-cli-htmlbars';
+import FilterMenu from '../../../app/components/filter-menu';
 
 module('Integration | Component | filter-menu', function (hooks) {
   setupRenderingTest(hooks);
 
   test('renders 11 links', async function (assert) {
-    await render(hbs`
-      <FilterMenu />
-    `);
+    await render(<template><FilterMenu /></template>);
 
     const links = findAll('[data-test-link]');
 
