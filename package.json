@@ -101,7 +101,7 @@
     "stylelint-config-standard": "^36.0.1",
     "tracked-built-ins": "^3.4.0",
     "util": "^0.12.5",
-    "vite": "^8.0.11"
+    "vite": "^8.0.16"
   },
   "engines": {
     "node": ">= 18"
